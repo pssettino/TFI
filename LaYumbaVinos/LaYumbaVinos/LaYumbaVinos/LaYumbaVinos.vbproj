@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{829AC76A-12FB-4D5E-92EE-5D14DFF65167}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>LaYumbaVinos.My.MyApplication</StartupObject>
+    <RootNamespace>LaYumbaVinos</RootNamespace>
+    <AssemblyName>LaYumbaVinos</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>LaYumbaVinos.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>LaYumbaVinos.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmAMBodega.Designer.vb">
+      <DependentUpon>frmAMBodega.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAMBodega.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAMCliente.Designer.vb">
+      <DependentUpon>frmAMCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAMCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAMFamilia.Designer.vb">
+      <DependentUpon>frmAMFamilia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAMFamilia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAMUsuario.Designer.vb">
+      <DependentUpon>frmAMUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAMUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAMVenta.Designer.vb">
+      <DependentUpon>frmAMVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAMVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAMVino.Designer.vb">
+      <DependentUpon>frmAMVino.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAMVino.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBackup.Designer.vb">
+      <DependentUpon>frmBackup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBackup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBitacora.Designer.vb">
+      <DependentUpon>frmBitacora.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBitacora.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBodegas.Designer.vb">
+      <DependentUpon>frmBodegas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBodegas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCambiarContrasena.Designer.vb">
+      <DependentUpon>frmCambiarContrasena.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCambiarContrasena.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientes.Designer.vb">
+      <DependentUpon>frmClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFamilias.Designer.vb">
+      <DependentUpon>frmFamilias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFamilias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuPrincipal.Designer.vb">
+      <DependentUpon>frmMenuPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRestore.Designer.vb">
+      <DependentUpon>frmRestore.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRestore.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuarios.Designer.vb">
+      <DependentUpon>frmUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentas.Designer.vb">
+      <DependentUpon>frmVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVinos.Designer.vb">
+      <DependentUpon>frmVinos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmVinos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmAMBodega.resx">
+      <DependentUpon>frmAMBodega.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAMCliente.resx">
+      <DependentUpon>frmAMCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAMFamilia.resx">
+      <DependentUpon>frmAMFamilia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAMUsuario.resx">
+      <DependentUpon>frmAMUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAMVenta.resx">
+      <DependentUpon>frmAMVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAMVino.resx">
+      <DependentUpon>frmAMVino.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBackup.resx">
+      <DependentUpon>frmBackup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBitacora.resx">
+      <DependentUpon>frmBitacora.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBodegas.resx">
+      <DependentUpon>frmBodegas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCambiarContrasena.resx">
+      <DependentUpon>frmCambiarContrasena.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClientes.resx">
+      <DependentUpon>frmClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFamilias.resx">
+      <DependentUpon>frmFamilias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuPrincipal.resx">
+      <DependentUpon>frmMenuPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRestore.resx">
+      <DependentUpon>frmRestore.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVentas.resx">
+      <DependentUpon>frmVentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVinos.resx">
+      <DependentUpon>frmVinos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture.JPG" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
