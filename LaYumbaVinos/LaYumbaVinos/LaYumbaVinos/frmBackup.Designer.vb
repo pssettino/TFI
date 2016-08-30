@@ -87,9 +87,9 @@ Partial Class frmBackup
         Me.lblCantidad.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.lblCantidad.Location = New System.Drawing.Point(6, 75)
         Me.lblCantidad.Name = "lblCantidad"
-        Me.lblCantidad.Size = New System.Drawing.Size(68, 18)
+        Me.lblCantidad.Size = New System.Drawing.Size(68, 31)
         Me.lblCantidad.TabIndex = 12
-        Me.lblCantidad.Text = "Cantidad"
+        Me.lblCantidad.Text = "Cantidad de partes"
         Me.lblCantidad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'GroupBox

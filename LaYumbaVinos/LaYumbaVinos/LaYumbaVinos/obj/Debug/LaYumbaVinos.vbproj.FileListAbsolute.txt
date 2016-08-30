@@ -46,3 +46,6 @@ C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVi
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmAMCliente.resources
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmAMUsuario.resources
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmAMFamilia.resources
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmRecepcionVinos.resources
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmAMRecepcionVino.resources
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmIntegridadDB.resources

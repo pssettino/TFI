@@ -6,11 +6,6 @@
 
     End Sub
 
-    Private Sub VinosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles VinosToolStripMenuItem1.Click
-        Dim _frmVinos As New frmVinos
-        _frmVinos.Show()
-
-    End Sub
 
     Private Sub BodegasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BodegasToolStripMenuItem.Click
         Dim _frmBodegas As New frmBodegas
@@ -55,5 +50,15 @@
     Private Sub CambiarContraseñaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CambiarContraseñaToolStripMenuItem.Click
         Dim _frmCambiarCotrasena As New frmCambiarContrasena
         _frmCambiarCotrasena.Show()
+    End Sub
+
+    Private Sub AdministraciónDeVinosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdministraciónDeVinosToolStripMenuItem.Click
+        Dim _frmVinos As New frmVinos
+        _frmVinos.Show()
+    End Sub
+
+    Private Sub IntegridadBDToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IntegridadBDToolStripMenuItem.Click
+        Dim _frmIntegridadDB As New frmIntegridadDB
+        _frmIntegridadDB.Show()
     End Sub
 End Class

@@ -23,16 +23,16 @@ Partial Class frmAMVino
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox_FrmMed = New System.Windows.Forms.GroupBox()
-        Me.txtCantidad = New System.Windows.Forms.NumericUpDown()
+        Me.cmbBodega = New System.Windows.Forms.ComboBox()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.lblPrecio = New System.Windows.Forms.Label()
-        Me.lblCantidad = New System.Windows.Forms.Label()
         Me.lblLaboratorio = New System.Windows.Forms.Label()
         Me.lblNombre = New System.Windows.Forms.Label()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
-        Me.cmbBodega = New System.Windows.Forms.ComboBox()
+        Me.lblCantidad = New System.Windows.Forms.Label()
+        Me.txtCantidad = New System.Windows.Forms.NumericUpDown()
         Me.GroupBox_FrmMed.SuspendLayout()
         CType(Me.txtCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -56,16 +56,13 @@ Partial Class frmAMVino
         Me.GroupBox_FrmMed.TabStop = False
         Me.GroupBox_FrmMed.Text = "Vino"
         '
-        'txtCantidad
+        'cmbBodega
         '
-        Me.txtCantidad.Location = New System.Drawing.Point(83, 107)
-        Me.txtCantidad.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtCantidad.Maximum = New Decimal(New Integer() {32767, 0, 0, 0})
-        Me.txtCantidad.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.Size = New System.Drawing.Size(110, 20)
-        Me.txtCantidad.TabIndex = 114
-        Me.txtCantidad.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.cmbBodega.FormattingEnabled = True
+        Me.cmbBodega.Location = New System.Drawing.Point(83, 61)
+        Me.cmbBodega.Name = "cmbBodega"
+        Me.cmbBodega.Size = New System.Drawing.Size(242, 21)
+        Me.cmbBodega.TabIndex = 115
         '
         'btnCancelar
         '
@@ -93,16 +90,6 @@ Partial Class frmAMVino
         Me.lblPrecio.TabIndex = 2
         Me.lblPrecio.Text = "Precio"
         Me.lblPrecio.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'lblCantidad
-        '
-        Me.lblCantidad.AutoSize = True
-        Me.lblCantidad.Location = New System.Drawing.Point(29, 107)
-        Me.lblCantidad.Name = "lblCantidad"
-        Me.lblCantidad.Size = New System.Drawing.Size(49, 13)
-        Me.lblCantidad.TabIndex = 2
-        Me.lblCantidad.Text = "Cantidad"
-        Me.lblCantidad.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblLaboratorio
         '
@@ -139,13 +126,26 @@ Partial Class frmAMVino
         Me.txtDescripcion.Size = New System.Drawing.Size(241, 20)
         Me.txtDescripcion.TabIndex = 0
         '
-        'cmbBodega
+        'lblCantidad
         '
-        Me.cmbBodega.FormattingEnabled = True
-        Me.cmbBodega.Location = New System.Drawing.Point(83, 61)
-        Me.cmbBodega.Name = "cmbBodega"
-        Me.cmbBodega.Size = New System.Drawing.Size(242, 21)
-        Me.cmbBodega.TabIndex = 115
+        Me.lblCantidad.AutoSize = True
+        Me.lblCantidad.Location = New System.Drawing.Point(29, 107)
+        Me.lblCantidad.Name = "lblCantidad"
+        Me.lblCantidad.Size = New System.Drawing.Size(49, 13)
+        Me.lblCantidad.TabIndex = 2
+        Me.lblCantidad.Text = "Cantidad"
+        Me.lblCantidad.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'txtCantidad
+        '
+        Me.txtCantidad.Location = New System.Drawing.Point(83, 107)
+        Me.txtCantidad.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtCantidad.Maximum = New Decimal(New Integer() {32767, 0, 0, 0})
+        Me.txtCantidad.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.txtCantidad.Name = "txtCantidad"
+        Me.txtCantidad.Size = New System.Drawing.Size(110, 20)
+        Me.txtCantidad.TabIndex = 114
+        Me.txtCantidad.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'frmAMVino
         '
@@ -162,14 +162,14 @@ Partial Class frmAMVino
 
     End Sub
     Friend WithEvents GroupBox_FrmMed As System.Windows.Forms.GroupBox
-    Friend WithEvents txtCantidad As System.Windows.Forms.NumericUpDown
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
     Friend WithEvents lblPrecio As System.Windows.Forms.Label
-    Friend WithEvents lblCantidad As System.Windows.Forms.Label
     Friend WithEvents lblLaboratorio As System.Windows.Forms.Label
     Friend WithEvents lblNombre As System.Windows.Forms.Label
     Friend WithEvents txtPrecio As System.Windows.Forms.TextBox
     Friend WithEvents txtDescripcion As System.Windows.Forms.TextBox
     Friend WithEvents cmbBodega As System.Windows.Forms.ComboBox
+    Friend WithEvents txtCantidad As System.Windows.Forms.NumericUpDown
+    Friend WithEvents lblCantidad As System.Windows.Forms.Label
 End Class

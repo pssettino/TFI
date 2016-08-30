@@ -34,10 +34,9 @@ Partial Class frmVinos
         Me.dgVinos = New System.Windows.Forms.DataGridView()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Laboratorio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Bodega = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Receta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgBtnModificar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.dgBtnEliminar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Eliminado = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -56,7 +55,7 @@ Partial Class frmVinos
         Me.GroupBox1.Controls.Add(Me.txtDescripcion)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(794, 107)
+        Me.GroupBox1.Size = New System.Drawing.Size(794, 95)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Filtro"
@@ -82,7 +81,7 @@ Partial Class frmVinos
         'cmbLaboratorio
         '
         Me.cmbLaboratorio.FormattingEnabled = True
-        Me.cmbLaboratorio.Location = New System.Drawing.Point(333, 46)
+        Me.cmbLaboratorio.Location = New System.Drawing.Point(316, 43)
         Me.cmbLaboratorio.Name = "cmbLaboratorio"
         Me.cmbLaboratorio.Size = New System.Drawing.Size(168, 21)
         Me.cmbLaboratorio.TabIndex = 17
@@ -92,9 +91,9 @@ Partial Class frmVinos
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(266, 46)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(60, 13)
+        Me.Label1.Size = New System.Drawing.Size(44, 13)
         Me.Label1.TabIndex = 15
-        Me.Label1.Text = "Laboratorio"
+        Me.Label1.Text = "Bodega"
         '
         'lblDescripcion
         '
@@ -116,9 +115,9 @@ Partial Class frmVinos
         '
         Me.GroupBox2.Controls.Add(Me.btnNuevoVino)
         Me.GroupBox2.Controls.Add(Me.dgVinos)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 134)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 113)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(794, 292)
+        Me.GroupBox2.Size = New System.Drawing.Size(794, 313)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Vinos"
@@ -138,12 +137,12 @@ Partial Class frmVinos
         Me.dgVinos.AllowUserToDeleteRows = False
         Me.dgVinos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgVinos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgVinos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.Descripcion, Me.Laboratorio, Me.Cantidad, Me.Precio, Me.Receta, Me.dgBtnModificar, Me.dgBtnEliminar, Me.Eliminado})
+        Me.dgVinos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.Descripcion, Me.Bodega, Me.Cantidad, Me.Precio, Me.dgBtnModificar, Me.dgBtnEliminar, Me.Eliminado})
         Me.dgVinos.Location = New System.Drawing.Point(6, 57)
         Me.dgVinos.Name = "dgVinos"
         Me.dgVinos.ReadOnly = True
         Me.dgVinos.RowHeadersVisible = False
-        Me.dgVinos.Size = New System.Drawing.Size(783, 229)
+        Me.dgVinos.Size = New System.Drawing.Size(783, 250)
         Me.dgVinos.TabIndex = 9
         '
         'id
@@ -152,6 +151,7 @@ Partial Class frmVinos
         Me.id.HeaderText = "Id"
         Me.id.Name = "id"
         Me.id.ReadOnly = True
+        Me.id.Visible = False
         '
         'Descripcion
         '
@@ -159,11 +159,11 @@ Partial Class frmVinos
         Me.Descripcion.Name = "Descripcion"
         Me.Descripcion.ReadOnly = True
         '
-        'Laboratorio
+        'Bodega
         '
-        Me.Laboratorio.HeaderText = "Laboratorio"
-        Me.Laboratorio.Name = "Laboratorio"
-        Me.Laboratorio.ReadOnly = True
+        Me.Bodega.HeaderText = "Bodega"
+        Me.Bodega.Name = "Bodega"
+        Me.Bodega.ReadOnly = True
         '
         'Cantidad
         '
@@ -176,12 +176,6 @@ Partial Class frmVinos
         Me.Precio.HeaderText = "Precio"
         Me.Precio.Name = "Precio"
         Me.Precio.ReadOnly = True
-        '
-        'Receta
-        '
-        Me.Receta.HeaderText = "Receta"
-        Me.Receta.Name = "Receta"
-        Me.Receta.ReadOnly = True
         '
         'dgBtnModificar
         '
@@ -231,14 +225,13 @@ Partial Class frmVinos
     Friend WithEvents btnLimpiarVino As System.Windows.Forms.Button
     Friend WithEvents btnBuscarVino As System.Windows.Forms.Button
     Friend WithEvents dgVinos As System.Windows.Forms.DataGridView
+    Friend WithEvents btnNuevoVino As System.Windows.Forms.Button
     Friend WithEvents id As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Laboratorio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Bodega As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Precio As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Receta As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents dgBtnModificar As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents dgBtnEliminar As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents Eliminado As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents btnNuevoVino As System.Windows.Forms.Button
 End Class
