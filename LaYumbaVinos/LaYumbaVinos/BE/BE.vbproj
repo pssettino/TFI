@@ -62,7 +62,17 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.vb" />
+    <Compile Include="Backup.vb" />
+    <Compile Include="Bitacora.vb" />
+    <Compile Include="Cliente.vb" />
+    <Compile Include="DVH.vb" />
+    <Compile Include="DVV.vb" />
+    <Compile Include="Familia.vb" />
+    <Compile Include="ICrud.vb" />
+    <Compile Include="Idioma.vb" />
+    <Compile Include="Bodega.vb" />
+    <Compile Include="Localidad.vb" />
+    <Compile Include="Vino.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -78,6 +88,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Patente.vb" />
+    <Compile Include="Provincia.vb" />
+    <Compile Include="Traduccion.vb" />
+    <Compile Include="Usuario.vb" />
+    <Compile Include="Venta.vb" />
+    <Compile Include="VentaVino.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

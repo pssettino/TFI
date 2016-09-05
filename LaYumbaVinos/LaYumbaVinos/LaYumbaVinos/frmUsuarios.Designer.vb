@@ -34,7 +34,6 @@ Partial Class frmUsuarios
         Me.Eliminado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox = New System.Windows.Forms.GroupBox()
         Me.btnNuevoUsuario = New System.Windows.Forms.Button()
-        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         CType(Me.dgUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox.SuspendLayout()
         Me.SuspendLayout()
@@ -138,10 +137,6 @@ Partial Class frmUsuarios
         Me.btnNuevoUsuario.Text = "&Nuevo Usuario"
         Me.btnNuevoUsuario.UseVisualStyleBackColor = True
         '
-        'HelpProvider1
-        '
-        Me.HelpProvider1.HelpNamespace = "farmacia_help.chm"
-        '
         'frmUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -158,7 +153,6 @@ Partial Class frmUsuarios
     Friend WithEvents dgUsuarios As System.Windows.Forms.DataGridView
     Friend WithEvents GroupBox As System.Windows.Forms.GroupBox
     Friend WithEvents btnNuevoUsuario As System.Windows.Forms.Button
-    Friend WithEvents HelpProvider1 As System.Windows.Forms.HelpProvider
     Friend WithEvents id As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Nombre_Usuario As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Apellido_Nombre As System.Windows.Forms.DataGridViewTextBoxColumn

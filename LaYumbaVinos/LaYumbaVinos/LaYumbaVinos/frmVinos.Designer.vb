@@ -25,7 +25,7 @@ Partial Class frmVinos
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnLimpiarVino = New System.Windows.Forms.Button()
         Me.btnBuscarVino = New System.Windows.Forms.Button()
-        Me.cmbLaboratorio = New System.Windows.Forms.ComboBox()
+        Me.cmbVinos = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblDescripcion = New System.Windows.Forms.Label()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
@@ -49,7 +49,7 @@ Partial Class frmVinos
         '
         Me.GroupBox1.Controls.Add(Me.btnLimpiarVino)
         Me.GroupBox1.Controls.Add(Me.btnBuscarVino)
-        Me.GroupBox1.Controls.Add(Me.cmbLaboratorio)
+        Me.GroupBox1.Controls.Add(Me.cmbVinos)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.lblDescripcion)
         Me.GroupBox1.Controls.Add(Me.txtDescripcion)
@@ -78,13 +78,13 @@ Partial Class frmVinos
         Me.btnBuscarVino.Text = "&Buscar"
         Me.btnBuscarVino.UseVisualStyleBackColor = True
         '
-        'cmbLaboratorio
+        'cmbVinos
         '
-        Me.cmbLaboratorio.FormattingEnabled = True
-        Me.cmbLaboratorio.Location = New System.Drawing.Point(316, 43)
-        Me.cmbLaboratorio.Name = "cmbLaboratorio"
-        Me.cmbLaboratorio.Size = New System.Drawing.Size(168, 21)
-        Me.cmbLaboratorio.TabIndex = 17
+        Me.cmbVinos.FormattingEnabled = True
+        Me.cmbVinos.Location = New System.Drawing.Point(316, 43)
+        Me.cmbVinos.Name = "cmbVinos"
+        Me.cmbVinos.Size = New System.Drawing.Size(168, 21)
+        Me.cmbVinos.TabIndex = 17
         '
         'Label1
         '
@@ -217,7 +217,7 @@ Partial Class frmVinos
 
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents cmbLaboratorio As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbVinos As System.Windows.Forms.ComboBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents lblDescripcion As System.Windows.Forms.Label
     Friend WithEvents txtDescripcion As System.Windows.Forms.TextBox

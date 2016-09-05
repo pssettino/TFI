@@ -24,13 +24,13 @@ Partial Class frmAMRecepcionVino
     Private Sub InitializeComponent()
         Me.txtCantidad = New System.Windows.Forms.NumericUpDown()
         Me.lblCantidad = New System.Windows.Forms.Label()
-        Me.GroupBox_FrmMed = New System.Windows.Forms.GroupBox()
+        Me.grboxRecepcionVinos = New System.Windows.Forms.GroupBox()
         Me.cmbBodega = New System.Windows.Forms.ComboBox()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
-        Me.lblLaboratorio = New System.Windows.Forms.Label()
+        Me.lblVino = New System.Windows.Forms.Label()
         CType(Me.txtCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox_FrmMed.SuspendLayout()
+        Me.grboxRecepcionVinos.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtCantidad
@@ -54,20 +54,20 @@ Partial Class frmAMRecepcionVino
         Me.lblCantidad.Text = "Cantidad"
         Me.lblCantidad.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'GroupBox_FrmMed
+        'grboxRecepcionVinos
         '
-        Me.GroupBox_FrmMed.Controls.Add(Me.cmbBodega)
-        Me.GroupBox_FrmMed.Controls.Add(Me.txtCantidad)
-        Me.GroupBox_FrmMed.Controls.Add(Me.btnCancelar)
-        Me.GroupBox_FrmMed.Controls.Add(Me.btnAceptar)
-        Me.GroupBox_FrmMed.Controls.Add(Me.lblCantidad)
-        Me.GroupBox_FrmMed.Controls.Add(Me.lblLaboratorio)
-        Me.GroupBox_FrmMed.Location = New System.Drawing.Point(12, 12)
-        Me.GroupBox_FrmMed.Name = "GroupBox_FrmMed"
-        Me.GroupBox_FrmMed.Size = New System.Drawing.Size(353, 161)
-        Me.GroupBox_FrmMed.TabIndex = 10
-        Me.GroupBox_FrmMed.TabStop = False
-        Me.GroupBox_FrmMed.Text = "Ingreso de Vino"
+        Me.grboxRecepcionVinos.Controls.Add(Me.cmbBodega)
+        Me.grboxRecepcionVinos.Controls.Add(Me.txtCantidad)
+        Me.grboxRecepcionVinos.Controls.Add(Me.btnCancelar)
+        Me.grboxRecepcionVinos.Controls.Add(Me.btnAceptar)
+        Me.grboxRecepcionVinos.Controls.Add(Me.lblCantidad)
+        Me.grboxRecepcionVinos.Controls.Add(Me.lblVino)
+        Me.grboxRecepcionVinos.Location = New System.Drawing.Point(12, 12)
+        Me.grboxRecepcionVinos.Name = "grboxRecepcionVinos"
+        Me.grboxRecepcionVinos.Size = New System.Drawing.Size(353, 161)
+        Me.grboxRecepcionVinos.TabIndex = 10
+        Me.grboxRecepcionVinos.TabStop = False
+        Me.grboxRecepcionVinos.Text = "Ingreso de Vino"
         '
         'cmbBodega
         '
@@ -94,35 +94,35 @@ Partial Class frmAMRecepcionVino
         Me.btnAceptar.TabIndex = 4
         Me.btnAceptar.Text = "&Aceptar"
         '
-        'lblLaboratorio
+        'lblVino
         '
-        Me.lblLaboratorio.AutoSize = True
-        Me.lblLaboratorio.Location = New System.Drawing.Point(15, 27)
-        Me.lblLaboratorio.Name = "lblLaboratorio"
-        Me.lblLaboratorio.Size = New System.Drawing.Size(28, 13)
-        Me.lblLaboratorio.TabIndex = 2
-        Me.lblLaboratorio.Text = "Vino"
-        Me.lblLaboratorio.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblVino.AutoSize = True
+        Me.lblVino.Location = New System.Drawing.Point(15, 27)
+        Me.lblVino.Name = "lblVino"
+        Me.lblVino.Size = New System.Drawing.Size(28, 13)
+        Me.lblVino.TabIndex = 2
+        Me.lblVino.Text = "Vino"
+        Me.lblVino.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'frmAMRecepcionVino
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(377, 184)
-        Me.Controls.Add(Me.GroupBox_FrmMed)
+        Me.Controls.Add(Me.grboxRecepcionVinos)
         Me.Name = "frmAMRecepcionVino"
         Me.Text = "Recepcion de Vinos"
         CType(Me.txtCantidad, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox_FrmMed.ResumeLayout(False)
-        Me.GroupBox_FrmMed.PerformLayout()
+        Me.grboxRecepcionVinos.ResumeLayout(False)
+        Me.grboxRecepcionVinos.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents txtCantidad As System.Windows.Forms.NumericUpDown
     Friend WithEvents lblCantidad As System.Windows.Forms.Label
-    Friend WithEvents GroupBox_FrmMed As System.Windows.Forms.GroupBox
+    Friend WithEvents grboxRecepcionVinos As System.Windows.Forms.GroupBox
     Friend WithEvents cmbBodega As System.Windows.Forms.ComboBox
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
-    Friend WithEvents lblLaboratorio As System.Windows.Forms.Label
+    Friend WithEvents lblVino As System.Windows.Forms.Label
 End Class

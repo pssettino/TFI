@@ -22,42 +22,50 @@ Partial Class frmAMBodega
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.GroupBox_FrmMed = New System.Windows.Forms.GroupBox()
+        Me.grboxBodega = New System.Windows.Forms.GroupBox()
+        Me.cmbProvincia = New System.Windows.Forms.ComboBox()
         Me.cmbLocalidad = New System.Windows.Forms.ComboBox()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
-        Me.lblPrecio = New System.Windows.Forms.Label()
-        Me.lblLaboratorio = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblRazonSocial = New System.Windows.Forms.Label()
+        Me.lblLocalidad = New System.Windows.Forms.Label()
         Me.lblNombre = New System.Windows.Forms.Label()
+        Me.TextTelefono = New System.Windows.Forms.TextBox()
         Me.txtRazonSocial = New System.Windows.Forms.TextBox()
         Me.txtCuit = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.cmbProvincia = New System.Windows.Forms.ComboBox()
-        Me.TextTelefono = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.GroupBox_FrmMed.SuspendLayout()
+        Me.grboxBodega.SuspendLayout()
         Me.SuspendLayout()
         '
-        'GroupBox_FrmMed
+        'grboxBodega
         '
-        Me.GroupBox_FrmMed.Controls.Add(Me.cmbProvincia)
-        Me.GroupBox_FrmMed.Controls.Add(Me.cmbLocalidad)
-        Me.GroupBox_FrmMed.Controls.Add(Me.btnCancelar)
-        Me.GroupBox_FrmMed.Controls.Add(Me.btnAceptar)
-        Me.GroupBox_FrmMed.Controls.Add(Me.Label1)
-        Me.GroupBox_FrmMed.Controls.Add(Me.Label2)
-        Me.GroupBox_FrmMed.Controls.Add(Me.lblPrecio)
-        Me.GroupBox_FrmMed.Controls.Add(Me.lblLaboratorio)
-        Me.GroupBox_FrmMed.Controls.Add(Me.lblNombre)
-        Me.GroupBox_FrmMed.Controls.Add(Me.TextTelefono)
-        Me.GroupBox_FrmMed.Controls.Add(Me.txtRazonSocial)
-        Me.GroupBox_FrmMed.Controls.Add(Me.txtCuit)
-        Me.GroupBox_FrmMed.Location = New System.Drawing.Point(12, 12)
-        Me.GroupBox_FrmMed.Name = "GroupBox_FrmMed"
-        Me.GroupBox_FrmMed.Size = New System.Drawing.Size(353, 305)
-        Me.GroupBox_FrmMed.TabIndex = 10
-        Me.GroupBox_FrmMed.TabStop = False
-        Me.GroupBox_FrmMed.Text = "Bodega"
+        Me.grboxBodega.Controls.Add(Me.cmbProvincia)
+        Me.grboxBodega.Controls.Add(Me.cmbLocalidad)
+        Me.grboxBodega.Controls.Add(Me.btnCancelar)
+        Me.grboxBodega.Controls.Add(Me.btnAceptar)
+        Me.grboxBodega.Controls.Add(Me.Label1)
+        Me.grboxBodega.Controls.Add(Me.Label2)
+        Me.grboxBodega.Controls.Add(Me.lblRazonSocial)
+        Me.grboxBodega.Controls.Add(Me.lblLocalidad)
+        Me.grboxBodega.Controls.Add(Me.lblNombre)
+        Me.grboxBodega.Controls.Add(Me.TextTelefono)
+        Me.grboxBodega.Controls.Add(Me.txtRazonSocial)
+        Me.grboxBodega.Controls.Add(Me.txtCuit)
+        Me.grboxBodega.Location = New System.Drawing.Point(12, 12)
+        Me.grboxBodega.Name = "grboxBodega"
+        Me.grboxBodega.Size = New System.Drawing.Size(353, 305)
+        Me.grboxBodega.TabIndex = 10
+        Me.grboxBodega.TabStop = False
+        Me.grboxBodega.Text = "Bodega"
+        '
+        'cmbProvincia
+        '
+        Me.cmbProvincia.FormattingEnabled = True
+        Me.cmbProvincia.Location = New System.Drawing.Point(89, 177)
+        Me.cmbProvincia.Name = "cmbProvincia"
+        Me.cmbProvincia.Size = New System.Drawing.Size(258, 21)
+        Me.cmbProvincia.TabIndex = 115
         '
         'cmbLocalidad
         '
@@ -84,25 +92,45 @@ Partial Class frmAMBodega
         Me.btnAceptar.TabIndex = 4
         Me.btnAceptar.Text = "&Aceptar"
         '
-        'lblPrecio
+        'Label1
         '
-        Me.lblPrecio.AutoSize = True
-        Me.lblPrecio.Location = New System.Drawing.Point(13, 80)
-        Me.lblPrecio.Name = "lblPrecio"
-        Me.lblPrecio.Size = New System.Drawing.Size(70, 13)
-        Me.lblPrecio.TabIndex = 2
-        Me.lblPrecio.Text = "Razón Social"
-        Me.lblPrecio.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(32, 180)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(51, 13)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Provincia"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'lblLaboratorio
+        'Label2
         '
-        Me.lblLaboratorio.AutoSize = True
-        Me.lblLaboratorio.Location = New System.Drawing.Point(33, 230)
-        Me.lblLaboratorio.Name = "lblLaboratorio"
-        Me.lblLaboratorio.Size = New System.Drawing.Size(53, 13)
-        Me.lblLaboratorio.TabIndex = 2
-        Me.lblLaboratorio.Text = "Localidad"
-        Me.lblLaboratorio.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(34, 129)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(49, 13)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Teléfono"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblRazonSocial
+        '
+        Me.lblRazonSocial.AutoSize = True
+        Me.lblRazonSocial.Location = New System.Drawing.Point(13, 80)
+        Me.lblRazonSocial.Name = "lblRazonSocial"
+        Me.lblRazonSocial.Size = New System.Drawing.Size(70, 13)
+        Me.lblRazonSocial.TabIndex = 2
+        Me.lblRazonSocial.Text = "Razón Social"
+        Me.lblRazonSocial.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblLocalidad
+        '
+        Me.lblLocalidad.AutoSize = True
+        Me.lblLocalidad.Location = New System.Drawing.Point(33, 230)
+        Me.lblLocalidad.Name = "lblLocalidad"
+        Me.lblLocalidad.Size = New System.Drawing.Size(53, 13)
+        Me.lblLocalidad.TabIndex = 2
+        Me.lblLocalidad.Text = "Localidad"
+        Me.lblLocalidad.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblNombre
         '
@@ -113,6 +141,14 @@ Partial Class frmAMBodega
         Me.lblNombre.TabIndex = 2
         Me.lblNombre.Text = "CUIT"
         Me.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'TextTelefono
+        '
+        Me.TextTelefono.Location = New System.Drawing.Point(89, 126)
+        Me.TextTelefono.Name = "TextTelefono"
+        Me.TextTelefono.Size = New System.Drawing.Size(125, 20)
+        Me.TextTelefono.TabIndex = 3
+        Me.TextTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtRazonSocial
         '
@@ -129,61 +165,25 @@ Partial Class frmAMBodega
         Me.txtCuit.Size = New System.Drawing.Size(125, 20)
         Me.txtCuit.TabIndex = 0
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(32, 180)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(51, 13)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Provincia"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'cmbProvincia
-        '
-        Me.cmbProvincia.FormattingEnabled = True
-        Me.cmbProvincia.Location = New System.Drawing.Point(89, 177)
-        Me.cmbProvincia.Name = "cmbProvincia"
-        Me.cmbProvincia.Size = New System.Drawing.Size(258, 21)
-        Me.cmbProvincia.TabIndex = 115
-        '
-        'TextTelefono
-        '
-        Me.TextTelefono.Location = New System.Drawing.Point(89, 126)
-        Me.TextTelefono.Name = "TextTelefono"
-        Me.TextTelefono.Size = New System.Drawing.Size(125, 20)
-        Me.TextTelefono.TabIndex = 3
-        Me.TextTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(34, 129)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(49, 13)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Teléfono"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
         'frmAMBodega
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(376, 329)
-        Me.Controls.Add(Me.GroupBox_FrmMed)
+        Me.Controls.Add(Me.grboxBodega)
         Me.Name = "frmAMBodega"
         Me.Text = "Bodega"
-        Me.GroupBox_FrmMed.ResumeLayout(False)
-        Me.GroupBox_FrmMed.PerformLayout()
+        Me.grboxBodega.ResumeLayout(False)
+        Me.grboxBodega.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents GroupBox_FrmMed As System.Windows.Forms.GroupBox
+    Friend WithEvents grboxBodega As System.Windows.Forms.GroupBox
     Friend WithEvents cmbLocalidad As System.Windows.Forms.ComboBox
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
-    Friend WithEvents lblPrecio As System.Windows.Forms.Label
-    Friend WithEvents lblLaboratorio As System.Windows.Forms.Label
+    Friend WithEvents lblRazonSocial As System.Windows.Forms.Label
+    Friend WithEvents lblLocalidad As System.Windows.Forms.Label
     Friend WithEvents lblNombre As System.Windows.Forms.Label
     Friend WithEvents txtRazonSocial As System.Windows.Forms.TextBox
     Friend WithEvents txtCuit As System.Windows.Forms.TextBox

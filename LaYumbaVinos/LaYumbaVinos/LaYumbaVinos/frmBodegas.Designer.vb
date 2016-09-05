@@ -26,8 +26,8 @@ Partial Class frmBodegas
         Me.btnNuevaBodega = New System.Windows.Forms.Button()
         Me.dgBodegas = New System.Windows.Forms.DataGridView()
         Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Laboratorio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RazonSocial = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgBtnModificar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.dgBtnEliminar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Eliminado = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,7 +61,7 @@ Partial Class frmBodegas
         Me.dgBodegas.AllowUserToDeleteRows = False
         Me.dgBodegas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgBodegas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgBodegas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Descripcion, Me.Laboratorio, Me.Cantidad, Me.dgBtnModificar, Me.dgBtnEliminar, Me.Eliminado})
+        Me.dgBodegas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Descripcion, Me.RazonSocial, Me.Telefono, Me.dgBtnModificar, Me.dgBtnEliminar, Me.Eliminado})
         Me.dgBodegas.Location = New System.Drawing.Point(6, 57)
         Me.dgBodegas.Name = "dgBodegas"
         Me.dgBodegas.ReadOnly = True
@@ -75,17 +75,17 @@ Partial Class frmBodegas
         Me.Descripcion.Name = "Descripcion"
         Me.Descripcion.ReadOnly = True
         '
-        'Laboratorio
+        'RazonSocial
         '
-        Me.Laboratorio.HeaderText = "Razon Social"
-        Me.Laboratorio.Name = "Laboratorio"
-        Me.Laboratorio.ReadOnly = True
+        Me.RazonSocial.HeaderText = "Razon Social"
+        Me.RazonSocial.Name = "RazonSocial"
+        Me.RazonSocial.ReadOnly = True
         '
-        'Cantidad
+        'Telefono
         '
-        Me.Cantidad.HeaderText = "Telefono"
-        Me.Cantidad.Name = "Cantidad"
-        Me.Cantidad.ReadOnly = True
+        Me.Telefono.HeaderText = "Telefono"
+        Me.Telefono.Name = "Telefono"
+        Me.Telefono.ReadOnly = True
         '
         'dgBtnModificar
         '
@@ -127,8 +127,8 @@ Partial Class frmBodegas
     Friend WithEvents btnNuevaBodega As System.Windows.Forms.Button
     Friend WithEvents dgBodegas As System.Windows.Forms.DataGridView
     Friend WithEvents Descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Laboratorio As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents RazonSocial As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Telefono As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents dgBtnModificar As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents dgBtnEliminar As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents Eliminado As System.Windows.Forms.DataGridViewTextBoxColumn

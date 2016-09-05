@@ -1,0 +1,8 @@
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\BE\obj\Debug\BE.Resources.resources
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\BE\obj\Debug\BE.vbproj.GenerateResource.Cache
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\BE\bin\Debug\BE.dll
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\BE\bin\Debug\BE.pdb
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\BE\bin\Debug\BE.xml
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\BE\obj\Debug\BE.dll
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\BE\obj\Debug\BE.xml
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\BE\obj\Debug\BE.pdb

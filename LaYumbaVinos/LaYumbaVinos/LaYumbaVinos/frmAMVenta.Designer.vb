@@ -44,19 +44,19 @@ Partial Class frmAMVenta
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.txtImporteTotal = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.dgMedicamentosPorVenta = New System.Windows.Forms.DataGridView()
-        Me.venta_medicamento_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NroMedicamento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgVinosPorVenta = New System.Windows.Forms.DataGridView()
+        Me.btnAceptar = New System.Windows.Forms.Button()
+        Me.venta_vino_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NroVino = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Vino = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CantVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrecioVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.gvBtnEliminarMedicamento = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.gvBtnEliminarVino = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Eliminado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnAceptar = New System.Windows.Forms.Button()
         CType(Me.txtCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.dgMedicamentosPorVenta, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgVinosPorVenta, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtNroVenta
@@ -232,7 +232,7 @@ Partial Class frmAMVenta
         Me.GroupBox2.Controls.Add(Me.cmbVino)
         Me.GroupBox2.Controls.Add(Me.txtPrecioLista)
         Me.GroupBox2.Controls.Add(Me.Label9)
-        Me.GroupBox2.Controls.Add(Me.dgMedicamentosPorVenta)
+        Me.GroupBox2.Controls.Add(Me.dgVinosPorVenta)
         Me.GroupBox2.Controls.Add(Me.btnAgregarVino)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.Label6)
@@ -278,33 +278,41 @@ Partial Class frmAMVenta
         Me.Label9.TabIndex = 121
         Me.Label9.Text = "Precio Total"
         '
-        'dgMedicamentosPorVenta
+        'dgVinosPorVenta
         '
-        Me.dgMedicamentosPorVenta.AllowUserToAddRows = False
-        Me.dgMedicamentosPorVenta.AllowUserToDeleteRows = False
-        Me.dgMedicamentosPorVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgMedicamentosPorVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgMedicamentosPorVenta.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.venta_medicamento_id, Me.NroMedicamento, Me.Vino, Me.CantVenta, Me.PrecioVenta, Me.gvBtnEliminarMedicamento, Me.Eliminado})
-        Me.dgMedicamentosPorVenta.Location = New System.Drawing.Point(15, 144)
-        Me.dgMedicamentosPorVenta.Name = "dgMedicamentosPorVenta"
-        Me.dgMedicamentosPorVenta.ReadOnly = True
-        Me.dgMedicamentosPorVenta.RowHeadersVisible = False
-        Me.dgMedicamentosPorVenta.Size = New System.Drawing.Size(662, 177)
-        Me.dgMedicamentosPorVenta.TabIndex = 120
+        Me.dgVinosPorVenta.AllowUserToAddRows = False
+        Me.dgVinosPorVenta.AllowUserToDeleteRows = False
+        Me.dgVinosPorVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgVinosPorVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgVinosPorVenta.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.venta_vino_id, Me.NroVino, Me.Vino, Me.CantVenta, Me.PrecioVenta, Me.gvBtnEliminarVino, Me.Eliminado})
+        Me.dgVinosPorVenta.Location = New System.Drawing.Point(15, 144)
+        Me.dgVinosPorVenta.Name = "dgVinosPorVenta"
+        Me.dgVinosPorVenta.ReadOnly = True
+        Me.dgVinosPorVenta.RowHeadersVisible = False
+        Me.dgVinosPorVenta.Size = New System.Drawing.Size(662, 177)
+        Me.dgVinosPorVenta.TabIndex = 120
         '
-        'venta_medicamento_id
+        'btnAceptar
         '
-        Me.venta_medicamento_id.HeaderText = ""
-        Me.venta_medicamento_id.Name = "venta_medicamento_id"
-        Me.venta_medicamento_id.ReadOnly = True
-        Me.venta_medicamento_id.Visible = False
+        Me.btnAceptar.Location = New System.Drawing.Point(417, 358)
+        Me.btnAceptar.Name = "btnAceptar"
+        Me.btnAceptar.Size = New System.Drawing.Size(127, 27)
+        Me.btnAceptar.TabIndex = 119
+        Me.btnAceptar.Text = "&Aceptar"
         '
-        'NroMedicamento
+        'venta_vino_id
         '
-        Me.NroMedicamento.FillWeight = 40.0!
-        Me.NroMedicamento.HeaderText = "Nro"
-        Me.NroMedicamento.Name = "NroMedicamento"
-        Me.NroMedicamento.ReadOnly = True
+        Me.venta_vino_id.HeaderText = ""
+        Me.venta_vino_id.Name = "venta_vino_id"
+        Me.venta_vino_id.ReadOnly = True
+        Me.venta_vino_id.Visible = False
+        '
+        'NroVino
+        '
+        Me.NroVino.FillWeight = 40.0!
+        Me.NroVino.HeaderText = "Nro"
+        Me.NroVino.Name = "NroVino"
+        Me.NroVino.ReadOnly = True
         '
         'Vino
         '
@@ -327,15 +335,15 @@ Partial Class frmAMVenta
         Me.PrecioVenta.Name = "PrecioVenta"
         Me.PrecioVenta.ReadOnly = True
         '
-        'gvBtnEliminarMedicamento
+        'gvBtnEliminarVino
         '
-        Me.gvBtnEliminarMedicamento.FillWeight = 150.0!
-        Me.gvBtnEliminarMedicamento.HeaderText = ""
-        Me.gvBtnEliminarMedicamento.Name = "gvBtnEliminarMedicamento"
-        Me.gvBtnEliminarMedicamento.ReadOnly = True
-        Me.gvBtnEliminarMedicamento.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.gvBtnEliminarMedicamento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.gvBtnEliminarMedicamento.Text = "Eliminar"
+        Me.gvBtnEliminarVino.FillWeight = 150.0!
+        Me.gvBtnEliminarVino.HeaderText = ""
+        Me.gvBtnEliminarVino.Name = "gvBtnEliminarVino"
+        Me.gvBtnEliminarVino.ReadOnly = True
+        Me.gvBtnEliminarVino.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.gvBtnEliminarVino.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.gvBtnEliminarVino.Text = "Eliminar"
         '
         'Eliminado
         '
@@ -343,14 +351,6 @@ Partial Class frmAMVenta
         Me.Eliminado.Name = "Eliminado"
         Me.Eliminado.ReadOnly = True
         Me.Eliminado.Visible = False
-        '
-        'btnAceptar
-        '
-        Me.btnAceptar.Location = New System.Drawing.Point(417, 358)
-        Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(127, 27)
-        Me.btnAceptar.TabIndex = 119
-        Me.btnAceptar.Text = "&Aceptar"
         '
         'frmAMVenta
         '
@@ -366,7 +366,7 @@ Partial Class frmAMVenta
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.dgMedicamentosPorVenta, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgVinosPorVenta, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -391,14 +391,14 @@ Partial Class frmAMVenta
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents txtImporteTotal As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents dgMedicamentosPorVenta As System.Windows.Forms.DataGridView
+    Friend WithEvents dgVinosPorVenta As System.Windows.Forms.DataGridView
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents venta_medicamento_id As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents NroMedicamento As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents venta_vino_id As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NroVino As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Vino As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents CantVenta As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents PrecioVenta As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents gvBtnEliminarMedicamento As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents gvBtnEliminarVino As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents Eliminado As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

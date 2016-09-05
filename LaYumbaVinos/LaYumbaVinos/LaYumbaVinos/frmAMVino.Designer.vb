@@ -22,39 +22,39 @@ Partial Class frmAMVino
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.GroupBox_FrmMed = New System.Windows.Forms.GroupBox()
+        Me.grboxVino = New System.Windows.Forms.GroupBox()
         Me.cmbBodega = New System.Windows.Forms.ComboBox()
+        Me.txtCantidad = New System.Windows.Forms.NumericUpDown()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.lblPrecio = New System.Windows.Forms.Label()
-        Me.lblLaboratorio = New System.Windows.Forms.Label()
-        Me.lblNombre = New System.Windows.Forms.Label()
+        Me.lblCantidad = New System.Windows.Forms.Label()
+        Me.lblBodega = New System.Windows.Forms.Label()
+        Me.lblDescripcion = New System.Windows.Forms.Label()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
-        Me.lblCantidad = New System.Windows.Forms.Label()
-        Me.txtCantidad = New System.Windows.Forms.NumericUpDown()
-        Me.GroupBox_FrmMed.SuspendLayout()
+        Me.grboxVino.SuspendLayout()
         CType(Me.txtCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'GroupBox_FrmMed
+        'grboxVino
         '
-        Me.GroupBox_FrmMed.Controls.Add(Me.cmbBodega)
-        Me.GroupBox_FrmMed.Controls.Add(Me.txtCantidad)
-        Me.GroupBox_FrmMed.Controls.Add(Me.btnCancelar)
-        Me.GroupBox_FrmMed.Controls.Add(Me.btnAceptar)
-        Me.GroupBox_FrmMed.Controls.Add(Me.lblPrecio)
-        Me.GroupBox_FrmMed.Controls.Add(Me.lblCantidad)
-        Me.GroupBox_FrmMed.Controls.Add(Me.lblLaboratorio)
-        Me.GroupBox_FrmMed.Controls.Add(Me.lblNombre)
-        Me.GroupBox_FrmMed.Controls.Add(Me.txtPrecio)
-        Me.GroupBox_FrmMed.Controls.Add(Me.txtDescripcion)
-        Me.GroupBox_FrmMed.Location = New System.Drawing.Point(12, 12)
-        Me.GroupBox_FrmMed.Name = "GroupBox_FrmMed"
-        Me.GroupBox_FrmMed.Size = New System.Drawing.Size(353, 244)
-        Me.GroupBox_FrmMed.TabIndex = 9
-        Me.GroupBox_FrmMed.TabStop = False
-        Me.GroupBox_FrmMed.Text = "Vino"
+        Me.grboxVino.Controls.Add(Me.cmbBodega)
+        Me.grboxVino.Controls.Add(Me.txtCantidad)
+        Me.grboxVino.Controls.Add(Me.btnCancelar)
+        Me.grboxVino.Controls.Add(Me.btnAceptar)
+        Me.grboxVino.Controls.Add(Me.lblPrecio)
+        Me.grboxVino.Controls.Add(Me.lblCantidad)
+        Me.grboxVino.Controls.Add(Me.lblBodega)
+        Me.grboxVino.Controls.Add(Me.lblDescripcion)
+        Me.grboxVino.Controls.Add(Me.txtPrecio)
+        Me.grboxVino.Controls.Add(Me.txtDescripcion)
+        Me.grboxVino.Location = New System.Drawing.Point(12, 12)
+        Me.grboxVino.Name = "grboxVino"
+        Me.grboxVino.Size = New System.Drawing.Size(353, 244)
+        Me.grboxVino.TabIndex = 9
+        Me.grboxVino.TabStop = False
+        Me.grboxVino.Text = "Vino"
         '
         'cmbBodega
         '
@@ -63,6 +63,17 @@ Partial Class frmAMVino
         Me.cmbBodega.Name = "cmbBodega"
         Me.cmbBodega.Size = New System.Drawing.Size(242, 21)
         Me.cmbBodega.TabIndex = 115
+        '
+        'txtCantidad
+        '
+        Me.txtCantidad.Location = New System.Drawing.Point(83, 107)
+        Me.txtCantidad.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtCantidad.Maximum = New Decimal(New Integer() {32767, 0, 0, 0})
+        Me.txtCantidad.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.txtCantidad.Name = "txtCantidad"
+        Me.txtCantidad.Size = New System.Drawing.Size(110, 20)
+        Me.txtCantidad.TabIndex = 114
+        Me.txtCantidad.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'btnCancelar
         '
@@ -91,25 +102,35 @@ Partial Class frmAMVino
         Me.lblPrecio.Text = "Precio"
         Me.lblPrecio.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'lblLaboratorio
+        'lblCantidad
         '
-        Me.lblLaboratorio.AutoSize = True
-        Me.lblLaboratorio.Location = New System.Drawing.Point(33, 69)
-        Me.lblLaboratorio.Name = "lblLaboratorio"
-        Me.lblLaboratorio.Size = New System.Drawing.Size(44, 13)
-        Me.lblLaboratorio.TabIndex = 2
-        Me.lblLaboratorio.Text = "Bodega"
-        Me.lblLaboratorio.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblCantidad.AutoSize = True
+        Me.lblCantidad.Location = New System.Drawing.Point(29, 107)
+        Me.lblCantidad.Name = "lblCantidad"
+        Me.lblCantidad.Size = New System.Drawing.Size(49, 13)
+        Me.lblCantidad.TabIndex = 2
+        Me.lblCantidad.Text = "Cantidad"
+        Me.lblCantidad.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'lblNombre
+        'lblBodega
         '
-        Me.lblNombre.AutoSize = True
-        Me.lblNombre.Location = New System.Drawing.Point(15, 31)
-        Me.lblNombre.Name = "lblNombre"
-        Me.lblNombre.Size = New System.Drawing.Size(63, 13)
-        Me.lblNombre.TabIndex = 2
-        Me.lblNombre.Text = "Descripción"
-        Me.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblBodega.AutoSize = True
+        Me.lblBodega.Location = New System.Drawing.Point(33, 69)
+        Me.lblBodega.Name = "lblBodega"
+        Me.lblBodega.Size = New System.Drawing.Size(44, 13)
+        Me.lblBodega.TabIndex = 2
+        Me.lblBodega.Text = "Bodega"
+        Me.lblBodega.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblDescripcion
+        '
+        Me.lblDescripcion.AutoSize = True
+        Me.lblDescripcion.Location = New System.Drawing.Point(15, 31)
+        Me.lblDescripcion.Name = "lblDescripcion"
+        Me.lblDescripcion.Size = New System.Drawing.Size(63, 13)
+        Me.lblDescripcion.TabIndex = 2
+        Me.lblDescripcion.Text = "Descripción"
+        Me.lblDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'txtPrecio
         '
@@ -126,47 +147,26 @@ Partial Class frmAMVino
         Me.txtDescripcion.Size = New System.Drawing.Size(241, 20)
         Me.txtDescripcion.TabIndex = 0
         '
-        'lblCantidad
-        '
-        Me.lblCantidad.AutoSize = True
-        Me.lblCantidad.Location = New System.Drawing.Point(29, 107)
-        Me.lblCantidad.Name = "lblCantidad"
-        Me.lblCantidad.Size = New System.Drawing.Size(49, 13)
-        Me.lblCantidad.TabIndex = 2
-        Me.lblCantidad.Text = "Cantidad"
-        Me.lblCantidad.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'txtCantidad
-        '
-        Me.txtCantidad.Location = New System.Drawing.Point(83, 107)
-        Me.txtCantidad.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtCantidad.Maximum = New Decimal(New Integer() {32767, 0, 0, 0})
-        Me.txtCantidad.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.Size = New System.Drawing.Size(110, 20)
-        Me.txtCantidad.TabIndex = 114
-        Me.txtCantidad.Value = New Decimal(New Integer() {1, 0, 0, 0})
-        '
         'frmAMVino
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(374, 266)
-        Me.Controls.Add(Me.GroupBox_FrmMed)
+        Me.Controls.Add(Me.grboxVino)
         Me.Name = "frmAMVino"
         Me.Text = "Vino"
-        Me.GroupBox_FrmMed.ResumeLayout(False)
-        Me.GroupBox_FrmMed.PerformLayout()
+        Me.grboxVino.ResumeLayout(False)
+        Me.grboxVino.PerformLayout()
         CType(Me.txtCantidad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents GroupBox_FrmMed As System.Windows.Forms.GroupBox
+    Friend WithEvents grboxVino As System.Windows.Forms.GroupBox
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
     Friend WithEvents lblPrecio As System.Windows.Forms.Label
-    Friend WithEvents lblLaboratorio As System.Windows.Forms.Label
-    Friend WithEvents lblNombre As System.Windows.Forms.Label
+    Friend WithEvents lblBodega As System.Windows.Forms.Label
+    Friend WithEvents lblDescripcion As System.Windows.Forms.Label
     Friend WithEvents txtPrecio As System.Windows.Forms.TextBox
     Friend WithEvents txtDescripcion As System.Windows.Forms.TextBox
     Friend WithEvents cmbBodega As System.Windows.Forms.ComboBox

@@ -37,13 +37,13 @@ Partial Class frmMenuPrincipal
         Me.VinosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministraciónDeVinosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecepciónDeVinosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MedicamentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VinosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BodegasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SeguridadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnsMenuPrincipal = New System.Windows.Forms.MenuStrip()
         Me.IntegridadBDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnsMenuPrincipal = New System.Windows.Forms.MenuStrip()
         Me.mnsMenuPrincipal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -105,7 +105,7 @@ Partial Class frmMenuPrincipal
         'ClientesToolStripMenuItem1
         '
         Me.ClientesToolStripMenuItem1.Name = "ClientesToolStripMenuItem1"
-        Me.ClientesToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.ClientesToolStripMenuItem1.Size = New System.Drawing.Size(116, 22)
         Me.ClientesToolStripMenuItem1.Text = "Clientes"
         '
         'ClientesToolStripMenuItem
@@ -140,12 +140,12 @@ Partial Class frmMenuPrincipal
         Me.RecepciónDeVinosToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
         Me.RecepciónDeVinosToolStripMenuItem.Text = "Recepción de Vinos"
         '
-        'MedicamentosToolStripMenuItem
+        'VinosToolStripMenuItem
         '
-        Me.MedicamentosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VinosToolStripMenuItem1, Me.BodegasToolStripMenuItem, Me.ReporteStockDeVinosToolStripMenuItem})
-        Me.MedicamentosToolStripMenuItem.Name = "MedicamentosToolStripMenuItem"
-        Me.MedicamentosToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
-        Me.MedicamentosToolStripMenuItem.Text = "Vinos"
+        Me.VinosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VinosToolStripMenuItem1, Me.BodegasToolStripMenuItem, Me.ReporteStockDeVinosToolStripMenuItem})
+        Me.VinosToolStripMenuItem.Name = "VinosToolStripMenuItem"
+        Me.VinosToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
+        Me.VinosToolStripMenuItem.Text = "Vinos"
         '
         'BodegasToolStripMenuItem
         '
@@ -173,20 +173,20 @@ Partial Class frmMenuPrincipal
         Me.SeguridadToolStripMenuItem.Size = New System.Drawing.Size(72, 20)
         Me.SeguridadToolStripMenuItem.Text = "Seguridad"
         '
-        'mnsMenuPrincipal
-        '
-        Me.mnsMenuPrincipal.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VentasToolStripMenuItem, Me.MedicamentosToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.SeguridadToolStripMenuItem, Me.AyudaToolStripMenuItem, Me.SalirToolStripMenuItem})
-        Me.mnsMenuPrincipal.Location = New System.Drawing.Point(0, 0)
-        Me.mnsMenuPrincipal.Name = "mnsMenuPrincipal"
-        Me.mnsMenuPrincipal.Size = New System.Drawing.Size(954, 24)
-        Me.mnsMenuPrincipal.TabIndex = 1
-        Me.mnsMenuPrincipal.Text = "MenuStrip1"
-        '
         'IntegridadBDToolStripMenuItem
         '
         Me.IntegridadBDToolStripMenuItem.Name = "IntegridadBDToolStripMenuItem"
         Me.IntegridadBDToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
         Me.IntegridadBDToolStripMenuItem.Text = "Integridad BD"
+        '
+        'mnsMenuPrincipal
+        '
+        Me.mnsMenuPrincipal.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VentasToolStripMenuItem, Me.VinosToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.SeguridadToolStripMenuItem, Me.AyudaToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.mnsMenuPrincipal.Location = New System.Drawing.Point(0, 0)
+        Me.mnsMenuPrincipal.Name = "mnsMenuPrincipal"
+        Me.mnsMenuPrincipal.Size = New System.Drawing.Size(954, 24)
+        Me.mnsMenuPrincipal.TabIndex = 1
+        Me.mnsMenuPrincipal.Text = "MenuStrip1"
         '
         'frmMenuPrincipal
         '
@@ -215,7 +215,7 @@ Partial Class frmMenuPrincipal
     Friend WithEvents ClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ReporteStockDeVinosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents VinosToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MedicamentosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents VinosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BodegasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents VentasToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents VentasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
