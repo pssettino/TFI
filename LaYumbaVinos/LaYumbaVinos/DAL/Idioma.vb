@@ -15,7 +15,7 @@ Public Class Idioma
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "idi_ObtenerIdiomas"
+        comm.CommandText = "SP_ObtenerIdiomas"
         Dim Idiomas As New List(Of BE.Idioma)
         Try
             sqlDa.SelectCommand = comm

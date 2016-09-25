@@ -35,7 +35,7 @@ Public Class Provincia
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
 
-        comm.CommandText = "prov_ObtenerProvincias"
+        comm.CommandText = "SP_ObtenerProvincias"
 
         sqlDa.SelectCommand = comm
 
@@ -62,7 +62,7 @@ Public Class Provincia
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
 
-        comm.CommandText = "prov_ObtenerProvinciaPorID"
+        comm.CommandText = "SP_ObtenerProvinciaPorID"
 
         provinciaId.DbType = DbType.Int32
         provinciaId.ParameterName = "@provincia_id"

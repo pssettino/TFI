@@ -1,11 +1,12 @@
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ''BE
+''Pablo Settino
+''Idioma.vb
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 Option Explicit On
 Option Strict On
 
 Public Class Idioma
-
 
     Private _idiomaid As Integer
     Private _nombre As String
@@ -28,4 +29,4 @@ Public Class Idioma
         End Set
     End Property
 
-End Class ' Idioma
+End Class

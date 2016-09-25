@@ -1,5 +1,7 @@
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ''BE
+''Pablo Settino
+''DVV.vb
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 Option Explicit On
 Option Strict On
@@ -14,6 +16,6 @@ Public Class DVV
     Public Function ObtenerTabla() As String
         Return _tabla
     End Function
-End Class ' DVV
+End Class
 
 

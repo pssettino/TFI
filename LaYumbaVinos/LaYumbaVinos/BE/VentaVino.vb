@@ -1,4 +1,9 @@
-﻿Public Class VentaVino
+﻿'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+''BE
+''Pablo Settino
+''VentaVino.vb
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Public Class VentaVino
 
     Private _venta As BE.Venta
     Private _vino As BE.Vino

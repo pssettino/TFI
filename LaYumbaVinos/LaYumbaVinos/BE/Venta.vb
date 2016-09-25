@@ -1,5 +1,7 @@
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ''BE
+''Pablo Settino
+''Venta.vb
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 Option Explicit On
 Option Strict On
@@ -25,7 +27,7 @@ Public Class Venta
         End Set
     End Property
 
-    Public Property ventaId() As Integer
+    Public Property VentaId() As Integer
         Get
             Return _ventaId
         End Get
@@ -34,7 +36,7 @@ Public Class Venta
         End Set
     End Property
 
-    Public Property fechaVenta() As Date
+    Public Property FechaVenta() As Date
         Get
             Return _fechaVenta
         End Get
@@ -43,7 +45,7 @@ Public Class Venta
         End Set
     End Property
 
-    Public Property activo() As Boolean
+    Public Property Activo() As Boolean
         Get
             Return _activo
         End Get
@@ -52,7 +54,7 @@ Public Class Venta
         End Set
     End Property
 
-    Public Property dvh() As Integer
+    Public Property Dvh() As Integer
         Get
             Return _dvh
         End Get
@@ -70,7 +72,7 @@ Public Class Venta
         End Set
     End Property
 
-    Public Property cliente() As Cliente
+    Public Property Cliente() As Cliente
         Get
             Return _cliente
         End Get
@@ -80,7 +82,7 @@ Public Class Venta
     End Property
 
 
-    Public Property eliminado() As Boolean
+    Public Property Eliminado() As Boolean
         Get
             Return _eliminado
         End Get
@@ -98,4 +100,4 @@ Public Class Venta
         End Set
     End Property
 
-End Class ' Venta
+End Class

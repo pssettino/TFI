@@ -1,5 +1,7 @@
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ''BE
+''Pablo Settino
+''DVH.vb
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Option Explicit On
@@ -30,4 +32,4 @@ Public Class DVH
         Return _restricciones
     End Function
 
-End Class ' DVH
+End Class

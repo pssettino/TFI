@@ -1,5 +1,7 @@
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ''BE
+''Pablo Settino
+''Patente.vb
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 Option Explicit On
 Option Strict On
@@ -10,7 +12,7 @@ Public Class Patente
     Private _negado As Boolean
     Private _obligatoria As Boolean
 
-    Public Property negado() As Boolean
+    Public Property Negado() As Boolean
         Get
             Return _negado
         End Get
@@ -36,7 +38,7 @@ Public Class Patente
         End Set
     End Property
  
-    Public Property obligatoria() As Boolean
+    Public Property Obligatoria() As Boolean
         Get
             Return _obligatoria
         End Get
@@ -44,4 +46,4 @@ Public Class Patente
             _obligatoria = Value
         End Set
     End Property
-End Class ' Patente
+End Class

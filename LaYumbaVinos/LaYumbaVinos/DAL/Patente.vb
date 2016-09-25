@@ -11,13 +11,9 @@ Public Class Patente
     Private Shared _instancia As DAL.Patente
 
     Public Shared Function GetInstance() As DAL.Patente
-
         If _instancia Is Nothing Then
-
             _instancia = New DAL.Patente
-
         End If
-
         Return _instancia
     End Function
 
@@ -36,7 +32,7 @@ Public Class Patente
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "pat_ObtenerPatentes"
+        comm.CommandText = "SP_ObtenerPatentes"
         Dim patentes As New List(Of BE.Patente)
         Try
             sqlDa.SelectCommand = comm

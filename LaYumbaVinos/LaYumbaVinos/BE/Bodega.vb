@@ -1,12 +1,13 @@
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ''BE
+''Pablo Settino
+''Bodega.vb
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Option Explicit On
 Option Strict On
 
 Public Class Bodega
-
 
     Private _bodegaId As Integer
     Private _razonSocial As String
@@ -22,7 +23,7 @@ Public Class Bodega
         End Set
     End Property
 
-    Public Property razonSocial() As String
+    Public Property RazonSocial() As String
         Get
             Return _razonSocial
         End Get
@@ -31,7 +32,7 @@ Public Class Bodega
         End Set
     End Property
 
-    Public Property telefono() As String
+    Public Property Telefono() As String
         Get
             Return _telefono
         End Get
@@ -40,7 +41,7 @@ Public Class Bodega
         End Set
     End Property
 
-    Public Property cuit() As String
+    Public Property Cuit() As String
         Get
             Return _cuit
         End Get
@@ -48,6 +49,5 @@ Public Class Bodega
             _cuit = value
         End Set
     End Property
-
 
 End Class

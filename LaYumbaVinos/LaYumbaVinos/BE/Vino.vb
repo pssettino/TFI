@@ -1,5 +1,7 @@
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ''BE
+''Pablo Settino
+''Vino.vb
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 Option Explicit On
 Option Strict On
@@ -24,7 +26,7 @@ Public Class Vino
         End Set
     End Property
 
-    Public Property descripcion() As String
+    Public Property Descripcion() As String
         Get
             Return _descripcion
         End Get
@@ -42,7 +44,7 @@ Public Class Vino
         End Set
     End Property
 
-    Public Property precio() As String
+    Public Property Precio() As String
         Get
             Return _precio
         End Get
@@ -51,7 +53,7 @@ Public Class Vino
         End Set
     End Property
 
-    Public Property eliminado() As Boolean
+    Public Property Eliminado() As Boolean
         Get
             Return _eliminado
         End Get
@@ -61,7 +63,7 @@ Public Class Vino
     End Property
 
 
-    Public Property cantidad() As String
+    Public Property Cantidad() As String
         Get
             Return _cantidad
         End Get
@@ -79,4 +81,4 @@ Public Class Vino
         End Set
     End Property
 
-End Class ' Vino
+End Class

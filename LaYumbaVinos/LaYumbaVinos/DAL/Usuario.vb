@@ -39,7 +39,7 @@ Public Class Usuario
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "usu_InsertarUsuario"
+        comm.CommandText = "SP_InsertarUsuario"
 
         nombreUsuario.DbType = DbType.String
         nombreUsuario.ParameterName = "@nombre_usuario"
@@ -131,7 +131,7 @@ Public Class Usuario
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "usu_EliminarUsuario"
+        comm.CommandText = "SP_EliminarUsuario"
 
         usuarioId.DbType = DbType.Int32
         usuarioId.ParameterName = "@usuario_id"
@@ -170,7 +170,7 @@ Public Class Usuario
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "usu_ObtenerUsuarios"
+        comm.CommandText = "SP_ObtenerUsuarios"
         Dim usuarios As New List(Of BE.Usuario)
         Try
             sqlDa.SelectCommand = comm
@@ -208,7 +208,7 @@ Public Class Usuario
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
 
-        comm.CommandText = "usu_ObtenerUsuariosPorID"
+        comm.CommandText = "SP_ObtenerUsuariosPorID"
 
         usuarioId.DbType = DbType.Int32
         usuarioId.ParameterName = "@usuario_id"
@@ -283,7 +283,7 @@ Public Class Usuario
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "usu_ModificarUsuario"
+        comm.CommandText = "SP_ModificarUsuario"
 
         usuarioId.DbType = DbType.Int32
         usuarioId.ParameterName = "@usuario_id"
@@ -378,7 +378,7 @@ Public Class Usuario
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "usu_BloquearDesbloquerUsuario"
+        comm.CommandText = "SP_BloquearDesbloquerUsuario"
 
         UsuarioId.DbType = DbType.Int32
         UsuarioId.ParameterName = "@Usuario_Id"
@@ -419,7 +419,7 @@ Public Class Usuario
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "usu_ValidarContraseña"
+        comm.CommandText = "SP_ValidarContraseña"
 
         nombreUsuario.DbType = DbType.String
         nombreUsuario.ParameterName = "@nombre_usuario"
@@ -481,7 +481,7 @@ Public Class Usuario
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "usu_VerificarExistencia"
+        comm.CommandText = "SP_VerificarExistencia"
 
         nombreUsuario.DbType = DbType.String
         nombreUsuario.ParameterName = "@nombre_usuario"
@@ -515,7 +515,7 @@ Public Class Usuario
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "sp_VerificarPatente"
+        comm.CommandText = "SP_VerificarPatente"
 
         usuarioId.DbType = DbType.Int32
         usuarioId.ParameterName = "@usuario_id"
@@ -552,7 +552,7 @@ Public Class Usuario
         Dim dt As New DataTable
 
         sqlConn.Open()
-        SqlComm.CommandText = String.Format("SELECT Patente_id, Nombre FROM [layumba].dbo.[Patente] where nombre = '" & strPatente & "'")
+        SqlComm.CommandText = String.Format("SELECT Patente_id, Nombre FROM Patente] where nombre = '" & strPatente & "'")
         SqlComm.Connection = sqlConn
         dr = SqlComm.ExecuteReader()
         dt.Load(dr)
@@ -567,7 +567,7 @@ Public Class Usuario
         Dim dt As New DataTable
 
         'sqlConn.Open()
-        SqlComm.CommandText = String.Format("SELECT * FROM [layumba].dbo.[Familia_Usuario] where usuario_id = " & _UsuarioId)
+        SqlComm.CommandText = String.Format("SELECT * FROM Familia_Usuario] where usuario_id = " & _UsuarioId)
         SqlComm.Connection = sqlConn
         dr = SqlComm.ExecuteReader()
         dt.Load(dr)
@@ -594,7 +594,7 @@ Public Class Usuario
     Function AsignarPatenteUsuario(patente As BE.Patente, _UsuarioId As Integer) As Boolean
         Dim SqlComm As New SqlClient.SqlCommand
         sqlConn.Open()
-        SqlComm.CommandText = String.Format("insert into [layumba].dbo.[Usuario_Patente] (usuario_id,patente_id,negado) values (" & _UsuarioId & "," & patente.PatenteId & ",'" & CBool(patente.negado) & "')")
+        SqlComm.CommandText = String.Format("insert into Usuario_Patente] (usuario_id,patente_id,negado) values (" & _UsuarioId & "," & patente.PatenteId & ",'" & CBool(patente.negado) & "')")
         SqlComm.Connection = sqlConn
         SqlComm.ExecuteNonQuery()
         sqlConn.Close()
@@ -613,7 +613,7 @@ Public Class Usuario
     Function AsignarFamiliaUsuario(familia As BE.Familia, _UsuarioId As Integer) As Boolean
         Dim SqlComm As New SqlClient.SqlCommand
         sqlConn.Open()
-        SqlComm.CommandText = String.Format("insert into [layumba].dbo.[Familia_Usuario] (familia_id,usuario_id) values (" & familia.familiaId & "," & _UsuarioId & ")")
+        SqlComm.CommandText = String.Format("insert into Familia_Usuario] (familia_id,usuario_id) values (" & familia.familiaId & "," & _UsuarioId & ")")
         SqlComm.Connection = sqlConn
         SqlComm.ExecuteNonQuery()
         sqlConn.Close()
@@ -654,7 +654,7 @@ Public Class Usuario
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "sp_ValidarEliminarUsuario"
+        comm.CommandText = "SP_ValidarEliminarUsuario"
 
         usuarioId.DbType = DbType.Int16
         usuarioId.ParameterName = "@usuario_id"
@@ -689,7 +689,7 @@ Public Class Usuario
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "sp_ValidarEliminarUsuarioPatente"
+        comm.CommandText = "SP_ValidarEliminarUsuarioPatente"
 
         patenteId.DbType = DbType.Int16
         patenteId.ParameterName = "@patente_id"
@@ -729,7 +729,7 @@ Public Class Usuario
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "sp_ValidarEliminarUsuarioPatenteNegacion"
+        comm.CommandText = "SP_ValidarEliminarUsuarioPatenteNegacion"
 
         patenteId.DbType = DbType.Int16
         patenteId.ParameterName = "@patente_id"

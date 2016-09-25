@@ -30,18 +30,18 @@ Partial Class frmBitacora
         Me.btnExportar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.dgBitacora = New System.Windows.Forms.DataGridView()
-        Me.btnlimpiar = New System.Windows.Forms.Button()
-        Me.dtpFechaHasta = New System.Windows.Forms.DateTimePicker()
-        Me.dtpFechaDesde = New System.Windows.Forms.DateTimePicker()
-        Me.GroupBox = New System.Windows.Forms.GroupBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fecha_hora = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Criticidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cmbUsuario = New System.Windows.Forms.ComboBox()
+        Me.btnlimpiar = New System.Windows.Forms.Button()
+        Me.dtpFechaHasta = New System.Windows.Forms.DateTimePicker()
+        Me.dtpFechaDesde = New System.Windows.Forms.DateTimePicker()
+        Me.GroupBox = New System.Windows.Forms.GroupBox()
         Me.cmbCriticidad = New System.Windows.Forms.ComboBox()
+        Me.cmbUsuario = New System.Windows.Forms.ComboBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         CType(Me.dgBitacora, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -124,6 +124,39 @@ Partial Class frmBitacora
         Me.dgBitacora.Size = New System.Drawing.Size(866, 348)
         Me.dgBitacora.TabIndex = 19
         '
+        'id
+        '
+        Me.id.HeaderText = "Id"
+        Me.id.Name = "id"
+        Me.id.ReadOnly = True
+        Me.id.Visible = False
+        '
+        'usuario
+        '
+        Me.usuario.HeaderText = "Usuario"
+        Me.usuario.Name = "usuario"
+        Me.usuario.ReadOnly = True
+        '
+        'descripcion
+        '
+        Me.descripcion.FillWeight = 200.0!
+        Me.descripcion.HeaderText = "Descripcion"
+        Me.descripcion.Name = "descripcion"
+        Me.descripcion.ReadOnly = True
+        '
+        'fecha_hora
+        '
+        Me.fecha_hora.FillWeight = 150.0!
+        Me.fecha_hora.HeaderText = "Fecha y Hora"
+        Me.fecha_hora.Name = "fecha_hora"
+        Me.fecha_hora.ReadOnly = True
+        '
+        'Criticidad
+        '
+        Me.Criticidad.HeaderText = "Criticidad"
+        Me.Criticidad.Name = "Criticidad"
+        Me.Criticidad.ReadOnly = True
+        '
         'btnlimpiar
         '
         Me.btnlimpiar.Location = New System.Drawing.Point(754, 22)
@@ -170,48 +203,13 @@ Partial Class frmBitacora
         Me.GroupBox.TabStop = False
         Me.GroupBox.Text = "Filtro"
         '
-        'GroupBox1
+        'cmbCriticidad
         '
-        Me.GroupBox1.Controls.Add(Me.dgBitacora)
-        Me.GroupBox1.Location = New System.Drawing.Point(13, 116)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(900, 385)
-        Me.GroupBox1.TabIndex = 37
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Bitácora"
-        '
-        'id
-        '
-        Me.id.HeaderText = "Id"
-        Me.id.Name = "id"
-        Me.id.ReadOnly = True
-        Me.id.Visible = False
-        '
-        'usuario
-        '
-        Me.usuario.HeaderText = "Usuario"
-        Me.usuario.Name = "usuario"
-        Me.usuario.ReadOnly = True
-        '
-        'descripcion
-        '
-        Me.descripcion.FillWeight = 200.0!
-        Me.descripcion.HeaderText = "Descripcion"
-        Me.descripcion.Name = "descripcion"
-        Me.descripcion.ReadOnly = True
-        '
-        'fecha_hora
-        '
-        Me.fecha_hora.FillWeight = 150.0!
-        Me.fecha_hora.HeaderText = "Fecha y Hora"
-        Me.fecha_hora.Name = "fecha_hora"
-        Me.fecha_hora.ReadOnly = True
-        '
-        'Criticidad
-        '
-        Me.Criticidad.HeaderText = "Criticidad"
-        Me.Criticidad.Name = "Criticidad"
-        Me.Criticidad.ReadOnly = True
+        Me.cmbCriticidad.FormattingEnabled = True
+        Me.cmbCriticidad.Location = New System.Drawing.Point(84, 56)
+        Me.cmbCriticidad.Name = "cmbCriticidad"
+        Me.cmbCriticidad.Size = New System.Drawing.Size(311, 21)
+        Me.cmbCriticidad.TabIndex = 30
         '
         'cmbUsuario
         '
@@ -221,13 +219,15 @@ Partial Class frmBitacora
         Me.cmbUsuario.Size = New System.Drawing.Size(311, 21)
         Me.cmbUsuario.TabIndex = 30
         '
-        'cmbCriticidad
+        'GroupBox1
         '
-        Me.cmbCriticidad.FormattingEnabled = True
-        Me.cmbCriticidad.Location = New System.Drawing.Point(84, 56)
-        Me.cmbCriticidad.Name = "cmbCriticidad"
-        Me.cmbCriticidad.Size = New System.Drawing.Size(311, 21)
-        Me.cmbCriticidad.TabIndex = 30
+        Me.GroupBox1.Controls.Add(Me.dgBitacora)
+        Me.GroupBox1.Location = New System.Drawing.Point(13, 116)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(900, 385)
+        Me.GroupBox1.TabIndex = 37
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Bitácora"
         '
         'frmBitacora
         '

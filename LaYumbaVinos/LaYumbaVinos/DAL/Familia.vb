@@ -32,14 +32,14 @@ Public Class Familia
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "fam_InsertarFamilia"
+        comm.CommandText = "SP_InsertarFamilia"
 
         nombreFamilia.DbType = DbType.String
         nombreFamilia.ParameterName = "@nombre_Familia"
         nombreFamilia.Value = objAdd.nombre
 
         Descripcion.DbType = DbType.String
-        Descripcion.ParameterName = "@Descripcion"
+        Descripcion.ParameterName = "@descripcion"
         Descripcion.Value = objAdd.descripcion
 
         comm.Parameters.Add(nombreFamilia)
@@ -78,10 +78,10 @@ Public Class Familia
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "fam_EliminarFamilia"
+        comm.CommandText = "SP_EliminarFamilia"
 
         FamiliaId.DbType = DbType.Int32
-        FamiliaId.ParameterName = "@Familia_id"
+        FamiliaId.ParameterName = "@familia_id"
         FamiliaId.Value = objDel.familiaId
 
         comm.Parameters.Add(FamiliaId)
@@ -114,7 +114,7 @@ Public Class Familia
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "fam_ObtenerFamilias"
+        comm.CommandText = "SP_ObtenerFamilias"
         Dim Familias As New List(Of BE.Familia)
         Try
             sqlDa.SelectCommand = comm
@@ -146,7 +146,7 @@ Public Class Familia
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "fam_ObtenerFamiliasPorID"
+        comm.CommandText = "SP_ObtenerFamiliasPorID"
 
         FamiliaId.DbType = DbType.Int32
         FamiliaId.ParameterName = "@familia_id"
@@ -198,10 +198,10 @@ Public Class Familia
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "fam_ModificarFamilia"
+        comm.CommandText = "SP_ModificarFamilia"
 
         FamiliaId.DbType = DbType.Int32
-        FamiliaId.ParameterName = "@Familia_id"
+        FamiliaId.ParameterName = "@familia_id"
         FamiliaId.Value = objUpd.familiaId
 
         nombreFamilia.DbType = DbType.String
@@ -249,7 +249,7 @@ Public Class Familia
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "fam_VerificarExistencia"
+        comm.CommandText = "SP_VerificarExistencia"
 
         nombre.DbType = DbType.String
         nombre.ParameterName = "@nombre"
@@ -275,7 +275,7 @@ Public Class Familia
     Function AsignarPatenteFamilia(patente As BE.Patente, _familiaId As Integer) As Boolean
         Dim SqlComm As New SqlClient.SqlCommand
         sqlConn.Open()
-        SqlComm.CommandText = String.Format("insert into [layumba].dbo.Patente_Familia (familia_id,patente_id) values (" & _familiaId & "," & patente.PatenteId & ")")
+        SqlComm.CommandText = String.Format("insert into Patente_Familia (familia_id,patente_id) values (" & _familiaId & "," & patente.PatenteId & ")")
         SqlComm.Connection = sqlConn
         SqlComm.ExecuteNonQuery()
         sqlConn.Close()
@@ -284,7 +284,7 @@ Public Class Familia
     Function QuitarPatentes(unaFamilia As BE.Familia) As Boolean
         Dim SqlComm As New SqlClient.SqlCommand
         sqlConn.Open()
-        SqlComm.CommandText = String.Format("delete from [layumba].dbo.Patente_Familia  where familia_id = " & unaFamilia.familiaId)
+        SqlComm.CommandText = String.Format("delete from Patente_Familia  where familia_id = " & unaFamilia.familiaId)
         SqlComm.Connection = sqlConn
         SqlComm.ExecuteNonQuery()
         sqlConn.Close()
@@ -314,7 +314,7 @@ Public Class Familia
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "sp_ValidarEliminarFamilia"
+        comm.CommandText = "SP_ValidarEliminarFamilia"
 
         familiaId.DbType = DbType.Int16
         familiaId.ParameterName = "@familia_id"
@@ -349,7 +349,7 @@ Public Class Familia
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "sp_ValidarEliminarFamiliaPatente"
+        comm.CommandText = "SP_ValidarEliminarFamiliaPatente"
 
         familiaId.DbType = DbType.Int16
         familiaId.ParameterName = "@familia_id"
@@ -389,7 +389,7 @@ Public Class Familia
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "sp_ValidarEliminarFamiliaUsuario"
+        comm.CommandText = "SP_ValidarEliminarFamiliaUsuario"
 
         familiaId.DbType = DbType.Int16
         familiaId.ParameterName = "@familia_id"

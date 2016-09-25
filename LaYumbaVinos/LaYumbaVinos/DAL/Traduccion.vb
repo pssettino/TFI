@@ -19,7 +19,7 @@ Public Class Traduccion
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
 
-        comm.CommandText = "idi_ObtenerTraduccion"
+        comm.CommandText = "SP_ObtenerTraduccion"
 
         idioma_fk.DbType = DbType.Int32
         idioma_fk.ParameterName = "@idioma_fk"
@@ -43,7 +43,7 @@ Public Class Traduccion
             For Each fila As DataRow In ds.Tables(0).Rows
                 Dim TraduccionBE As New BE.Traduccion
                 Dim Idioma As New BE.Idioma
-                TraduccionBE.traduccion_id = CInt(fila("traduccion_id"))
+                TraduccionBE.TraduccionId = CInt(fila("traduccion_id"))
                 Idioma.IdiomaId = CInt(fila("idioma_fk"))
                 TraduccionBE.idioma = Idioma
                 TraduccionBE.texto = CStr(fila("texto"))
@@ -73,7 +73,7 @@ Public Class Traduccion
 
         Try
             sqlConn.Open()
-            SqlComm.CommandText = String.Format("insert into [layumba].dbo.[Traduccion] (idioma_fk,texto,traduccion) values (2,'" & Texto & "','" & Texto & "')")
+            SqlComm.CommandText = String.Format("insert into Traduccion (idioma_fk,texto,traduccion) values (2,'" & Texto & "','" & Texto & "')")
             SqlComm.Connection = sqlConn
             SqlComm.ExecuteNonQuery()
             sqlConn.Close()

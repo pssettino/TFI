@@ -31,7 +31,7 @@ Public Class Bitacora
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "bit_InsertarBitacora"
+        comm.CommandText = "SP_InsertarBitacora"
 
         usuarioId.DbType = DbType.Int16
         usuarioId.ParameterName = "@usuario_fk"
@@ -81,7 +81,7 @@ Public Class Bitacora
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
 
-        comm.CommandText = "bit_ListarBitacoraPorID"
+        comm.CommandText = "SP_ListarBitacoraPorID"
 
         bitacoraId.DbType = DbType.Int32
         bitacoraId.ParameterName = "@bitacora_id"
@@ -132,7 +132,7 @@ Public Class Bitacora
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "bit_ListarBitacoraPorParametros"
+        comm.CommandText = "SP_ListarBitacoraPorParametros"
 
         usuarioId.DbType = DbType.Int32
         usuarioId.ParameterName = "@usuario_id"

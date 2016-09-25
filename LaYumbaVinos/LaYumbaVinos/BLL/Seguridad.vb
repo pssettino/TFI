@@ -21,7 +21,7 @@ Public Class Seguridad
     Dim keySize As Integer = 256
 
     Public Function ValidarServidor(ByVal dataSource As String) As Boolean
-        Dim connString = "Data Source=" + dataSource + ";Initial Catalog=layumba;Integrated Security=True"
+        Dim connString = "Data Source=" + dataSource + ";Initial Catalog=layumbavinos;Integrated Security=True"
         Dim SqlConn As New SqlClient.SqlConnection With {.ConnectionString = connString}
         Try
             If dataSource <> "" Then

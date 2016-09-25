@@ -31,7 +31,7 @@ Public Class Venta
 
         comm.Connection = SqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "vent_InsertarVenta"
+        comm.CommandText = "SP_InsertarVenta"
 
         fechaVenta.DbType = DbType.DateTime
         fechaVenta.ParameterName = "@fecha_venta"
@@ -88,7 +88,7 @@ Public Class Venta
 
         comm.Connection = SqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "vent_ModificarVenta"
+        comm.CommandText = "SP_ModificarVenta"
 
         ventaId.DbType = DbType.Int32
         ventaId.ParameterName = "@venta_id"
@@ -133,7 +133,7 @@ Public Class Venta
     Function QuitarVentaVino(unaVenta As BE.Venta) As Boolean
         Dim SqlComm As New SqlClient.SqlCommand
         SqlConn.Open()
-        SqlComm.CommandText = String.Format("delete from [layumba].dbo.Venta_Vino  where venta_id = " & unaVenta.ventaId)
+        SqlComm.CommandText = String.Format("delete from Venta_Vino  where venta_id = " & unaVenta.ventaId)
         SqlComm.Connection = SqlConn
         SqlComm.ExecuteNonQuery()
         SqlConn.Close()
@@ -152,9 +152,9 @@ Public Class Venta
         Dim fecha_hasta As New SqlClient.SqlParameter
         Dim clienteFk As New SqlClient.SqlParameter
 
-        comm.Connection = sqlConn
+        comm.Connection = SqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "vent_ListarVentasPorParametros"
+        comm.CommandText = "SP_ListarVentasPorParametros"
 
         fecha_desde.DbType = DbType.DateTime
         fecha_desde.ParameterName = "@fecha_desde"
@@ -186,7 +186,7 @@ Public Class Venta
 
                 VentaBE.ventaId = CInt(fila("venta_id"))
                 VentaBE.fechaVenta = CDate(fila("fecha_venta"))
-                ClienteBE.clienteId = CInt(fila("cliente_id"))
+                ClienteBE.ClienteId = CInt(fila("cliente_id"))
                 ClienteBE.NombreCompleto = CStr(fila("nombreCompleto"))
                 VentaBE.cliente = ClienteBE
                 Dim VinoBE As New List(Of BE.VentaVino)
@@ -227,7 +227,7 @@ Public Class Venta
 
         comm.Connection = SqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "vent_InsertarVentaVino"
+        comm.CommandText = "SP_InsertarVentaVino"
 
         _ventaId.DbType = DbType.Int32
         _ventaId.ParameterName = "@venta_id"
@@ -283,7 +283,7 @@ Public Class Venta
 
         comm.Connection = SqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "vent_ListarVentasById"
+        comm.CommandText = "SP_ListarVentasById"
 
         _ventaId.DbType = DbType.Int32
         _ventaId.ParameterName = "@venta_id"
@@ -334,7 +334,7 @@ Public Class Venta
 
         comm.Connection = SqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "vent_ListarVentaVinosByVentaId"
+        comm.CommandText = "SP_ListarVentaVinosByVentaId"
 
         _ventaId.DbType = DbType.Int32
         _ventaId.ParameterName = "@venta_id"
@@ -379,7 +379,7 @@ Public Class Venta
 
         comm.Connection = SqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "vent_EliminarVentaVinosByVentaId"
+        comm.CommandText = "SP_EliminarVentaVinosByVentaId"
 
         _ventaId.DbType = DbType.Int16
         _ventaId.ParameterName = "@venta_id"
@@ -434,7 +434,7 @@ Public Class Venta
         Dim SqlComm As New SqlClient.SqlCommand
         Dim dr As SqlClient.SqlDataReader
         Dim dt As New DataTable
-        SqlComm.CommandText = String.Format("SELECT * FROM  [layumba].dbo.[Venta_Vino] where venta_id = " & _VentaId)
+        SqlComm.CommandText = String.Format("SELECT * FROM Venta_Vino where venta_id = " & _VentaId)
         SqlComm.Connection = SqlConn
         dr = SqlComm.ExecuteReader()
         dt.Load(dr)

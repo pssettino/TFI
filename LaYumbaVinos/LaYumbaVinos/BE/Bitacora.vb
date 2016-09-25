@@ -1,5 +1,7 @@
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ''BE
+''Pablo Settino
+''Bitacora.vb
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 Option Explicit On
 Option Strict On
@@ -57,7 +59,7 @@ Public Class Bitacora
         End Set
     End Property
 
-    Public Property usuario() As Usuario
+    Public Property Usuario() As Usuario
         Get
             Return _usuario
         End Get
@@ -76,4 +78,4 @@ Public Class Bitacora
     End Property
  
 
-End Class ' Bitacora
+End Class

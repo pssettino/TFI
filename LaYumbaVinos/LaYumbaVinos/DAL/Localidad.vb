@@ -33,7 +33,7 @@ Public Class Localidad
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "loc_ObtenerLocalidades"
+        comm.CommandText = "SP_ObtenerLocalidades"
         Dim localidades As New List(Of BE.Localidad)
         Try
             sqlDa.SelectCommand = comm
@@ -65,7 +65,7 @@ Public Class Localidad
         Dim localidadId As New SqlClient.SqlParameter
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "loc_ObtenerLocalidadPorID"
+        comm.CommandText = "SP_ObtenerLocalidadPorID"
         localidadId.DbType = DbType.Int32
         localidadId.ParameterName = "@localidad_id"
         localidadId.Value = objId.LocalidadId

@@ -40,7 +40,7 @@ Public Class Cliente
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "cli_InsertarCliente"
+        comm.CommandText = "SP_InsertarCliente"
 
         dni.DbType = DbType.Int32
         dni.ParameterName = "@dni"
@@ -118,7 +118,7 @@ Public Class Cliente
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "cli_EliminarCliente"
+        comm.CommandText = "SP_EliminarCliente"
 
         clienteID.DbType = DbType.Int32
         clienteID.ParameterName = "@cliente_Id"
@@ -156,7 +156,7 @@ Public Class Cliente
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "cli_ObtenerClientes"
+        comm.CommandText = "SP_ObtenerClientes"
         Dim clientes As New List(Of BE.Cliente)
 
         Try
@@ -205,7 +205,7 @@ Public Class Cliente
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "cli_ObtenerClientesPorID"
+        comm.CommandText = "SP_ObtenerClientesPorID"
 
         clienteId.DbType = DbType.Int32
         clienteId.ParameterName = "@cliente_Id"
@@ -271,7 +271,7 @@ Public Class Cliente
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "cli_ModificarCliente"
+        comm.CommandText = "SP_ModificarCliente"
 
         clienteId.DbType = DbType.Int16
         clienteId.ParameterName = "@cliente_Id"
@@ -349,7 +349,7 @@ Public Class Cliente
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "cli_VerificarExistencia"
+        comm.CommandText = "SP_VerificarExistencia"
 
         dni.DbType = DbType.Int32
         dni.ParameterName = "@dni"
@@ -398,7 +398,7 @@ Public Class Cliente
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "cli_ObtenerClientesPorDNI"
+        comm.CommandText = "SP_ObtenerClientesPorDNI"
 
         _dni.DbType = DbType.String
         _dni.ParameterName = "@dni"
@@ -452,7 +452,7 @@ Public Class Cliente
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "cli_ObtenerClientesPorApellido_Nombre"
+        comm.CommandText = "SP_ObtenerClientesPorApellido_Nombre"
 
         _Apellido_Nombre.DbType = DbType.String
         _Apellido_Nombre.ParameterName = "@Apellido_Nombre"
@@ -504,7 +504,7 @@ Public Class Cliente
 
         comm.Connection = SqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "cli_ObtenerClientesDisponibles"
+        comm.CommandText = "SP_ObtenerClientesDisponibles"
         Dim clientes As New List(Of BE.Cliente)
 
         Try

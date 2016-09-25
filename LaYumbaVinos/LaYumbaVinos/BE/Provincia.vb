@@ -1,5 +1,7 @@
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ''BE
+''Pablo Settino
+''Provincia.vb
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Option Explicit On
@@ -10,7 +12,7 @@ Public Class Provincia
     Private _provinciaId As Integer
     Private _descripcion As String
 
-    Public Property provinciaId() As Integer
+    Public Property ProvinciaId() As Integer
         Get
             Return _provinciaId
         End Get
@@ -19,7 +21,7 @@ Public Class Provincia
         End Set
     End Property
 
-    Public Property descripcion() As String
+    Public Property Descripcion() As String
         Get
             Return _descripcion
         End Get
@@ -28,4 +30,4 @@ Public Class Provincia
         End Set
     End Property
 
-End Class ' Provincia
+End Class

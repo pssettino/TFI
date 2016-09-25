@@ -1,5 +1,7 @@
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ''BE
+''Pablo Settino
+''Usuario.vb
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Option Explicit On
@@ -21,7 +23,7 @@ Public Class Usuario
     Private _familias As New List(Of Familia)
     Private _patentes As New List(Of Patente)
 
-    Public Property familias() As List(Of Familia)
+    Public Property Familias() As List(Of Familia)
         Get
             Return _familias
         End Get
@@ -30,7 +32,7 @@ Public Class Usuario
         End Set
     End Property
 
-    Public Property patentes() As List(Of Patente)
+    Public Property Patentes() As List(Of Patente)
         Get
             Return _patentes
         End Get
@@ -129,4 +131,4 @@ Public Class Usuario
         End Set
     End Property
  
-End Class ' Usuario
+End Class
