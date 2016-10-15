@@ -31,7 +31,7 @@ Partial Class frmLogin
         Me.lblidioma = New System.Windows.Forms.Label()
         Me.lblcontraseña = New System.Windows.Forms.Label()
         Me.lblusuario = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cmbIdioma = New System.Windows.Forms.ComboBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -103,20 +103,20 @@ Partial Class frmLogin
         Me.lblusuario.Text = "Usuario"
         Me.lblusuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'ComboBox1
+        'cmbIdioma
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(245, 116)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(220, 21)
-        Me.ComboBox1.TabIndex = 13
+        Me.cmbIdioma.FormattingEnabled = True
+        Me.cmbIdioma.Location = New System.Drawing.Point(245, 116)
+        Me.cmbIdioma.Name = "cmbIdioma"
+        Me.cmbIdioma.Size = New System.Drawing.Size(220, 21)
+        Me.cmbIdioma.TabIndex = 13
         '
         'frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(496, 222)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.cmbIdioma)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.txtContraseña)
@@ -140,5 +140,5 @@ Partial Class frmLogin
     Friend WithEvents lblidioma As System.Windows.Forms.Label
     Friend WithEvents lblcontraseña As System.Windows.Forms.Label
     Friend WithEvents lblusuario As System.Windows.Forms.Label
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbIdioma As System.Windows.Forms.ComboBox
 End Class

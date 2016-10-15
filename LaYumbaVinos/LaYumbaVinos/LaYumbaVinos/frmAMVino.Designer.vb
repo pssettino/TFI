@@ -33,12 +33,18 @@ Partial Class frmAMVino
         Me.lblDescripcion = New System.Windows.Forms.Label()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
+        Me.lblDescripcionError = New System.Windows.Forms.Label()
+        Me.lblBodegaError = New System.Windows.Forms.Label()
+        Me.lblPrecioError = New System.Windows.Forms.Label()
         Me.grboxVino.SuspendLayout()
         CType(Me.txtCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'grboxVino
         '
+        Me.grboxVino.Controls.Add(Me.lblPrecioError)
+        Me.grboxVino.Controls.Add(Me.lblBodegaError)
+        Me.grboxVino.Controls.Add(Me.lblDescripcionError)
         Me.grboxVino.Controls.Add(Me.cmbBodega)
         Me.grboxVino.Controls.Add(Me.txtCantidad)
         Me.grboxVino.Controls.Add(Me.btnCancelar)
@@ -59,7 +65,7 @@ Partial Class frmAMVino
         'cmbBodega
         '
         Me.cmbBodega.FormattingEnabled = True
-        Me.cmbBodega.Location = New System.Drawing.Point(83, 61)
+        Me.cmbBodega.Location = New System.Drawing.Point(83, 66)
         Me.cmbBodega.Name = "cmbBodega"
         Me.cmbBodega.Size = New System.Drawing.Size(242, 21)
         Me.cmbBodega.TabIndex = 115
@@ -134,7 +140,7 @@ Partial Class frmAMVino
         '
         'txtPrecio
         '
-        Me.txtPrecio.Location = New System.Drawing.Point(84, 143)
+        Me.txtPrecio.Location = New System.Drawing.Point(83, 146)
         Me.txtPrecio.Name = "txtPrecio"
         Me.txtPrecio.Size = New System.Drawing.Size(109, 20)
         Me.txtPrecio.TabIndex = 3
@@ -146,6 +152,42 @@ Partial Class frmAMVino
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(241, 20)
         Me.txtDescripcion.TabIndex = 0
+        '
+        'lblDescripcionError
+        '
+        Me.lblDescripcionError.AutoSize = True
+        Me.lblDescripcionError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDescripcionError.ForeColor = System.Drawing.Color.Red
+        Me.lblDescripcionError.Location = New System.Drawing.Point(82, 51)
+        Me.lblDescripcionError.Name = "lblDescripcionError"
+        Me.lblDescripcionError.Size = New System.Drawing.Size(24, 12)
+        Me.lblDescripcionError.TabIndex = 116
+        Me.lblDescripcionError.Text = "error"
+        Me.lblDescripcionError.Visible = False
+        '
+        'lblBodegaError
+        '
+        Me.lblBodegaError.AutoSize = True
+        Me.lblBodegaError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBodegaError.ForeColor = System.Drawing.Color.Red
+        Me.lblBodegaError.Location = New System.Drawing.Point(82, 90)
+        Me.lblBodegaError.Name = "lblBodegaError"
+        Me.lblBodegaError.Size = New System.Drawing.Size(24, 12)
+        Me.lblBodegaError.TabIndex = 117
+        Me.lblBodegaError.Text = "error"
+        Me.lblBodegaError.Visible = False
+        '
+        'lblPrecioError
+        '
+        Me.lblPrecioError.AutoSize = True
+        Me.lblPrecioError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrecioError.ForeColor = System.Drawing.Color.Red
+        Me.lblPrecioError.Location = New System.Drawing.Point(82, 169)
+        Me.lblPrecioError.Name = "lblPrecioError"
+        Me.lblPrecioError.Size = New System.Drawing.Size(24, 12)
+        Me.lblPrecioError.TabIndex = 119
+        Me.lblPrecioError.Text = "error"
+        Me.lblPrecioError.Visible = False
         '
         'frmAMVino
         '
@@ -172,4 +214,7 @@ Partial Class frmAMVino
     Friend WithEvents cmbBodega As System.Windows.Forms.ComboBox
     Friend WithEvents txtCantidad As System.Windows.Forms.NumericUpDown
     Friend WithEvents lblCantidad As System.Windows.Forms.Label
+    Friend WithEvents lblPrecioError As System.Windows.Forms.Label
+    Friend WithEvents lblBodegaError As System.Windows.Forms.Label
+    Friend WithEvents lblDescripcionError As System.Windows.Forms.Label
 End Class

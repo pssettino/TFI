@@ -13,6 +13,10 @@
         ValidarMenu()
     End Sub
 
+    Public Sub New()
+        InitializeComponent()
+    End Sub
+
     Private Sub VentasToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles VentasToolStripMenuItem1.Click
         LaYumbaVinos.frmVentas.MdiParent = Me
         LaYumbaVinos.frmVentas.Show()

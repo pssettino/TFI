@@ -66,7 +66,7 @@ Partial Class frmVentas
         Me.cmbCliente.FormattingEnabled = True
         Me.cmbCliente.Location = New System.Drawing.Point(116, 55)
         Me.cmbCliente.Name = "cmbCliente"
-        Me.cmbCliente.Size = New System.Drawing.Size(128, 21)
+        Me.cmbCliente.Size = New System.Drawing.Size(355, 21)
         Me.cmbCliente.TabIndex = 117
         '
         'Label2

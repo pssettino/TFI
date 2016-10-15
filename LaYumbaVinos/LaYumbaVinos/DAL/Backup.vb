@@ -12,14 +12,14 @@ Public Class Backup
         Dim SqlComm As New SqlClient.SqlCommand
 
         If Not BackupBE.ubicacion.EndsWith("\") Then BackupBE.ubicacion = BackupBE.ubicacion & "\"
-        Dim inputFile = String.Format("{0}layumba_{1}", BackupBE.Ubicacion, DateTime.Now.ToString("yyyyMMddhhmmss"))
+        Dim inputFile = String.Format("{0}layumbavinos_{1}", BackupBE.Ubicacion, DateTime.Now.ToString("yyyyMMddhhmmss"))
 
         SqlComm.Connection = SqlConn
         SqlConn.Open()
         SqlComm.CommandType = CommandType.Text
 
         Try
-            SqlComm.CommandText = "BACKUP DATABASE LAYUMBA TO DISK = '" + inputFile + "'"
+            SqlComm.CommandText = "BACKUP DATABASE LAYUMBAVINOS TO DISK = '" + inputFile + "'"
             SqlComm.ExecuteNonQuery()
             SqlConn.Close()
         Catch ex As Exception
@@ -38,15 +38,15 @@ Public Class Backup
         SqlComm.CommandType = CommandType.Text
 
         Try
-            SqlComm.CommandText = "ALTER DATABASE LAYUMBA SET SINGLE_USER WITH ROLLBACK IMMEDIATE"
+            SqlComm.CommandText = "ALTER DATABASE LAYUMBAVINOS SET SINGLE_USER WITH ROLLBACK IMMEDIATE"
             SqlComm.ExecuteNonQuery()
-            SqlComm.CommandText = "RESTORE DATABASE LAYUMBA FROM DISK = '" + BackupBE.Archivo.ToString + "' WITH REPLACE, NORECOVERY; RESTORE LOG LAYUMBA FROM DISK = '" + BackupBE.Archivo.ToString + "' WITH RECOVERY;"
+            SqlComm.CommandText = "RESTORE DATABASE LAYUMBAVINOS FROM DISK = '" + BackupBE.Archivo.ToString + "' WITH REPLACE, NORECOVERY; RESTORE LOG LAYUMBAVINOS FROM DISK = '" + BackupBE.Archivo.ToString + "' WITH RECOVERY;"
             SqlComm.ExecuteNonQuery()
-            SqlComm.CommandText = "ALTER DATABASE LAYUMBA SET MULTI_USER WITH ROLLBACK IMMEDIATE"
+            SqlComm.CommandText = "ALTER DATABASE LAYUMBAVINOS SET MULTI_USER WITH ROLLBACK IMMEDIATE"
             SqlComm.ExecuteNonQuery()
             SqlConn.Close()
         Catch ex As Exception
-            SqlComm.CommandText = "ALTER DATABASE LAYUMBA SET MULTI_USER WITH ROLLBACK IMMEDIATE"
+            SqlComm.CommandText = "ALTER DATABASE LAYUMBAVINOS SET MULTI_USER WITH ROLLBACK IMMEDIATE"
             SqlComm.ExecuteNonQuery()
             SqlConn.Close()
         End Try

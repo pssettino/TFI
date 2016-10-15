@@ -23,8 +23,6 @@ Partial Class frmClientes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnLimpiarCliente = New System.Windows.Forms.Button()
-        Me.btnBuscarCliente = New System.Windows.Forms.Button()
         Me.lblApellidoNombre = New System.Windows.Forms.Label()
         Me.lbldni = New System.Windows.Forms.Label()
         Me.txtBuscarApeNom = New System.Windows.Forms.TextBox()
@@ -46,8 +44,6 @@ Partial Class frmClientes
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.btnLimpiarCliente)
-        Me.GroupBox1.Controls.Add(Me.btnBuscarCliente)
         Me.GroupBox1.Controls.Add(Me.lblApellidoNombre)
         Me.GroupBox1.Controls.Add(Me.lbldni)
         Me.GroupBox1.Controls.Add(Me.txtBuscarApeNom)
@@ -59,28 +55,10 @@ Partial Class frmClientes
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Filtro"
         '
-        'btnLimpiarCliente
-        '
-        Me.btnLimpiarCliente.Location = New System.Drawing.Point(654, 20)
-        Me.btnLimpiarCliente.Name = "btnLimpiarCliente"
-        Me.btnLimpiarCliente.Size = New System.Drawing.Size(127, 27)
-        Me.btnLimpiarCliente.TabIndex = 114
-        Me.btnLimpiarCliente.Text = "&Limpiar"
-        Me.btnLimpiarCliente.UseVisualStyleBackColor = True
-        '
-        'btnBuscarCliente
-        '
-        Me.btnBuscarCliente.Location = New System.Drawing.Point(516, 20)
-        Me.btnBuscarCliente.Name = "btnBuscarCliente"
-        Me.btnBuscarCliente.Size = New System.Drawing.Size(127, 27)
-        Me.btnBuscarCliente.TabIndex = 113
-        Me.btnBuscarCliente.Text = "&Buscar"
-        Me.btnBuscarCliente.UseVisualStyleBackColor = True
-        '
         'lblApellidoNombre
         '
         Me.lblApellidoNombre.AutoSize = True
-        Me.lblApellidoNombre.Location = New System.Drawing.Point(184, 27)
+        Me.lblApellidoNombre.Location = New System.Drawing.Point(380, 27)
         Me.lblApellidoNombre.Name = "lblApellidoNombre"
         Me.lblApellidoNombre.Size = New System.Drawing.Size(92, 13)
         Me.lblApellidoNombre.TabIndex = 99
@@ -99,10 +77,10 @@ Partial Class frmClientes
         '
         'txtBuscarApeNom
         '
-        Me.txtBuscarApeNom.Location = New System.Drawing.Point(292, 24)
+        Me.txtBuscarApeNom.Location = New System.Drawing.Point(488, 24)
         Me.txtBuscarApeNom.MaxLength = 255
         Me.txtBuscarApeNom.Name = "txtBuscarApeNom"
-        Me.txtBuscarApeNom.Size = New System.Drawing.Size(218, 20)
+        Me.txtBuscarApeNom.Size = New System.Drawing.Size(293, 20)
         Me.txtBuscarApeNom.TabIndex = 98
         '
         'txtBuscarDni
@@ -110,7 +88,7 @@ Partial Class frmClientes
         Me.txtBuscarDni.Location = New System.Drawing.Point(49, 24)
         Me.txtBuscarDni.MaxLength = 8
         Me.txtBuscarDni.Name = "txtBuscarDni"
-        Me.txtBuscarDni.Size = New System.Drawing.Size(129, 20)
+        Me.txtBuscarDni.Size = New System.Drawing.Size(303, 20)
         Me.txtBuscarDni.TabIndex = 97
         '
         'GroupBox2
@@ -217,8 +195,6 @@ Partial Class frmClientes
     Friend WithEvents txtBuscarApeNom As System.Windows.Forms.TextBox
     Friend WithEvents txtBuscarDni As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents btnLimpiarCliente As System.Windows.Forms.Button
-    Friend WithEvents btnBuscarCliente As System.Windows.Forms.Button
     Friend WithEvents DNI As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents nombreCompleto As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Telefono As System.Windows.Forms.DataGridViewTextBoxColumn

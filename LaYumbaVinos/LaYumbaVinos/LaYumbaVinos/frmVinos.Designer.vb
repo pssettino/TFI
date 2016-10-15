@@ -23,8 +23,6 @@ Partial Class frmVinos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnLimpiarVino = New System.Windows.Forms.Button()
-        Me.btnBuscarVino = New System.Windows.Forms.Button()
         Me.cmbVinos = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblDescripcion = New System.Windows.Forms.Label()
@@ -47,8 +45,6 @@ Partial Class frmVinos
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.btnLimpiarVino)
-        Me.GroupBox1.Controls.Add(Me.btnBuscarVino)
         Me.GroupBox1.Controls.Add(Me.cmbVinos)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.lblDescripcion)
@@ -60,36 +56,18 @@ Partial Class frmVinos
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Filtro"
         '
-        'btnLimpiarVino
-        '
-        Me.btnLimpiarVino.Location = New System.Drawing.Point(655, 39)
-        Me.btnLimpiarVino.Name = "btnLimpiarVino"
-        Me.btnLimpiarVino.Size = New System.Drawing.Size(127, 27)
-        Me.btnLimpiarVino.TabIndex = 112
-        Me.btnLimpiarVino.Text = "&Limpiar"
-        Me.btnLimpiarVino.UseVisualStyleBackColor = True
-        '
-        'btnBuscarVino
-        '
-        Me.btnBuscarVino.Location = New System.Drawing.Point(517, 39)
-        Me.btnBuscarVino.Name = "btnBuscarVino"
-        Me.btnBuscarVino.Size = New System.Drawing.Size(127, 27)
-        Me.btnBuscarVino.TabIndex = 111
-        Me.btnBuscarVino.Text = "&Buscar"
-        Me.btnBuscarVino.UseVisualStyleBackColor = True
-        '
         'cmbVinos
         '
         Me.cmbVinos.FormattingEnabled = True
-        Me.cmbVinos.Location = New System.Drawing.Point(316, 43)
+        Me.cmbVinos.Location = New System.Drawing.Point(504, 46)
         Me.cmbVinos.Name = "cmbVinos"
-        Me.cmbVinos.Size = New System.Drawing.Size(168, 21)
+        Me.cmbVinos.Size = New System.Drawing.Size(272, 21)
         Me.cmbVinos.TabIndex = 17
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(266, 46)
+        Me.Label1.Location = New System.Drawing.Point(454, 49)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 13)
         Me.Label1.TabIndex = 15
@@ -108,7 +86,7 @@ Partial Class frmVinos
         '
         Me.txtDescripcion.Location = New System.Drawing.Point(75, 46)
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(168, 20)
+        Me.txtDescripcion.Size = New System.Drawing.Size(327, 20)
         Me.txtDescripcion.TabIndex = 13
         '
         'GroupBox2
@@ -222,8 +200,6 @@ Partial Class frmVinos
     Friend WithEvents lblDescripcion As System.Windows.Forms.Label
     Friend WithEvents txtDescripcion As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents btnLimpiarVino As System.Windows.Forms.Button
-    Friend WithEvents btnBuscarVino As System.Windows.Forms.Button
     Friend WithEvents dgVinos As System.Windows.Forms.DataGridView
     Friend WithEvents btnNuevoVino As System.Windows.Forms.Button
     Friend WithEvents id As System.Windows.Forms.DataGridViewTextBoxColumn

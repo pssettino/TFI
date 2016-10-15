@@ -178,6 +178,12 @@
     <Compile Include="frmRestore.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmServidor.Designer.vb">
+      <DependentUpon>frmServidor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmServidor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmUsuarios.Designer.vb">
       <DependentUpon>frmUsuarios.vb</DependentUpon>
     </Compile>
@@ -266,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRestore.resx">
       <DependentUpon>frmRestore.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmServidor.resx">
+      <DependentUpon>frmServidor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarios.resx">
       <DependentUpon>frmUsuarios.vb</DependentUpon>

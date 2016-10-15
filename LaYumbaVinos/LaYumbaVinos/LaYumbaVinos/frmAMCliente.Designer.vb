@@ -23,6 +23,16 @@ Partial Class frmAMCliente
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox_FrmCli = New System.Windows.Forms.GroupBox()
+        Me.lblDireccionError = New System.Windows.Forms.Label()
+        Me.lblLocalidadError = New System.Windows.Forms.Label()
+        Me.lblProvinciaError = New System.Windows.Forms.Label()
+        Me.lblEmailError = New System.Windows.Forms.Label()
+        Me.lblTelefonoError = New System.Windows.Forms.Label()
+        Me.lblDniError = New System.Windows.Forms.Label()
+        Me.lblNombreError = New System.Windows.Forms.Label()
+        Me.lblapellidoError = New System.Windows.Forms.Label()
+        Me.cmbLocalidad = New System.Windows.Forms.ComboBox()
+        Me.cmbProvincia = New System.Windows.Forms.ComboBox()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.lblEmail = New System.Windows.Forms.Label()
@@ -39,13 +49,19 @@ Partial Class frmAMCliente
         Me.lbldni = New System.Windows.Forms.Label()
         Me.lblLocalidad = New System.Windows.Forms.Label()
         Me.lblDireccion = New System.Windows.Forms.Label()
-        Me.cmbProvincia = New System.Windows.Forms.ComboBox()
-        Me.cmbLocalidad = New System.Windows.Forms.ComboBox()
         Me.GroupBox_FrmCli.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox_FrmCli
         '
+        Me.GroupBox_FrmCli.Controls.Add(Me.lblDireccionError)
+        Me.GroupBox_FrmCli.Controls.Add(Me.lblLocalidadError)
+        Me.GroupBox_FrmCli.Controls.Add(Me.lblProvinciaError)
+        Me.GroupBox_FrmCli.Controls.Add(Me.lblEmailError)
+        Me.GroupBox_FrmCli.Controls.Add(Me.lblTelefonoError)
+        Me.GroupBox_FrmCli.Controls.Add(Me.lblDniError)
+        Me.GroupBox_FrmCli.Controls.Add(Me.lblNombreError)
+        Me.GroupBox_FrmCli.Controls.Add(Me.lblapellidoError)
         Me.GroupBox_FrmCli.Controls.Add(Me.cmbLocalidad)
         Me.GroupBox_FrmCli.Controls.Add(Me.cmbProvincia)
         Me.GroupBox_FrmCli.Controls.Add(Me.btnCancelar)
@@ -70,6 +86,118 @@ Partial Class frmAMCliente
         Me.GroupBox_FrmCli.TabIndex = 13
         Me.GroupBox_FrmCli.TabStop = False
         Me.GroupBox_FrmCli.Text = "Cliente"
+        '
+        'lblDireccionError
+        '
+        Me.lblDireccionError.AutoSize = True
+        Me.lblDireccionError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDireccionError.ForeColor = System.Drawing.Color.Red
+        Me.lblDireccionError.Location = New System.Drawing.Point(71, 277)
+        Me.lblDireccionError.Name = "lblDireccionError"
+        Me.lblDireccionError.Size = New System.Drawing.Size(24, 12)
+        Me.lblDireccionError.TabIndex = 122
+        Me.lblDireccionError.Text = "error"
+        Me.lblDireccionError.Visible = False
+        '
+        'lblLocalidadError
+        '
+        Me.lblLocalidadError.AutoSize = True
+        Me.lblLocalidadError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLocalidadError.ForeColor = System.Drawing.Color.Red
+        Me.lblLocalidadError.Location = New System.Drawing.Point(71, 239)
+        Me.lblLocalidadError.Name = "lblLocalidadError"
+        Me.lblLocalidadError.Size = New System.Drawing.Size(24, 12)
+        Me.lblLocalidadError.TabIndex = 121
+        Me.lblLocalidadError.Text = "error"
+        Me.lblLocalidadError.Visible = False
+        '
+        'lblProvinciaError
+        '
+        Me.lblProvinciaError.AutoSize = True
+        Me.lblProvinciaError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblProvinciaError.ForeColor = System.Drawing.Color.Red
+        Me.lblProvinciaError.Location = New System.Drawing.Point(71, 197)
+        Me.lblProvinciaError.Name = "lblProvinciaError"
+        Me.lblProvinciaError.Size = New System.Drawing.Size(24, 12)
+        Me.lblProvinciaError.TabIndex = 120
+        Me.lblProvinciaError.Text = "error"
+        Me.lblProvinciaError.Visible = False
+        '
+        'lblEmailError
+        '
+        Me.lblEmailError.AutoSize = True
+        Me.lblEmailError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEmailError.ForeColor = System.Drawing.Color.Red
+        Me.lblEmailError.Location = New System.Drawing.Point(71, 154)
+        Me.lblEmailError.Name = "lblEmailError"
+        Me.lblEmailError.Size = New System.Drawing.Size(24, 12)
+        Me.lblEmailError.TabIndex = 119
+        Me.lblEmailError.Text = "error"
+        Me.lblEmailError.Visible = False
+        '
+        'lblTelefonoError
+        '
+        Me.lblTelefonoError.AutoSize = True
+        Me.lblTelefonoError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTelefonoError.ForeColor = System.Drawing.Color.Red
+        Me.lblTelefonoError.Location = New System.Drawing.Point(240, 116)
+        Me.lblTelefonoError.Name = "lblTelefonoError"
+        Me.lblTelefonoError.Size = New System.Drawing.Size(24, 12)
+        Me.lblTelefonoError.TabIndex = 118
+        Me.lblTelefonoError.Text = "error"
+        Me.lblTelefonoError.Visible = False
+        '
+        'lblDniError
+        '
+        Me.lblDniError.AutoSize = True
+        Me.lblDniError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDniError.ForeColor = System.Drawing.Color.Red
+        Me.lblDniError.Location = New System.Drawing.Point(71, 116)
+        Me.lblDniError.Name = "lblDniError"
+        Me.lblDniError.Size = New System.Drawing.Size(24, 12)
+        Me.lblDniError.TabIndex = 117
+        Me.lblDniError.Text = "error"
+        Me.lblDniError.Visible = False
+        '
+        'lblNombreError
+        '
+        Me.lblNombreError.AutoSize = True
+        Me.lblNombreError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreError.ForeColor = System.Drawing.Color.Red
+        Me.lblNombreError.Location = New System.Drawing.Point(71, 79)
+        Me.lblNombreError.Name = "lblNombreError"
+        Me.lblNombreError.Size = New System.Drawing.Size(24, 12)
+        Me.lblNombreError.TabIndex = 116
+        Me.lblNombreError.Text = "error"
+        Me.lblNombreError.Visible = False
+        '
+        'lblapellidoError
+        '
+        Me.lblapellidoError.AutoSize = True
+        Me.lblapellidoError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblapellidoError.ForeColor = System.Drawing.Color.Red
+        Me.lblapellidoError.Location = New System.Drawing.Point(71, 41)
+        Me.lblapellidoError.Name = "lblapellidoError"
+        Me.lblapellidoError.Size = New System.Drawing.Size(24, 12)
+        Me.lblapellidoError.TabIndex = 115
+        Me.lblapellidoError.Text = "error"
+        Me.lblapellidoError.Visible = False
+        '
+        'cmbLocalidad
+        '
+        Me.cmbLocalidad.FormattingEnabled = True
+        Me.cmbLocalidad.Location = New System.Drawing.Point(71, 215)
+        Me.cmbLocalidad.Name = "cmbLocalidad"
+        Me.cmbLocalidad.Size = New System.Drawing.Size(287, 21)
+        Me.cmbLocalidad.TabIndex = 10
+        '
+        'cmbProvincia
+        '
+        Me.cmbProvincia.FormattingEnabled = True
+        Me.cmbProvincia.Location = New System.Drawing.Point(70, 173)
+        Me.cmbProvincia.Name = "cmbProvincia"
+        Me.cmbProvincia.Size = New System.Drawing.Size(287, 21)
+        Me.cmbProvincia.TabIndex = 10
         '
         'btnCancelar
         '
@@ -110,7 +238,7 @@ Partial Class frmAMCliente
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(73, 135)
+        Me.txtEmail.Location = New System.Drawing.Point(70, 131)
         Me.txtEmail.MaxLength = 100
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(285, 20)
@@ -216,22 +344,6 @@ Partial Class frmAMCliente
         Me.lblDireccion.Text = "Dirección"
         Me.lblDireccion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'cmbProvincia
-        '
-        Me.cmbProvincia.FormattingEnabled = True
-        Me.cmbProvincia.Location = New System.Drawing.Point(70, 173)
-        Me.cmbProvincia.Name = "cmbProvincia"
-        Me.cmbProvincia.Size = New System.Drawing.Size(287, 21)
-        Me.cmbProvincia.TabIndex = 10
-        '
-        'cmbLocalidad
-        '
-        Me.cmbLocalidad.FormattingEnabled = True
-        Me.cmbLocalidad.Location = New System.Drawing.Point(71, 215)
-        Me.cmbLocalidad.Name = "cmbLocalidad"
-        Me.cmbLocalidad.Size = New System.Drawing.Size(287, 21)
-        Me.cmbLocalidad.TabIndex = 10
-        '
         'frmAMCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -264,4 +376,12 @@ Partial Class frmAMCliente
     Friend WithEvents lbldni As System.Windows.Forms.Label
     Friend WithEvents lblLocalidad As System.Windows.Forms.Label
     Friend WithEvents lblDireccion As System.Windows.Forms.Label
+    Friend WithEvents lblDireccionError As System.Windows.Forms.Label
+    Friend WithEvents lblLocalidadError As System.Windows.Forms.Label
+    Friend WithEvents lblProvinciaError As System.Windows.Forms.Label
+    Friend WithEvents lblEmailError As System.Windows.Forms.Label
+    Friend WithEvents lblTelefonoError As System.Windows.Forms.Label
+    Friend WithEvents lblDniError As System.Windows.Forms.Label
+    Friend WithEvents lblNombreError As System.Windows.Forms.Label
+    Friend WithEvents lblapellidoError As System.Windows.Forms.Label
 End Class
