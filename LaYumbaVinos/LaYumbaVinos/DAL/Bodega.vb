@@ -25,6 +25,9 @@
         Dim cuit As New SqlClient.SqlParameter
         Dim razonSocial As New SqlClient.SqlParameter
         Dim telefono As New SqlClient.SqlParameter
+        Dim provincia As New SqlClient.SqlParameter
+        Dim localidad As New SqlClient.SqlParameter
+
       
 
         comm.Connection = SqlConn
@@ -44,11 +47,19 @@
         telefono.ParameterName = "@telefono"
         telefono.Value = objAdd.telefono
 
+        provincia.DbType = DbType.Int32
+        provincia.ParameterName = "@provincia_fk"
+        provincia.Value = objAdd.Provincia.ProvinciaId
+
+        localidad.DbType = DbType.Int32
+        localidad.ParameterName = "@localidad_fk"
+        localidad.Value = objAdd.Localidad.LocalidadId
 
         comm.Parameters.Add(cuit)
         comm.Parameters.Add(razonSocial)
         comm.Parameters.Add(telefono)
-        
+        comm.Parameters.Add(provincia)
+        comm.Parameters.Add(localidad)
 
         Try
             sqlDA.InsertCommand = comm
@@ -79,17 +90,16 @@
         comm.CommandText = "SP_EliminarBodega"
 
         BodegaId.DbType = DbType.Int32
-        BodegaId.ParameterName = "@bodega_Id"
+        BodegaId.ParameterName = "@bodegaId"
         BodegaId.Value = objDel.BodegaId
 
-        'TODO: Ver de hacer borrado logico
-
-        ' eliminado.DbType = DbType.Boolean
-        'eliminado.ParameterName = "@eliminado"
-        'eliminado.Value = objDel.Eliminado
+       
+        eliminado.DbType = DbType.Boolean
+        eliminado.ParameterName = "@eliminado"
+        eliminado.Value = objDel.Eliminado
 
         comm.Parameters.Add(BodegaId)
-        ' comm.Parameters.Add(eliminado)
+        comm.Parameters.Add(eliminado)
 
         Try
             sqlDA.DeleteCommand = comm
@@ -173,14 +183,20 @@
 
             For Each fila As DataRow In ds.Tables(0).Rows
                 Dim BodegaBE As New BE.Bodega
-                'Dim LocalidadBE As New BE.Localidad
-                'Dim ProvinciaBE As New BE.Provincia
+                Dim LocalidadBE As New BE.Localidad
+                Dim ProvinciaBE As New BE.Provincia
 
                 BodegaBE.BodegaId = CInt(fila("bodega_Id"))
                 BodegaBE.cuit = fila("cuit")
                 BodegaBE.razonSocial = CStr(fila("razon_social"))
                 BodegaBE.telefono = CStr(fila("telefono"))
 
+                ProvinciaBE.ProvinciaId = CInt(fila("provincia_fk"))
+                ProvinciaBE = Provincia.GetInstance.ListById(ProvinciaBE)
+                LocalidadBE.LocalidadId = CInt(fila("localidad_fk"))
+                LocalidadBE = Localidad.GetInstance.ListById(LocalidadBE)
+                BodegaBE.Provincia = ProvinciaBE
+                BodegaBE.Localidad = LocalidadBE
                 bodegas = BodegaBE
             Next
 
@@ -203,13 +219,15 @@
         Dim cuit As New SqlClient.SqlParameter
         Dim razonSocial As New SqlClient.SqlParameter
         Dim telefono As New SqlClient.SqlParameter
+        Dim provincia As New SqlClient.SqlParameter
+        Dim localidad As New SqlClient.SqlParameter
 
         comm.Connection = SqlConn
         comm.CommandType = CommandType.StoredProcedure
         comm.CommandText = "SP_ModificarBodega"
 
         bodegaId.DbType = DbType.Int32
-        bodegaId.ParameterName = "@bodega_Id"
+        bodegaId.ParameterName = "@bodegaId"
         bodegaId.Value = objUpd.BodegaId
 
         cuit.DbType = DbType.Int32
@@ -223,13 +241,23 @@
 
         telefono.DbType = DbType.String
         telefono.ParameterName = "@telefono"
-        telefono.Value = objUpd.telefono
+        telefono.Value = objUpd.Telefono
+
+        provincia.DbType = DbType.Int32
+        provincia.ParameterName = "@provincia_fk"
+        provincia.Value = objUpd.Provincia.ProvinciaId
+
+        localidad.DbType = DbType.Int32
+        localidad.ParameterName = "@localidad_fk"
+        localidad.Value = objUpd.Localidad.LocalidadId
 
 
         comm.Parameters.Add(bodegaId)
         comm.Parameters.Add(cuit)
         comm.Parameters.Add(razonSocial)
         comm.Parameters.Add(telefono)
+        comm.Parameters.Add(provincia)
+        comm.Parameters.Add(localidad)
         Try
             sqlDA.UpdateCommand = comm
 

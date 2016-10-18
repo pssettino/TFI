@@ -25,7 +25,7 @@ Public Class Idioma
             For Each fila As DataRow In ds.Tables(0).Rows
                 Dim IdiomaBE As New BE.Idioma
                 IdiomaBE.IdiomaId = CInt(fila("idioma_id"))
-                IdiomaBE.Nombre = CStr(fila("nombre"))
+                IdiomaBE.Nombre = CStr(fila("idioma"))
                 Idiomas.Add(IdiomaBE)
             Next
         Catch ex As Exception

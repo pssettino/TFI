@@ -25,7 +25,8 @@ Partial Class frmBodegas
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnNuevaBodega = New System.Windows.Forms.Button()
         Me.dgBodegas = New System.Windows.Forms.DataGridView()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cuit = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RazonSocial = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgBtnModificar = New System.Windows.Forms.DataGridViewButtonColumn()
@@ -61,19 +62,26 @@ Partial Class frmBodegas
         Me.dgBodegas.AllowUserToDeleteRows = False
         Me.dgBodegas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgBodegas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgBodegas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Descripcion, Me.RazonSocial, Me.Telefono, Me.dgBtnModificar, Me.dgBtnEliminar, Me.Eliminado})
+        Me.dgBodegas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.cuit, Me.RazonSocial, Me.Telefono, Me.dgBtnModificar, Me.dgBtnEliminar, Me.Eliminado})
         Me.dgBodegas.Location = New System.Drawing.Point(6, 57)
         Me.dgBodegas.Name = "dgBodegas"
         Me.dgBodegas.ReadOnly = True
         Me.dgBodegas.RowHeadersVisible = False
-        Me.dgBodegas.Size = New System.Drawing.Size(783, 229)
+        Me.dgBodegas.Size = New System.Drawing.Size(782, 229)
         Me.dgBodegas.TabIndex = 9
         '
-        'Descripcion
+        'id
         '
-        Me.Descripcion.HeaderText = "CUIT"
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.ReadOnly = True
+        Me.id.HeaderText = "Id"
+        Me.id.Name = "id"
+        Me.id.ReadOnly = True
+        Me.id.Visible = False
+        '
+        'cuit
+        '
+        Me.cuit.HeaderText = "CUIT"
+        Me.cuit.Name = "cuit"
+        Me.cuit.ReadOnly = True
         '
         'RazonSocial
         '
@@ -126,7 +134,8 @@ Partial Class frmBodegas
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents btnNuevaBodega As System.Windows.Forms.Button
     Friend WithEvents dgBodegas As System.Windows.Forms.DataGridView
-    Friend WithEvents Descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents id As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cuit As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents RazonSocial As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Telefono As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents dgBtnModificar As System.Windows.Forms.DataGridViewButtonColumn

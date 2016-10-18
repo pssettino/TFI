@@ -228,7 +228,7 @@ Public Class Usuario
                 Dim UsuarioBE As New BE.Usuario
                 UsuarioBE.UsuarioId = CInt(fila("usuario_id"))
                 UsuarioBE.NombreUsuario = CStr(fila("nombre_usuario"))
-                UsuarioBE.Contraseña = CStr(fila("contraseña"))
+                UsuarioBE.Contraseña = CStr(fila("contrasena"))
                 UsuarioBE.Apellido = CStr(fila("apellido"))
                 UsuarioBE.Nombre = CStr(fila("nombre"))
                 UsuarioBE.Mail = fila("email")
@@ -438,7 +438,7 @@ Public Class Usuario
                 Dim UsuarioBE As New BE.Usuario
                 UsuarioBE.UsuarioId = CInt(fila("usuario_id"))
                 UsuarioBE.NombreUsuario = CStr(fila("nombre_usuario"))
-                UsuarioBE.Contraseña = fila("Contraseña")
+                UsuarioBE.Contraseña = fila("contrasena")
                 UsuarioBE.Apellido = CStr(fila("apellido"))
                 UsuarioBE.Nombre = CStr(fila("nombre"))
                 UsuarioBE.Mail = fila("email")
@@ -484,7 +484,7 @@ Public Class Usuario
         comm.CommandText = "SP_VerificarExistencia"
 
         nombreUsuario.DbType = DbType.String
-        nombreUsuario.ParameterName = "@nombre_usuario"
+        nombreUsuario.ParameterName = "@nombre"
         nombreUsuario.Value = unapersona.NombreUsuario
 
         comm.Parameters.Add(nombreUsuario)
@@ -552,7 +552,7 @@ Public Class Usuario
         Dim dt As New DataTable
 
         sqlConn.Open()
-        SqlComm.CommandText = String.Format("SELECT Patente_id, Nombre FROM Patente] where nombre = '" & strPatente & "'")
+        SqlComm.CommandText = String.Format("SELECT [patente_id],[nombre] FROM [LaYumbaVinos].[dbo].[Patente] where nombre = '" & strPatente & "'")
         SqlComm.Connection = sqlConn
         dr = SqlComm.ExecuteReader()
         dt.Load(dr)
@@ -567,7 +567,7 @@ Public Class Usuario
         Dim dt As New DataTable
 
         'sqlConn.Open()
-        SqlComm.CommandText = String.Format("SELECT * FROM Familia_Usuario] where usuario_id = " & _UsuarioId)
+        SqlComm.CommandText = String.Format("SELECT * FROM Familia_Usuario where usuario_id = " & _UsuarioId)
         SqlComm.Connection = sqlConn
         dr = SqlComm.ExecuteReader()
         dt.Load(dr)
@@ -582,7 +582,7 @@ Public Class Usuario
         Dim dt As New DataTable
 
         'sqlConn.Open()
-        SqlComm.CommandText = String.Format("SELECT * FROM  [layumba].dbo.Usuario_Patente where usuario_id = " & _UsuarioId)
+        SqlComm.CommandText = String.Format("SELECT * FROM  dbo.Usuario_Patente where usuario_id = " & _UsuarioId)
         SqlComm.Connection = sqlConn
         dr = SqlComm.ExecuteReader()
         dt.Load(dr)
@@ -594,7 +594,7 @@ Public Class Usuario
     Function AsignarPatenteUsuario(patente As BE.Patente, _UsuarioId As Integer) As Boolean
         Dim SqlComm As New SqlClient.SqlCommand
         sqlConn.Open()
-        SqlComm.CommandText = String.Format("insert into Usuario_Patente] (usuario_id,patente_id,negado) values (" & _UsuarioId & "," & patente.PatenteId & ",'" & CBool(patente.negado) & "')")
+        SqlComm.CommandText = String.Format("insert into Usuario_Patente (usuario_id,patente_id,negado) values (" & _UsuarioId & "," & patente.PatenteId & ",'" & CBool(patente.Negado) & "')")
         SqlComm.Connection = sqlConn
         SqlComm.ExecuteNonQuery()
         sqlConn.Close()
@@ -603,7 +603,7 @@ Public Class Usuario
     Function QuitarPatentesUsuario(unUsuario As BE.Usuario) As Boolean
         Dim SqlComm As New SqlClient.SqlCommand
         sqlConn.Open()
-        SqlComm.CommandText = String.Format("delete from [layumba].dbo.Usuario_Patente where usuario_id = " & unUsuario.UsuarioId)
+        SqlComm.CommandText = String.Format("delete from [layumbavinos].dbo.Usuario_Patente where usuario_id = " & unUsuario.UsuarioId)
         SqlComm.Connection = sqlConn
         SqlComm.ExecuteNonQuery()
         sqlConn.Close()
@@ -613,7 +613,7 @@ Public Class Usuario
     Function AsignarFamiliaUsuario(familia As BE.Familia, _UsuarioId As Integer) As Boolean
         Dim SqlComm As New SqlClient.SqlCommand
         sqlConn.Open()
-        SqlComm.CommandText = String.Format("insert into Familia_Usuario] (familia_id,usuario_id) values (" & familia.familiaId & "," & _UsuarioId & ")")
+        SqlComm.CommandText = String.Format("insert into Familia_Usuario (familia_id,usuario_id) values (" & familia.familiaId & "," & _UsuarioId & ")")
         SqlComm.Connection = sqlConn
         SqlComm.ExecuteNonQuery()
         sqlConn.Close()
@@ -622,7 +622,7 @@ Public Class Usuario
     Function QuitarFamiliasUsuario(unUsuario As BE.Usuario) As Boolean
         Dim SqlComm As New SqlClient.SqlCommand
         sqlConn.Open()
-        SqlComm.CommandText = String.Format("delete from [layumba].dbo.[Familia_Usuario] where usuario_id = " & unUsuario.UsuarioId)
+        SqlComm.CommandText = String.Format("delete from [layumbavinos].dbo.[Familia_Usuario] where usuario_id = " & unUsuario.UsuarioId)
         SqlComm.Connection = sqlConn
         SqlComm.ExecuteNonQuery()
         sqlConn.Close()

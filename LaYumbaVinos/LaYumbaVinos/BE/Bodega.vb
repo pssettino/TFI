@@ -13,6 +13,40 @@ Public Class Bodega
     Private _razonSocial As String
     Private _telefono As String
     Private _cuit As String
+    Private _provincia As Provincia
+
+    Private _eliminado As Boolean
+    Public Property Eliminado() As Boolean
+        Get
+            Return _eliminado
+        End Get
+        Set(ByVal value As Boolean)
+            _eliminado = value
+        End Set
+    End Property
+
+
+
+    Public Property Provincia() As Provincia
+        Get
+            Return _provincia
+        End Get
+        Set(ByVal value As Provincia)
+            _provincia = value
+        End Set
+    End Property
+
+    Private _localidad As Localidad
+    Public Property Localidad() As Localidad
+        Get
+            Return _localidad
+        End Get
+        Set(ByVal value As Localidad)
+            _localidad = value
+        End Set
+    End Property
+
+
 
     Public Property BodegaId() As Integer
         Get

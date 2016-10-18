@@ -14,8 +14,8 @@ Imports System.Text.RegularExpressions
 Public Class Seguridad
 
     ' RSA PARAMETERS
-    Dim passPhrase As String = "LayumbaPassPhrase"
-    Dim saltValue As String = "LaYumbaSaltValue"
+    Dim passPhrase As String = "LaYumbaVinosPassPhrase"
+    Dim saltValue As String = "LaYumbaVinosSaltValue"
     Dim passwordIterations As Integer = 2
     Dim initVector As String = "@1B2c3D4e5F6g7H8"
     Dim keySize As Integer = 256

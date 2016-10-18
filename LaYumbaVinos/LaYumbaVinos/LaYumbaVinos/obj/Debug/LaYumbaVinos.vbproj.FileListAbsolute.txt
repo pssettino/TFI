@@ -19,13 +19,10 @@ C:\Users\pgsett\Desktop\Trabajo De Campo\TFD\LaYumbaVinos\LaYumbaVinos\LaYumbaVi
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFD\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmRestore.resources
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFD\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmUsuarios.resources
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFD\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmVinos.resources
-C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\bin\Debug\LaYumbaVinos.exe.config
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\bin\Debug\LaYumbaVinos.exe
-C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\bin\Debug\LaYumbaVinos.pdb
-C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\bin\Debug\LaYumbaVinos.xml
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\bin\Debug\DAL.dll
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\bin\Debug\BE.dll
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\bin\Debug\BLL.dll
-C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\bin\Debug\DAL.dll
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\bin\Debug\SevenZipSharp.dll
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\bin\Debug\BE.pdb
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\bin\Debug\BE.xml
@@ -61,3 +58,6 @@ C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVi
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.exe
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.xml
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.pdb
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\bin\Debug\LaYumbaVinos.exe.config
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\bin\Debug\LaYumbaVinos.pdb
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\bin\Debug\LaYumbaVinos.xml

@@ -6,9 +6,7 @@ Option Strict On
 
 Public Class Provincia
 
-    Private Sub New()
 
-    End Sub
 
     Private Shared _instancia As BLL.Provincia
 

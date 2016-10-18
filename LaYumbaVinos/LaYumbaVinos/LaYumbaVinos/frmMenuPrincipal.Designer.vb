@@ -194,6 +194,7 @@ Partial Class frmMenuPrincipal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(954, 481)
         Me.Controls.Add(Me.mnsMenuPrincipal)
+        Me.IsMdiContainer = True
         Me.Name = "frmMenuPrincipal"
         Me.Text = "La Yumba Vinos"
         Me.mnsMenuPrincipal.ResumeLayout(False)

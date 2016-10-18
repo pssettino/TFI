@@ -65,8 +65,8 @@
     End Sub
 
     Private Sub AdministraciónDeVinosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdministraciónDeVinosToolStripMenuItem.Click
-        LaYumbaVinos.frmAMVino.MdiParent = Me
-        LaYumbaVinos.frmAMVino.Show()
+        LaYumbaVinos.frmVinos.MdiParent = Me
+        LaYumbaVinos.frmVinos.Show()
     End Sub
 
     Private Sub IntegridadBDToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IntegridadBDToolStripMenuItem.Click

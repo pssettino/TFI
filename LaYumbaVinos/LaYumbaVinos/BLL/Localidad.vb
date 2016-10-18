@@ -6,10 +6,6 @@ Option Strict On
 
 Public Class Localidad
 
-    Private Sub New()
-
-    End Sub
-
     Private Shared _instancia As BLL.Localidad
 
     Public Shared Function GetInstance() As BLL.Localidad

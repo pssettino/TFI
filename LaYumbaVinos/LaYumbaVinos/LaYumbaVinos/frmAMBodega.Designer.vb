@@ -32,14 +32,24 @@ Partial Class frmAMBodega
         Me.lblRazonSocial = New System.Windows.Forms.Label()
         Me.lblLocalidad = New System.Windows.Forms.Label()
         Me.lblNombre = New System.Windows.Forms.Label()
-        Me.TextTelefono = New System.Windows.Forms.TextBox()
+        Me.txtTelefono = New System.Windows.Forms.TextBox()
         Me.txtRazonSocial = New System.Windows.Forms.TextBox()
         Me.txtCuit = New System.Windows.Forms.TextBox()
+        Me.lblCuitError = New System.Windows.Forms.Label()
+        Me.lblRazonSocialError = New System.Windows.Forms.Label()
+        Me.lblTelefonoError = New System.Windows.Forms.Label()
+        Me.lblProvinciaError = New System.Windows.Forms.Label()
+        Me.lblLocalidadError = New System.Windows.Forms.Label()
         Me.grboxBodega.SuspendLayout()
         Me.SuspendLayout()
         '
         'grboxBodega
         '
+        Me.grboxBodega.Controls.Add(Me.lblLocalidadError)
+        Me.grboxBodega.Controls.Add(Me.lblProvinciaError)
+        Me.grboxBodega.Controls.Add(Me.lblTelefonoError)
+        Me.grboxBodega.Controls.Add(Me.lblRazonSocialError)
+        Me.grboxBodega.Controls.Add(Me.lblCuitError)
         Me.grboxBodega.Controls.Add(Me.cmbProvincia)
         Me.grboxBodega.Controls.Add(Me.cmbLocalidad)
         Me.grboxBodega.Controls.Add(Me.btnCancelar)
@@ -49,7 +59,7 @@ Partial Class frmAMBodega
         Me.grboxBodega.Controls.Add(Me.lblRazonSocial)
         Me.grboxBodega.Controls.Add(Me.lblLocalidad)
         Me.grboxBodega.Controls.Add(Me.lblNombre)
-        Me.grboxBodega.Controls.Add(Me.TextTelefono)
+        Me.grboxBodega.Controls.Add(Me.txtTelefono)
         Me.grboxBodega.Controls.Add(Me.txtRazonSocial)
         Me.grboxBodega.Controls.Add(Me.txtCuit)
         Me.grboxBodega.Location = New System.Drawing.Point(12, 12)
@@ -142,13 +152,13 @@ Partial Class frmAMBodega
         Me.lblNombre.Text = "CUIT"
         Me.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'TextTelefono
+        'txtTelefono
         '
-        Me.TextTelefono.Location = New System.Drawing.Point(89, 126)
-        Me.TextTelefono.Name = "TextTelefono"
-        Me.TextTelefono.Size = New System.Drawing.Size(125, 20)
-        Me.TextTelefono.TabIndex = 3
-        Me.TextTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtTelefono.Location = New System.Drawing.Point(89, 126)
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.Size = New System.Drawing.Size(125, 20)
+        Me.txtTelefono.TabIndex = 3
+        Me.txtTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtRazonSocial
         '
@@ -164,6 +174,66 @@ Partial Class frmAMBodega
         Me.txtCuit.Name = "txtCuit"
         Me.txtCuit.Size = New System.Drawing.Size(125, 20)
         Me.txtCuit.TabIndex = 0
+        '
+        'lblCuitError
+        '
+        Me.lblCuitError.AutoSize = True
+        Me.lblCuitError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCuitError.ForeColor = System.Drawing.Color.Red
+        Me.lblCuitError.Location = New System.Drawing.Point(87, 51)
+        Me.lblCuitError.Name = "lblCuitError"
+        Me.lblCuitError.Size = New System.Drawing.Size(24, 12)
+        Me.lblCuitError.TabIndex = 117
+        Me.lblCuitError.Text = "error"
+        Me.lblCuitError.Visible = False
+        '
+        'lblRazonSocialError
+        '
+        Me.lblRazonSocialError.AutoSize = True
+        Me.lblRazonSocialError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRazonSocialError.ForeColor = System.Drawing.Color.Red
+        Me.lblRazonSocialError.Location = New System.Drawing.Point(87, 100)
+        Me.lblRazonSocialError.Name = "lblRazonSocialError"
+        Me.lblRazonSocialError.Size = New System.Drawing.Size(24, 12)
+        Me.lblRazonSocialError.TabIndex = 118
+        Me.lblRazonSocialError.Text = "error"
+        Me.lblRazonSocialError.Visible = False
+        '
+        'lblTelefonoError
+        '
+        Me.lblTelefonoError.AutoSize = True
+        Me.lblTelefonoError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTelefonoError.ForeColor = System.Drawing.Color.Red
+        Me.lblTelefonoError.Location = New System.Drawing.Point(87, 149)
+        Me.lblTelefonoError.Name = "lblTelefonoError"
+        Me.lblTelefonoError.Size = New System.Drawing.Size(24, 12)
+        Me.lblTelefonoError.TabIndex = 119
+        Me.lblTelefonoError.Text = "error"
+        Me.lblTelefonoError.Visible = False
+        '
+        'lblProvinciaError
+        '
+        Me.lblProvinciaError.AutoSize = True
+        Me.lblProvinciaError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblProvinciaError.ForeColor = System.Drawing.Color.Red
+        Me.lblProvinciaError.Location = New System.Drawing.Point(87, 201)
+        Me.lblProvinciaError.Name = "lblProvinciaError"
+        Me.lblProvinciaError.Size = New System.Drawing.Size(24, 12)
+        Me.lblProvinciaError.TabIndex = 120
+        Me.lblProvinciaError.Text = "error"
+        Me.lblProvinciaError.Visible = False
+        '
+        'lblLocalidadError
+        '
+        Me.lblLocalidadError.AutoSize = True
+        Me.lblLocalidadError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLocalidadError.ForeColor = System.Drawing.Color.Red
+        Me.lblLocalidadError.Location = New System.Drawing.Point(87, 254)
+        Me.lblLocalidadError.Name = "lblLocalidadError"
+        Me.lblLocalidadError.Size = New System.Drawing.Size(24, 12)
+        Me.lblLocalidadError.TabIndex = 121
+        Me.lblLocalidadError.Text = "error"
+        Me.lblLocalidadError.Visible = False
         '
         'frmAMBodega
         '
@@ -190,5 +260,10 @@ Partial Class frmAMBodega
     Friend WithEvents cmbProvincia As System.Windows.Forms.ComboBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents TextTelefono As System.Windows.Forms.TextBox
+    Friend WithEvents txtTelefono As System.Windows.Forms.TextBox
+    Friend WithEvents lblLocalidadError As System.Windows.Forms.Label
+    Friend WithEvents lblProvinciaError As System.Windows.Forms.Label
+    Friend WithEvents lblTelefonoError As System.Windows.Forms.Label
+    Friend WithEvents lblRazonSocialError As System.Windows.Forms.Label
+    Friend WithEvents lblCuitError As System.Windows.Forms.Label
 End Class

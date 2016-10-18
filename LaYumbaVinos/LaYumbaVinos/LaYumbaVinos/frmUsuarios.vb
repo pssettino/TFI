@@ -14,7 +14,17 @@
     End Sub
 
     Private Sub frmUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        MenuUI = Me.MdiParent
+        TraduccionBLL = New BLL.Traduccion(MenuUI.GetIdioma)
+        Dim PatenteBE As New BE.Patente
+        PatenteBE.Nombre = "Usuario"
+        PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
+        If (BLL.Usuario.GetInstance.VerificarPatente(MenuUI.GetUsuario, PatenteBE) = False) Then
+            MsgBox(TraduccionBLL.TraducirTexto("Sus permisos han sido modificados, por favor inicie sesion nuevamente"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
+            Application.Exit()
+        End If
+        TraduccionBLL.TraducirForm(Me)
+        ObtenerUsuarios()
     End Sub
 
     Private Sub dgUsuarios_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgUsuarios.CellContentClick
@@ -117,6 +127,7 @@
             dgUsuarios.Rows.Item(n).Cells("id").Value = UsuarioBE.UsuarioId
             dgUsuarios.Rows.Item(n).Cells("Nombre_Usuario").Value = SeguridadBLL.DesencriptarRSA(UsuarioBE.NombreUsuario)
             dgUsuarios.Rows.Item(n).Cells("Apellido_Nombre").Value = UsuarioBE.Apellido & ", " & UsuarioBE.Nombre
+            dgUsuarios.Rows.Item(n).Cells("Email").Value = UsuarioBE.Mail
             dgUsuarios.Rows.Item(n).Cells("eliminado").Value = UsuarioBE.Eliminado
             dgUsuarios.Rows.Item(n).Cells("bloqueado").Value = UsuarioBE.Bloqueado
             Dim dgUsuarioBtnEliminado = New DataGridViewButtonCell()
