@@ -68,4 +68,10 @@ Public Class frmBackup
             DescargarRar()
         End If
     End Sub
+
+    Private Sub btnCarpeta_Click(sender As Object, e As EventArgs) Handles btnCarpeta.Click
+        If FolderBrowserDialog1.ShowDialog() = DialogResult.OK Then
+            txtruta.Text = FolderBrowserDialog1.SelectedPath
+        End If
+    End Sub
 End Class

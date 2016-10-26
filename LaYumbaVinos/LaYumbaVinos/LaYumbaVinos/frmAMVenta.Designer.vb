@@ -37,10 +37,15 @@ Partial Class frmAMVenta
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtPrecioLista = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.lblClienteE = New System.Windows.Forms.Label()
+        Me.txtFechaHora = New System.Windows.Forms.DateTimePicker()
+        Me.cmbCliente = New System.Windows.Forms.ComboBox()
         Me.cmbVino = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtDisponible = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.lblPrecioE = New System.Windows.Forms.Label()
+        Me.lblVinoE = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.txtImporteTotal = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -70,7 +75,7 @@ Partial Class frmAMVenta
         '
         'txtPrecio
         '
-        Me.txtPrecio.Location = New System.Drawing.Point(407, 52)
+        Me.txtPrecio.Location = New System.Drawing.Point(410, 54)
         Me.txtPrecio.Name = "txtPrecio"
         Me.txtPrecio.Size = New System.Drawing.Size(111, 20)
         Me.txtPrecio.TabIndex = 5
@@ -123,7 +128,7 @@ Partial Class frmAMVenta
         '
         'Label5
         '
-        Me.Label5.Location = New System.Drawing.Point(307, 51)
+        Me.Label5.Location = New System.Drawing.Point(310, 53)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(96, 21)
         Me.Label5.TabIndex = 2
@@ -132,7 +137,7 @@ Partial Class frmAMVenta
         '
         'Label6
         '
-        Me.Label6.Location = New System.Drawing.Point(524, 52)
+        Me.Label6.Location = New System.Drawing.Point(527, 54)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(63, 21)
         Me.Label6.TabIndex = 2
@@ -141,7 +146,7 @@ Partial Class frmAMVenta
         '
         'Label10
         '
-        Me.Label10.Location = New System.Drawing.Point(227, 51)
+        Me.Label10.Location = New System.Drawing.Point(236, 55)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(62, 21)
         Me.Label10.TabIndex = 2
@@ -150,7 +155,7 @@ Partial Class frmAMVenta
         '
         'btnAgregarVino
         '
-        Me.btnAgregarVino.Location = New System.Drawing.Point(15, 101)
+        Me.btnAgregarVino.Location = New System.Drawing.Point(15, 95)
         Me.btnAgregarVino.Name = "btnAgregarVino"
         Me.btnAgregarVino.Size = New System.Drawing.Size(101, 27)
         Me.btnAgregarVino.TabIndex = 3
@@ -164,7 +169,7 @@ Partial Class frmAMVenta
         Me.txtCantidad.Maximum = New Decimal(New Integer() {32767, 0, 0, 0})
         Me.txtCantidad.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.Size = New System.Drawing.Size(110, 20)
+        Me.txtCantidad.Size = New System.Drawing.Size(113, 20)
         Me.txtCantidad.TabIndex = 113
         Me.txtCantidad.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
@@ -180,7 +185,7 @@ Partial Class frmAMVenta
         'txtPrecioLista
         '
         Me.txtPrecioLista.Enabled = False
-        Me.txtPrecioLista.Location = New System.Drawing.Point(110, 52)
+        Me.txtPrecioLista.Location = New System.Drawing.Point(118, 55)
         Me.txtPrecioLista.Name = "txtPrecioLista"
         Me.txtPrecioLista.ReadOnly = True
         Me.txtPrecioLista.Size = New System.Drawing.Size(111, 20)
@@ -189,8 +194,9 @@ Partial Class frmAMVenta
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
-        Me.GroupBox1.Controls.Add(Me.ComboBox2)
+        Me.GroupBox1.Controls.Add(Me.lblClienteE)
+        Me.GroupBox1.Controls.Add(Me.txtFechaHora)
+        Me.GroupBox1.Controls.Add(Me.cmbCliente)
         Me.GroupBox1.Controls.Add(Me.lblFechaHora)
         Me.GroupBox1.Controls.Add(Me.txtNroVenta)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -202,31 +208,47 @@ Partial Class frmAMVenta
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Venta"
         '
-        'DateTimePicker1
+        'lblClienteE
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(408, 18)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(180, 20)
-        Me.DateTimePicker1.TabIndex = 119
+        Me.lblClienteE.AutoSize = True
+        Me.lblClienteE.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblClienteE.ForeColor = System.Drawing.Color.Red
+        Me.lblClienteE.Location = New System.Drawing.Point(117, 78)
+        Me.lblClienteE.Name = "lblClienteE"
+        Me.lblClienteE.Size = New System.Drawing.Size(24, 12)
+        Me.lblClienteE.TabIndex = 120
+        Me.lblClienteE.Text = "error"
+        Me.lblClienteE.Visible = False
         '
-        'ComboBox2
+        'txtFechaHora
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(119, 52)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(171, 21)
-        Me.ComboBox2.TabIndex = 118
+        Me.txtFechaHora.Location = New System.Drawing.Point(408, 18)
+        Me.txtFechaHora.Name = "txtFechaHora"
+        Me.txtFechaHora.Size = New System.Drawing.Size(180, 20)
+        Me.txtFechaHora.TabIndex = 119
+        '
+        'cmbCliente
+        '
+        Me.cmbCliente.FormattingEnabled = True
+        Me.cmbCliente.Location = New System.Drawing.Point(119, 52)
+        Me.cmbCliente.Name = "cmbCliente"
+        Me.cmbCliente.Size = New System.Drawing.Size(171, 21)
+        Me.cmbCliente.TabIndex = 118
         '
         'cmbVino
         '
         Me.cmbVino.FormattingEnabled = True
-        Me.cmbVino.Location = New System.Drawing.Point(109, 19)
+        Me.cmbVino.Location = New System.Drawing.Point(118, 19)
         Me.cmbVino.Name = "cmbVino"
         Me.cmbVino.Size = New System.Drawing.Size(180, 21)
         Me.cmbVino.TabIndex = 118
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.txtDisponible)
+        Me.GroupBox2.Controls.Add(Me.Label12)
+        Me.GroupBox2.Controls.Add(Me.lblPrecioE)
+        Me.GroupBox2.Controls.Add(Me.lblVinoE)
         Me.GroupBox2.Controls.Add(Me.btnCancelar)
         Me.GroupBox2.Controls.Add(Me.txtImporteTotal)
         Me.GroupBox2.Controls.Add(Me.cmbVino)
@@ -249,6 +271,48 @@ Partial Class frmAMVenta
         Me.GroupBox2.TabIndex = 11
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Vinos"
+        '
+        'txtDisponible
+        '
+        Me.txtDisponible.Enabled = False
+        Me.txtDisponible.Location = New System.Drawing.Point(593, 17)
+        Me.txtDisponible.Name = "txtDisponible"
+        Me.txtDisponible.ReadOnly = True
+        Me.txtDisponible.Size = New System.Drawing.Size(76, 20)
+        Me.txtDisponible.TabIndex = 126
+        '
+        'Label12
+        '
+        Me.Label12.Location = New System.Drawing.Point(526, 16)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(61, 21)
+        Me.Label12.TabIndex = 125
+        Me.Label12.Text = "Disponible"
+        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblPrecioE
+        '
+        Me.lblPrecioE.AutoSize = True
+        Me.lblPrecioE.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrecioE.ForeColor = System.Drawing.Color.Red
+        Me.lblPrecioE.Location = New System.Drawing.Point(408, 77)
+        Me.lblPrecioE.Name = "lblPrecioE"
+        Me.lblPrecioE.Size = New System.Drawing.Size(24, 12)
+        Me.lblPrecioE.TabIndex = 124
+        Me.lblPrecioE.Text = "error"
+        Me.lblPrecioE.Visible = False
+        '
+        'lblVinoE
+        '
+        Me.lblVinoE.AutoSize = True
+        Me.lblVinoE.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVinoE.ForeColor = System.Drawing.Color.Red
+        Me.lblVinoE.Location = New System.Drawing.Point(116, 41)
+        Me.lblVinoE.Name = "lblVinoE"
+        Me.lblVinoE.Size = New System.Drawing.Size(24, 12)
+        Me.lblVinoE.TabIndex = 121
+        Me.lblVinoE.Text = "error"
+        Me.lblVinoE.Visible = False
         '
         'btnCancelar
         '
@@ -285,11 +349,11 @@ Partial Class frmAMVenta
         Me.dgVinosPorVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgVinosPorVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgVinosPorVenta.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.venta_vino_id, Me.NroVino, Me.Vino, Me.CantVenta, Me.PrecioVenta, Me.gvBtnEliminarVino, Me.Eliminado})
-        Me.dgVinosPorVenta.Location = New System.Drawing.Point(15, 144)
+        Me.dgVinosPorVenta.Location = New System.Drawing.Point(15, 128)
         Me.dgVinosPorVenta.Name = "dgVinosPorVenta"
         Me.dgVinosPorVenta.ReadOnly = True
         Me.dgVinosPorVenta.RowHeadersVisible = False
-        Me.dgVinosPorVenta.Size = New System.Drawing.Size(662, 177)
+        Me.dgVinosPorVenta.Size = New System.Drawing.Size(662, 193)
         Me.dgVinosPorVenta.TabIndex = 120
         '
         'btnAceptar
@@ -313,6 +377,7 @@ Partial Class frmAMVenta
         Me.NroVino.HeaderText = "Nro"
         Me.NroVino.Name = "NroVino"
         Me.NroVino.ReadOnly = True
+        Me.NroVino.Visible = False
         '
         'Vino
         '
@@ -385,7 +450,7 @@ Partial Class frmAMVenta
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents txtPrecioLista As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbCliente As System.Windows.Forms.ComboBox
     Friend WithEvents cmbVino As System.Windows.Forms.ComboBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
@@ -393,7 +458,12 @@ Partial Class frmAMVenta
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents dgVinosPorVenta As System.Windows.Forms.DataGridView
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents txtFechaHora As System.Windows.Forms.DateTimePicker
+    Friend WithEvents lblClienteE As System.Windows.Forms.Label
+    Friend WithEvents lblPrecioE As System.Windows.Forms.Label
+    Friend WithEvents lblVinoE As System.Windows.Forms.Label
+    Friend WithEvents txtDisponible As System.Windows.Forms.TextBox
+    Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents venta_vino_id As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents NroVino As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Vino As System.Windows.Forms.DataGridViewTextBoxColumn

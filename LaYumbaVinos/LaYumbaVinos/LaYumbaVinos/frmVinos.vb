@@ -66,7 +66,7 @@
         Dim result As Integer
 
         'MODIFICAR
-        If e.ColumnIndex = 6 Then 'Nro Columna del datagriew
+        If e.ColumnIndex = 5 Then 'Nro Columna del datagriew
             Dim VinoModificar As New frmAMVino(id)
             Dim SeguridadBLL As New BLL.Seguridad
             Dim BodegaBLL As New BLL.Bodega
@@ -91,7 +91,7 @@
             End If
         End If
         'ELIMINAR
-        If e.ColumnIndex = 7 Then 'Nro Columna del datagriew
+        If e.ColumnIndex = 6 Then 'Nro Columna del datagriew
             If eliminado = True Then
                 eliminado = False
                 Descr = "Activar"

@@ -133,7 +133,7 @@ Public Class Venta
     Function QuitarVentaVino(unaVenta As BE.Venta) As Boolean
         Dim SqlComm As New SqlClient.SqlCommand
         SqlConn.Open()
-        SqlComm.CommandText = String.Format("delete from Venta_Vino  where venta_id = " & unaVenta.ventaId)
+        SqlComm.CommandText = String.Format("delete from Venta_Vino  where venta_fk = " & unaVenta.VentaId)
         SqlComm.Connection = SqlConn
         SqlComm.ExecuteNonQuery()
         SqlConn.Close()
@@ -187,13 +187,14 @@ Public Class Venta
                 VentaBE.ventaId = CInt(fila("venta_id"))
                 VentaBE.fechaVenta = CDate(fila("fecha_venta"))
                 ClienteBE.ClienteId = CInt(fila("cliente_id"))
-                ClienteBE.NombreCompleto = CStr(fila("nombreCompleto"))
+                ClienteBE.Nombre = CStr(fila("nombre"))
+                ClienteBE.Apellido = CStr(fila("apellido"))
                 VentaBE.cliente = ClienteBE
                 Dim VinoBE As New List(Of BE.VentaVino)
                 For Each item In ObtenerVinosPorVenta(VentaBE.ventaId).Rows
                     Dim Vino As New BE.VentaVino
                     Dim ventaVino As New BE.Venta
-                    ventaVino.ventaId = item("venta_id")
+                    ventaVino.VentaId = item("venta_fk")
                     Vino.Venta = ventaVino
                     Vino.VentaVinoId = item("venta_Vino_id")
                     Vino.CantidadVenta = item("cantidad_venta")
@@ -307,7 +308,8 @@ Public Class Venta
                 VentaBE.ventaId = CInt(fila("venta_id"))
                 VentaBE.fechaVenta = CDate(fila("fecha_venta"))
                 ClienteBE.clienteId = CInt(fila("cliente_id"))
-                ClienteBE.NombreCompleto = CStr(fila("nombreCompleto"))
+                ClienteBE.Nombre = CStr(fila("nombre"))
+                ClienteBE.Apellido = CStr(fila("apellido"))
                 VentaBE.cliente = DAL.Cliente.GetInstance.ListById(ClienteBE)
                 VentaBE.Vinos = ListarVentaVinosByVentaId(VentaBE)
                 ventas.Add(VentaBE)
@@ -334,7 +336,7 @@ Public Class Venta
 
         comm.Connection = SqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "SP_ListarVentaVinosByVentaId"
+        comm.CommandText = "SP_ListarVentasVinosByVentaId"
 
         _ventaId.DbType = DbType.Int32
         _ventaId.ParameterName = "@venta_id"
@@ -434,7 +436,7 @@ Public Class Venta
         Dim SqlComm As New SqlClient.SqlCommand
         Dim dr As SqlClient.SqlDataReader
         Dim dt As New DataTable
-        SqlComm.CommandText = String.Format("SELECT * FROM Venta_Vino where venta_id = " & _VentaId)
+        SqlComm.CommandText = String.Format("SELECT * FROM Venta_Vino where venta_fk = " & _VentaId)
         SqlComm.Connection = SqlConn
         dr = SqlComm.ExecuteReader()
         dt.Load(dr)

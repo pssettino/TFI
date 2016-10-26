@@ -30,7 +30,7 @@
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "SP_InsertarV"
+        comm.CommandText = "SP_InsertarVino"
 
         descripcion.DbType = DbType.String
         descripcion.ParameterName = "@descripcion"
@@ -150,7 +150,7 @@
         vinoId.Value = objId.VinoId
 
         comm.Parameters.Add(vinoId)
-         Dim vinos = Nothing
+        Dim vinos As New List(Of BE.Vino)
         Try
             vinos = SetearListaDeVinos(comm, sqlDa, ds)
         Catch ex As Exception
@@ -159,7 +159,14 @@
             sqlDa.SelectCommand.Connection.Close()
         End Try
 
-        Return vinos
+        If vinos.Count = 0 Then
+            Return New BE.Vino
+        Else
+
+            Return vinos(0)
+        End If
+
+        
     End Function
 
     Public Function Update(objUpd As BE.Vino) As Boolean Implements BE.ICrud(Of BE.Vino).Update

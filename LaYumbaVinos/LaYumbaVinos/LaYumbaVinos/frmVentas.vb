@@ -23,6 +23,7 @@
         TraduccionBLL.TraducirForm(Me)
 
         cmbCliente.DisplayMember = "nombreCompleto"
+
         cmbCliente.ValueMember = "clienteId"
         cmbCliente.DataSource = BLL.Cliente.GetInstance.ListAll()
         ListarVentas()
@@ -47,7 +48,7 @@
             Dim n As Integer = dgVentas.Rows.Add()
             dgVentas.Rows.Item(n).Cells("dgBtnModificarVenta").Value = TraduccionBLL.TraducirTexto("Ver Detalle")
             dgVentas.Rows.Item(n).Cells("NroVenta").Value = item.ventaId
-            dgVentas.Rows.Item(n).Cells("Cliente").Value = item.cliente.NombreCompleto
+            dgVentas.Rows.Item(n).Cells("Cliente").Value = item.Cliente.Apellido + ", " + item.Cliente.Nombre
             dgVentas.Rows.Item(n).Cells("Fecha_Venta").Value = item.fechaVenta
             For Each vino In item.Vinos
                 TotalImporte = TotalImporte + (SeguridadBLL.DesencriptarRSA(vino.CantidadVenta) * SeguridadBLL.DesencriptarRSA(vino.PrecioVenta))
@@ -61,5 +62,38 @@
 
     Private Sub btnLimpiarVenta_Click(sender As Object, e As EventArgs) Handles btnLimpiarVenta.Click
         dgVentas.Rows.Clear()
+    End Sub
+
+    Private Sub dgVentas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgVentas.CellContentClick
+
+        If e.ColumnIndex = 4 Then 'Nro Columna del datagriew
+            Dim id As String = Convert.ToString(dgVentas.CurrentRow.Cells("NroVenta").Value)
+            Dim VentaRegistrar As New frmAMVenta(id)
+            Dim venta As New BE.Venta
+
+            venta.VentaId = id
+            venta = BLL.Venta.GetInstance.ListarVentaById(venta)
+
+            VentaRegistrar.txtFechaHora.Text = venta.FechaVenta
+            VentaRegistrar.txtNroVenta.Text = venta.VentaId
+            VentaRegistrar.vinos = venta.Vinos
+
+
+            Dim clientesLista As New Dictionary(Of Integer, String)
+            clientesLista.Add(0, TraduccionBLL.TraducirTexto("Seleccione el cliente"))
+            For Each ClienteBE In BLL.Cliente.GetInstance.ObtenerClientesDisponibles()
+                clientesLista.Add(ClienteBE.ClienteId, ClienteBE.Apellido + ", " + ClienteBE.Nombre)
+            Next
+
+            VentaRegistrar.cmbCliente.DataSource = New BindingSource(clientesLista, Nothing)
+            VentaRegistrar.cmbCliente.DisplayMember = "Value"
+            VentaRegistrar.cmbCliente.ValueMember = "Key"
+
+            VentaRegistrar.cmbCliente.SelectedValue = venta.Cliente.ClienteId
+
+            If VentaRegistrar.ShowDialog(Me) = Windows.Forms.DialogResult.OK Then
+                ListarVentas()
+            End If
+        End If
     End Sub
 End Class

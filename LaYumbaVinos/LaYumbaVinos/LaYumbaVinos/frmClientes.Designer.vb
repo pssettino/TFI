@@ -30,6 +30,7 @@ Partial Class frmClientes
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnNuevoCliente = New System.Windows.Forms.Button()
         Me.dgClientes = New System.Windows.Forms.DataGridView()
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DNI = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombreCompleto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -117,13 +118,20 @@ Partial Class frmClientes
         Me.dgClientes.AllowUserToDeleteRows = False
         Me.dgClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgClientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DNI, Me.nombreCompleto, Me.Telefono, Me.Email, Me.dgModificar, Me.dgEliminar, Me.eliminado})
+        Me.dgClientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.DNI, Me.nombreCompleto, Me.Telefono, Me.Email, Me.dgModificar, Me.dgEliminar, Me.eliminado})
         Me.dgClientes.Location = New System.Drawing.Point(7, 61)
         Me.dgClientes.Name = "dgClientes"
         Me.dgClientes.ReadOnly = True
         Me.dgClientes.RowHeadersVisible = False
         Me.dgClientes.Size = New System.Drawing.Size(774, 247)
         Me.dgClientes.TabIndex = 101
+        '
+        'id
+        '
+        Me.id.HeaderText = "id"
+        Me.id.Name = "id"
+        Me.id.ReadOnly = True
+        Me.id.Visible = False
         '
         'DNI
         '
@@ -195,6 +203,8 @@ Partial Class frmClientes
     Friend WithEvents txtBuscarApeNom As System.Windows.Forms.TextBox
     Friend WithEvents txtBuscarDni As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents btnNuevoCliente As System.Windows.Forms.Button
+    Friend WithEvents id As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DNI As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents nombreCompleto As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Telefono As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -202,5 +212,4 @@ Partial Class frmClientes
     Friend WithEvents dgModificar As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents dgEliminar As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents eliminado As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents btnNuevoCliente As System.Windows.Forms.Button
 End Class

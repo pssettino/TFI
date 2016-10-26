@@ -19,8 +19,9 @@ Public Class Cliente
     Private _localidad As Localidad
     Private _email As String
     Private _dvh As Integer
-    Private _nombreCompleto As String
 
+
+    Private _nombreCompleto As String
     Public Property NombreCompleto() As String
         Get
             Return _nombreCompleto
@@ -30,6 +31,10 @@ Public Class Cliente
         End Set
     End Property
 
+
+
+
+  
     Public Property ClienteId() As Integer
         Get
             Return _clienteId

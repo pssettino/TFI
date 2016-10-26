@@ -15,7 +15,9 @@ Public Class Backup
         Dim inputFile = String.Format("{0}layumbavinos_{1}", BackupBE.Ubicacion, DateTime.Now.ToString("yyyyMMddhhmmss"))
 
         SqlComm.Connection = SqlConn
-        SqlConn.Open()
+        If SqlConn.State = ConnectionState.Closed Then
+            SqlConn.Open()
+        End If
         SqlComm.CommandType = CommandType.Text
 
         Try

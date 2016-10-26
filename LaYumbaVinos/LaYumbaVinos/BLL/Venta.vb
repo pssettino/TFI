@@ -99,8 +99,8 @@ Public Class Venta
             For Each VinoBE In VentaBE.Vinos
                 dvhBE = New BE.DVH("Venta_Vino")
                 dvhBE.AgregarRestriccion("venta_vino_id", VinoBE.VentaVinoId)
-                dvhBE.AgregarRestriccion("venta_id", VentaBE.ventaId)
-                dvhBE.AgregarRestriccion("vino_id", VinoBE.Vino.VinoId)
+                dvhBE.AgregarRestriccion("venta_fk", VentaBE.VentaId)
+                dvhBE.AgregarRestriccion("vino_fk", VinoBE.Vino.VinoId)
                 DigitoVerificadorHorizontalBLL.GenerarDVH(dvhBE, False)
             Next
         End If

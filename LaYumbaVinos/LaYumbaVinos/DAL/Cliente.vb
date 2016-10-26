@@ -30,7 +30,6 @@ Public Class Cliente
         Dim dni As New SqlClient.SqlParameter
         Dim apellido As New SqlClient.SqlParameter
         Dim nombre As New SqlClient.SqlParameter
-        Dim nombreCompleto As New SqlClient.SqlParameter
         Dim email As New SqlClient.SqlParameter
         Dim telefono As New SqlClient.SqlParameter
         Dim fechaAlta As New SqlClient.SqlParameter
@@ -54,9 +53,6 @@ Public Class Cliente
         nombre.ParameterName = "@nombre"
         nombre.Value = objAdd.nombre
 
-        nombreCompleto.DbType = DbType.String
-        nombreCompleto.ParameterName = "@nombreCompleto"
-        nombreCompleto.Value = objAdd.apellido & ", " & objAdd.nombre
 
         email.DbType = DbType.String
         email.ParameterName = "@email"
@@ -85,7 +81,6 @@ Public Class Cliente
         comm.Parameters.Add(dni)
         comm.Parameters.Add(apellido)
         comm.Parameters.Add(nombre)
-        comm.Parameters.Add(nombreCompleto)
         comm.Parameters.Add(telefono)
         comm.Parameters.Add(fechaAlta)
         comm.Parameters.Add(email)
@@ -173,8 +168,8 @@ Public Class Cliente
                 ClienteBE.dni = fila("dni")
                 ClienteBE.apellido = CStr(fila("apellido"))
                 ClienteBE.nombre = CStr(fila("nombre"))
-                ClienteBE.NombreCompleto = fila("nombreCompleto")
-                ClienteBE.telefono = CStr((fila("telefono")))
+                ClienteBE.NombreCompleto = CStr(fila("apellido")) + ", " + CStr(fila("nombre"))
+                ClienteBE.Telefono = CStr((fila("telefono")))
                 ClienteBE.FechaAlta = fila("fecha_alta")
                 ClienteBE.email = CStr((fila("email")))
                 ClienteBE.direccion = CStr(fila("direccion"))
@@ -230,7 +225,7 @@ Public Class Cliente
                 ClienteBE.dni = fila("dni")
                 ClienteBE.apellido = CStr(fila("apellido"))
                 ClienteBE.nombre = CStr(fila("nombre"))
-                ClienteBE.NombreCompleto = fila("nombreCompleto")
+
                 ClienteBE.telefono = CStr((fila("telefono")))
                 ClienteBE.FechaAlta = fila("fecha_alta")
                 ClienteBE.email = CStr((fila("email")))
@@ -262,7 +257,7 @@ Public Class Cliente
         Dim dni As New SqlClient.SqlParameter
         Dim apellido As New SqlClient.SqlParameter
         Dim nombre As New SqlClient.SqlParameter
-        Dim nombreCompleto As New SqlClient.SqlParameter
+
         Dim telefono As New SqlClient.SqlParameter
         Dim email As New SqlClient.SqlParameter
         Dim direccion As New SqlClient.SqlParameter
@@ -289,9 +284,7 @@ Public Class Cliente
         nombre.ParameterName = "@nombre"
         nombre.Value = objUpd.nombre
 
-        nombreCompleto.DbType = DbType.String
-        nombreCompleto.ParameterName = "@nombreCompleto"
-        nombreCompleto.Value = objUpd.apellido & ", " & objUpd.nombre
+   
 
         telefono.DbType = DbType.String
         telefono.ParameterName = "@telefono"
@@ -317,7 +310,7 @@ Public Class Cliente
         comm.Parameters.Add(dni)
         comm.Parameters.Add(apellido)
         comm.Parameters.Add(nombre)
-        comm.Parameters.Add(nombreCompleto)
+
         comm.Parameters.Add(telefono)
         comm.Parameters.Add(email)
         comm.Parameters.Add(direccion)
@@ -349,7 +342,7 @@ Public Class Cliente
 
         comm.Connection = sqlConn
         comm.CommandType = CommandType.StoredProcedure
-        comm.CommandText = "SP_VerificarExistencia"
+        comm.CommandText = "SP_VerificarExistenciaCliente"
 
         dni.DbType = DbType.Int32
         dni.ParameterName = "@dni"
@@ -421,7 +414,6 @@ Public Class Cliente
                 ClienteBE.dni = fila("dni")
                 ClienteBE.apellido = CStr(fila("apellido"))
                 ClienteBE.nombre = CStr(fila("nombre"))
-                ClienteBE.NombreCompleto = fila("nombreCompleto")
                 ClienteBE.telefono = CStr((fila("telefono")))
                 ClienteBE.FechaAlta = fila("fecha_alta")
                 ClienteBE.email = CStr((fila("email")))
@@ -475,7 +467,7 @@ Public Class Cliente
                 ClienteBE.dni = fila("dni")
                 ClienteBE.apellido = CStr(fila("apellido"))
                 ClienteBE.nombre = CStr(fila("nombre"))
-                ClienteBE.NombreCompleto = fila("nombreCompleto")
+
                 ClienteBE.telefono = CStr((fila("telefono")))
                 ClienteBE.FechaAlta = fila("fecha_alta")
                 ClienteBE.email = CStr((fila("email")))
@@ -521,7 +513,7 @@ Public Class Cliente
                 ClienteBE.dni = fila("dni")
                 ClienteBE.apellido = CStr(fila("apellido"))
                 ClienteBE.nombre = CStr(fila("nombre"))
-                ClienteBE.NombreCompleto = fila("nombreCompleto")
+
                 ClienteBE.telefono = CStr((fila("telefono")))
                 ClienteBE.FechaAlta = fila("fecha_alta")
                 ClienteBE.email = CStr((fila("email")))

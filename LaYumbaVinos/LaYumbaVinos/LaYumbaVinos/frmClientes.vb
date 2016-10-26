@@ -32,7 +32,8 @@
             Dim n As Integer = dgClientes.Rows.Add()
             dgClientes.Rows.Item(n).Cells("id").Value = ClienteBE.clienteId
             dgClientes.Rows.Item(n).Cells("dni").Value = ClienteBE.dni
-            dgClientes.Rows.Item(n).Cells("nombreCompleto").Value = ClienteBE.NombreCompleto
+            dgClientes.Rows.Item(n).Cells("nombreCompleto").Value = ClienteBE.Apellido + ", " + ClienteBE.Nombre
+            dgClientes.Rows.Item(n).Cells("Email").Value = ClienteBE.Email
             dgClientes.Rows.Item(n).Cells("telefono").Value = ClienteBE.telefono
             dgClientes.Rows.Item(n).Cells("eliminado").Value = ClienteBE.eliminado
             Dim dgEliminar = New DataGridViewButtonCell()
@@ -55,11 +56,11 @@
         Dim result As Integer
 
         'MODIFICAR
-        If e.ColumnIndex = 4 Then 'Nro Columna del datagriew
+        If e.ColumnIndex = 5 Then 'Nro Columna del datagriew
 
             Dim ClienteModificar As New frmAMCliente(id)
             Dim SeguridadBLL As New BLL.Seguridad
-            ClienteModificar.txtnombre.Focus()
+            ClienteModificar.txtNombre.Focus()
 
             unCliente.ClienteId = id
             unCliente = BLL.Cliente.GetInstance().ListById(unCliente)
@@ -76,13 +77,13 @@
             ClienteModificar.cmbLocalidad.SelectedItem = unCliente.Localidad.LocalidadId
             ClienteModificar.cmbProvincia.SelectedItem = unCliente.Localidad.Provincia.ProvinciaId
 
-            ClienteModificar.txtnombre.Text = unCliente.Nombre
-            ClienteModificar.txtdni.Text = unCliente.Dni
-            ClienteModificar.txtapellido.Text = unCliente.Apellido
-            ClienteModificar.txtnombre.Text = unCliente.Nombre
-            ClienteModificar.txtemail.Text = unCliente.Email
-            ClienteModificar.txttelefono.Text = unCliente.Telefono
-            ClienteModificar.txtdireccion.Text = unCliente.Direccion
+            ClienteModificar.txtNombre.Text = unCliente.Nombre
+            ClienteModificar.txtDni.Text = unCliente.Dni
+            ClienteModificar.txtApellido.Text = unCliente.Apellido
+            ClienteModificar.txtNombre.Text = unCliente.Nombre
+            ClienteModificar.txtEmail.Text = unCliente.Email
+            ClienteModificar.txtTelefono.Text = unCliente.Telefono
+            ClienteModificar.txtDireccion.Text = unCliente.Direccion
 
 
             If ClienteModificar.ShowDialog(Me) = Windows.Forms.DialogResult.OK Then
@@ -90,7 +91,7 @@
             End If
         End If
         'ELIMINAR
-        If e.ColumnIndex = 5 Then 'Nro Columna del datagriew
+        If e.ColumnIndex = 6 Then 'Nro Columna del datagriew
             If eliminado = True Then
                 eliminado = False
                 Descr = "Activar"
@@ -127,7 +128,8 @@
             Dim n As Integer = dgClientes.Rows.Add()
             dgClientes.Rows.Item(n).Cells("id").Value = ClienteBE.ClienteId
             dgClientes.Rows.Item(n).Cells("dni").Value = ClienteBE.Dni
-            dgClientes.Rows.Item(n).Cells("nombreCompleto").Value = ClienteBE.NombreCompleto
+            dgClientes.Rows.Item(n).Cells("nombreCompleto").Value = ClienteBE.Apellido + ", " + ClienteBE.Nombre
+            dgClientes.Rows.Item(n).Cells("Email").Value = ClienteBE.Email
             dgClientes.Rows.Item(n).Cells("telefono").Value = ClienteBE.Telefono
             dgClientes.Rows.Item(n).Cells("eliminado").Value = ClienteBE.Eliminado
             Dim dgEliminar = New DataGridViewButtonCell()
@@ -146,7 +148,8 @@
             Dim n As Integer = dgClientes.Rows.Add()
             dgClientes.Rows.Item(n).Cells("id").Value = ClienteBE.ClienteId
             dgClientes.Rows.Item(n).Cells("dni").Value = ClienteBE.Dni
-            dgClientes.Rows.Item(n).Cells("nombreCompleto").Value = ClienteBE.NombreCompleto
+            dgClientes.Rows.Item(n).Cells("nombreCompleto").Value = ClienteBE.Apellido + ", " + ClienteBE.Nombre
+            dgClientes.Rows.Item(n).Cells("Email").Value = ClienteBE.Email
             dgClientes.Rows.Item(n).Cells("telefono").Value = ClienteBE.Telefono
             dgClientes.Rows.Item(n).Cells("eliminado").Value = ClienteBE.Eliminado
             Dim dgEliminar = New DataGridViewButtonCell()
