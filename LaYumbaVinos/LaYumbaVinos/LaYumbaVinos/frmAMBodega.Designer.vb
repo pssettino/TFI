@@ -23,6 +23,11 @@ Partial Class frmAMBodega
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.grboxBodega = New System.Windows.Forms.GroupBox()
+        Me.lblLocalidadError = New System.Windows.Forms.Label()
+        Me.lblProvinciaError = New System.Windows.Forms.Label()
+        Me.lblTelefonoError = New System.Windows.Forms.Label()
+        Me.lblRazonSocialError = New System.Windows.Forms.Label()
+        Me.lblCuitError = New System.Windows.Forms.Label()
         Me.cmbProvincia = New System.Windows.Forms.ComboBox()
         Me.cmbLocalidad = New System.Windows.Forms.ComboBox()
         Me.btnCancelar = New System.Windows.Forms.Button()
@@ -35,11 +40,6 @@ Partial Class frmAMBodega
         Me.txtTelefono = New System.Windows.Forms.TextBox()
         Me.txtRazonSocial = New System.Windows.Forms.TextBox()
         Me.txtCuit = New System.Windows.Forms.TextBox()
-        Me.lblCuitError = New System.Windows.Forms.Label()
-        Me.lblRazonSocialError = New System.Windows.Forms.Label()
-        Me.lblTelefonoError = New System.Windows.Forms.Label()
-        Me.lblProvinciaError = New System.Windows.Forms.Label()
-        Me.lblLocalidadError = New System.Windows.Forms.Label()
         Me.grboxBodega.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -68,6 +68,66 @@ Partial Class frmAMBodega
         Me.grboxBodega.TabIndex = 10
         Me.grboxBodega.TabStop = False
         Me.grboxBodega.Text = "Bodega"
+        '
+        'lblLocalidadError
+        '
+        Me.lblLocalidadError.AutoSize = True
+        Me.lblLocalidadError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLocalidadError.ForeColor = System.Drawing.Color.Red
+        Me.lblLocalidadError.Location = New System.Drawing.Point(87, 254)
+        Me.lblLocalidadError.Name = "lblLocalidadError"
+        Me.lblLocalidadError.Size = New System.Drawing.Size(24, 12)
+        Me.lblLocalidadError.TabIndex = 121
+        Me.lblLocalidadError.Text = "error"
+        Me.lblLocalidadError.Visible = False
+        '
+        'lblProvinciaError
+        '
+        Me.lblProvinciaError.AutoSize = True
+        Me.lblProvinciaError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblProvinciaError.ForeColor = System.Drawing.Color.Red
+        Me.lblProvinciaError.Location = New System.Drawing.Point(87, 201)
+        Me.lblProvinciaError.Name = "lblProvinciaError"
+        Me.lblProvinciaError.Size = New System.Drawing.Size(24, 12)
+        Me.lblProvinciaError.TabIndex = 120
+        Me.lblProvinciaError.Text = "error"
+        Me.lblProvinciaError.Visible = False
+        '
+        'lblTelefonoError
+        '
+        Me.lblTelefonoError.AutoSize = True
+        Me.lblTelefonoError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTelefonoError.ForeColor = System.Drawing.Color.Red
+        Me.lblTelefonoError.Location = New System.Drawing.Point(87, 149)
+        Me.lblTelefonoError.Name = "lblTelefonoError"
+        Me.lblTelefonoError.Size = New System.Drawing.Size(24, 12)
+        Me.lblTelefonoError.TabIndex = 119
+        Me.lblTelefonoError.Text = "error"
+        Me.lblTelefonoError.Visible = False
+        '
+        'lblRazonSocialError
+        '
+        Me.lblRazonSocialError.AutoSize = True
+        Me.lblRazonSocialError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRazonSocialError.ForeColor = System.Drawing.Color.Red
+        Me.lblRazonSocialError.Location = New System.Drawing.Point(87, 100)
+        Me.lblRazonSocialError.Name = "lblRazonSocialError"
+        Me.lblRazonSocialError.Size = New System.Drawing.Size(24, 12)
+        Me.lblRazonSocialError.TabIndex = 118
+        Me.lblRazonSocialError.Text = "error"
+        Me.lblRazonSocialError.Visible = False
+        '
+        'lblCuitError
+        '
+        Me.lblCuitError.AutoSize = True
+        Me.lblCuitError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCuitError.ForeColor = System.Drawing.Color.Red
+        Me.lblCuitError.Location = New System.Drawing.Point(87, 51)
+        Me.lblCuitError.Name = "lblCuitError"
+        Me.lblCuitError.Size = New System.Drawing.Size(24, 12)
+        Me.lblCuitError.TabIndex = 117
+        Me.lblCuitError.Text = "error"
+        Me.lblCuitError.Visible = False
         '
         'cmbProvincia
         '
@@ -175,73 +235,18 @@ Partial Class frmAMBodega
         Me.txtCuit.Size = New System.Drawing.Size(125, 20)
         Me.txtCuit.TabIndex = 0
         '
-        'lblCuitError
-        '
-        Me.lblCuitError.AutoSize = True
-        Me.lblCuitError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCuitError.ForeColor = System.Drawing.Color.Red
-        Me.lblCuitError.Location = New System.Drawing.Point(87, 51)
-        Me.lblCuitError.Name = "lblCuitError"
-        Me.lblCuitError.Size = New System.Drawing.Size(24, 12)
-        Me.lblCuitError.TabIndex = 117
-        Me.lblCuitError.Text = "error"
-        Me.lblCuitError.Visible = False
-        '
-        'lblRazonSocialError
-        '
-        Me.lblRazonSocialError.AutoSize = True
-        Me.lblRazonSocialError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRazonSocialError.ForeColor = System.Drawing.Color.Red
-        Me.lblRazonSocialError.Location = New System.Drawing.Point(87, 100)
-        Me.lblRazonSocialError.Name = "lblRazonSocialError"
-        Me.lblRazonSocialError.Size = New System.Drawing.Size(24, 12)
-        Me.lblRazonSocialError.TabIndex = 118
-        Me.lblRazonSocialError.Text = "error"
-        Me.lblRazonSocialError.Visible = False
-        '
-        'lblTelefonoError
-        '
-        Me.lblTelefonoError.AutoSize = True
-        Me.lblTelefonoError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTelefonoError.ForeColor = System.Drawing.Color.Red
-        Me.lblTelefonoError.Location = New System.Drawing.Point(87, 149)
-        Me.lblTelefonoError.Name = "lblTelefonoError"
-        Me.lblTelefonoError.Size = New System.Drawing.Size(24, 12)
-        Me.lblTelefonoError.TabIndex = 119
-        Me.lblTelefonoError.Text = "error"
-        Me.lblTelefonoError.Visible = False
-        '
-        'lblProvinciaError
-        '
-        Me.lblProvinciaError.AutoSize = True
-        Me.lblProvinciaError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblProvinciaError.ForeColor = System.Drawing.Color.Red
-        Me.lblProvinciaError.Location = New System.Drawing.Point(87, 201)
-        Me.lblProvinciaError.Name = "lblProvinciaError"
-        Me.lblProvinciaError.Size = New System.Drawing.Size(24, 12)
-        Me.lblProvinciaError.TabIndex = 120
-        Me.lblProvinciaError.Text = "error"
-        Me.lblProvinciaError.Visible = False
-        '
-        'lblLocalidadError
-        '
-        Me.lblLocalidadError.AutoSize = True
-        Me.lblLocalidadError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLocalidadError.ForeColor = System.Drawing.Color.Red
-        Me.lblLocalidadError.Location = New System.Drawing.Point(87, 254)
-        Me.lblLocalidadError.Name = "lblLocalidadError"
-        Me.lblLocalidadError.Size = New System.Drawing.Size(24, 12)
-        Me.lblLocalidadError.TabIndex = 121
-        Me.lblLocalidadError.Text = "error"
-        Me.lblLocalidadError.Visible = False
-        '
         'frmAMBodega
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(376, 329)
         Me.Controls.Add(Me.grboxBodega)
+        Me.MaximizeBox = False
         Me.Name = "frmAMBodega"
+        Me.ShowIcon = False
+        Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Bodega"
         Me.grboxBodega.ResumeLayout(False)
         Me.grboxBodega.PerformLayout()

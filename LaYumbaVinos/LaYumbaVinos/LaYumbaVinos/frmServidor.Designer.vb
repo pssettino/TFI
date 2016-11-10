@@ -90,6 +90,7 @@ Partial Class frmServidor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(449, 153)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnCancelar)
@@ -97,8 +98,11 @@ Partial Class frmServidor
         Me.Controls.Add(Me.lblServidorError)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtServidor)
+        Me.MaximizeBox = False
         Me.Name = "frmServidor"
-        Me.Text = "frmServidor"
+        Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Servidor"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

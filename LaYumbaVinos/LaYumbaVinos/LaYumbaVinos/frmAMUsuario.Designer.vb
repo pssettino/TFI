@@ -23,6 +23,12 @@ Partial Class frmAMUsuario
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblEmailError = New System.Windows.Forms.Label()
+        Me.lblDniError = New System.Windows.Forms.Label()
+        Me.lblNombreError = New System.Windows.Forms.Label()
+        Me.lblApellidoError = New System.Windows.Forms.Label()
+        Me.lblNombreUsuarioError = New System.Windows.Forms.Label()
+        Me.lblcontraseña = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnRestablecer = New System.Windows.Forms.Button()
         Me.lblusuario = New System.Windows.Forms.Label()
@@ -50,17 +56,11 @@ Partial Class frmAMUsuario
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.lblPatentes = New System.Windows.Forms.Label()
         Me.lblFamilias = New System.Windows.Forms.Label()
-        Me.lblcontraseña = New System.Windows.Forms.Label()
-        Me.lblNombreUsuarioError = New System.Windows.Forms.Label()
-        Me.lblApellidoError = New System.Windows.Forms.Label()
-        Me.lblNombreError = New System.Windows.Forms.Label()
-        Me.lblDniError = New System.Windows.Forms.Label()
-        Me.lblEmailError = New System.Windows.Forms.Label()
-        Me.GroupBox1.SuspendLayout
-        Me.GroupBox2.SuspendLayout
-        CType(Me.dgPatentes,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.dgFamilias,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.SuspendLayout
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        CType(Me.dgPatentes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgFamilias, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
         '
         'GroupBox1
         '
@@ -86,12 +86,82 @@ Partial Class frmAMUsuario
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(599, 132)
         Me.GroupBox1.TabIndex = 0
-        Me.GroupBox1.TabStop = false
+        Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Usuario"
+        '
+        'lblEmailError
+        '
+        Me.lblEmailError.AutoSize = True
+        Me.lblEmailError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEmailError.ForeColor = System.Drawing.Color.Red
+        Me.lblEmailError.Location = New System.Drawing.Point(378, 115)
+        Me.lblEmailError.Name = "lblEmailError"
+        Me.lblEmailError.Size = New System.Drawing.Size(24, 12)
+        Me.lblEmailError.TabIndex = 125
+        Me.lblEmailError.Text = "error"
+        Me.lblEmailError.Visible = False
+        '
+        'lblDniError
+        '
+        Me.lblDniError.AutoSize = True
+        Me.lblDniError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDniError.ForeColor = System.Drawing.Color.Red
+        Me.lblDniError.Location = New System.Drawing.Point(378, 79)
+        Me.lblDniError.Name = "lblDniError"
+        Me.lblDniError.Size = New System.Drawing.Size(24, 12)
+        Me.lblDniError.TabIndex = 124
+        Me.lblDniError.Text = "error"
+        Me.lblDniError.Visible = False
+        '
+        'lblNombreError
+        '
+        Me.lblNombreError.AutoSize = True
+        Me.lblNombreError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreError.ForeColor = System.Drawing.Color.Red
+        Me.lblNombreError.Location = New System.Drawing.Point(60, 115)
+        Me.lblNombreError.Name = "lblNombreError"
+        Me.lblNombreError.Size = New System.Drawing.Size(24, 12)
+        Me.lblNombreError.TabIndex = 123
+        Me.lblNombreError.Text = "error"
+        Me.lblNombreError.Visible = False
+        '
+        'lblApellidoError
+        '
+        Me.lblApellidoError.AutoSize = True
+        Me.lblApellidoError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblApellidoError.ForeColor = System.Drawing.Color.Red
+        Me.lblApellidoError.Location = New System.Drawing.Point(60, 79)
+        Me.lblApellidoError.Name = "lblApellidoError"
+        Me.lblApellidoError.Size = New System.Drawing.Size(24, 12)
+        Me.lblApellidoError.TabIndex = 122
+        Me.lblApellidoError.Text = "error"
+        Me.lblApellidoError.Visible = False
+        '
+        'lblNombreUsuarioError
+        '
+        Me.lblNombreUsuarioError.AutoSize = True
+        Me.lblNombreUsuarioError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreUsuarioError.ForeColor = System.Drawing.Color.Red
+        Me.lblNombreUsuarioError.Location = New System.Drawing.Point(60, 41)
+        Me.lblNombreUsuarioError.Name = "lblNombreUsuarioError"
+        Me.lblNombreUsuarioError.Size = New System.Drawing.Size(24, 12)
+        Me.lblNombreUsuarioError.TabIndex = 121
+        Me.lblNombreUsuarioError.Text = "error"
+        Me.lblNombreUsuarioError.Visible = False
+        '
+        'lblcontraseña
+        '
+        Me.lblcontraseña.AutoSize = True
+        Me.lblcontraseña.Location = New System.Drawing.Point(382, 41)
+        Me.lblcontraseña.Name = "lblcontraseña"
+        Me.lblcontraseña.Size = New System.Drawing.Size(70, 13)
+        Me.lblcontraseña.TabIndex = 120
+        Me.lblcontraseña.Text = "lblcontraseña"
+        Me.lblcontraseña.Visible = False
         '
         'Label2
         '
-        Me.Label2.AutoSize = true
+        Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(318, 22)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(61, 13)
@@ -108,7 +178,7 @@ Partial Class frmAMUsuario
         '
         'lblusuario
         '
-        Me.lblusuario.AutoSize = true
+        Me.lblusuario.AutoSize = True
         Me.lblusuario.Location = New System.Drawing.Point(12, 22)
         Me.lblusuario.Name = "lblusuario"
         Me.lblusuario.Size = New System.Drawing.Size(43, 13)
@@ -148,7 +218,7 @@ Partial Class frmAMUsuario
         '
         'lblNombre
         '
-        Me.lblNombre.AutoSize = true
+        Me.lblNombre.AutoSize = True
         Me.lblNombre.Location = New System.Drawing.Point(12, 95)
         Me.lblNombre.Name = "lblNombre"
         Me.lblNombre.Size = New System.Drawing.Size(44, 13)
@@ -158,7 +228,7 @@ Partial Class frmAMUsuario
         '
         'lblApellido
         '
-        Me.lblApellido.AutoSize = true
+        Me.lblApellido.AutoSize = True
         Me.lblApellido.Location = New System.Drawing.Point(12, 59)
         Me.lblApellido.Name = "lblApellido"
         Me.lblApellido.Size = New System.Drawing.Size(44, 13)
@@ -168,7 +238,7 @@ Partial Class frmAMUsuario
         '
         'lblDni
         '
-        Me.lblDni.AutoSize = true
+        Me.lblDni.AutoSize = True
         Me.lblDni.Location = New System.Drawing.Point(348, 59)
         Me.lblDni.Name = "lblDni"
         Me.lblDni.Size = New System.Drawing.Size(26, 13)
@@ -178,7 +248,7 @@ Partial Class frmAMUsuario
         '
         'Label12
         '
-        Me.Label12.AutoSize = true
+        Me.Label12.AutoSize = True
         Me.Label12.Location = New System.Drawing.Point(338, 95)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(36, 13)
@@ -206,12 +276,12 @@ Partial Class frmAMUsuario
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(597, 409)
         Me.GroupBox2.TabIndex = 1
-        Me.GroupBox2.TabStop = false
+        Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Familias y Patentes"
         '
         'Label1
         '
-        Me.Label1.AutoSize = true
+        Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(12, 30)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 13)
@@ -220,35 +290,35 @@ Partial Class frmAMUsuario
         '
         'dgPatentes
         '
-        Me.dgPatentes.AllowUserToAddRows = false
-        Me.dgPatentes.AllowUserToDeleteRows = false
+        Me.dgPatentes.AllowUserToAddRows = False
+        Me.dgPatentes.AllowUserToDeleteRows = False
         Me.dgPatentes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgPatentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgPatentes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.dgAsignarPatente, Me.dgPatenteNegada, Me.patente_id})
         Me.dgPatentes.Location = New System.Drawing.Point(62, 169)
         Me.dgPatentes.Margin = New System.Windows.Forms.Padding(2)
         Me.dgPatentes.Name = "dgPatentes"
-        Me.dgPatentes.RowHeadersVisible = false
+        Me.dgPatentes.RowHeadersVisible = False
         Me.dgPatentes.RowTemplate.Height = 24
         Me.dgPatentes.Size = New System.Drawing.Size(519, 186)
         Me.dgPatentes.TabIndex = 102
         '
         'Nombre
         '
-        Me.Nombre.FillWeight = 140!
+        Me.Nombre.FillWeight = 140.0!
         Me.Nombre.HeaderText = "Nombre"
         Me.Nombre.Name = "Nombre"
-        Me.Nombre.ReadOnly = true
+        Me.Nombre.ReadOnly = True
         '
         'dgAsignarPatente
         '
-        Me.dgAsignarPatente.FillWeight = 70!
+        Me.dgAsignarPatente.FillWeight = 70.0!
         Me.dgAsignarPatente.HeaderText = "Asignada"
         Me.dgAsignarPatente.Name = "dgAsignarPatente"
         '
         'dgPatenteNegada
         '
-        Me.dgPatenteNegada.FillWeight = 70!
+        Me.dgPatenteNegada.FillWeight = 70.0!
         Me.dgPatenteNegada.HeaderText = "Negada"
         Me.dgPatenteNegada.Name = "dgPatenteNegada"
         '
@@ -256,39 +326,39 @@ Partial Class frmAMUsuario
         '
         Me.patente_id.HeaderText = ""
         Me.patente_id.Name = "patente_id"
-        Me.patente_id.Visible = false
+        Me.patente_id.Visible = False
         '
         'dgFamilias
         '
-        Me.dgFamilias.AllowUserToAddRows = false
-        Me.dgFamilias.AllowUserToDeleteRows = false
+        Me.dgFamilias.AllowUserToAddRows = False
+        Me.dgFamilias.AllowUserToDeleteRows = False
         Me.dgFamilias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgFamilias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgFamilias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre_Familia, Me.familia_id, Me.dgAsignarFamilia})
         Me.dgFamilias.Location = New System.Drawing.Point(62, 30)
         Me.dgFamilias.Margin = New System.Windows.Forms.Padding(2)
         Me.dgFamilias.Name = "dgFamilias"
-        Me.dgFamilias.RowHeadersVisible = false
+        Me.dgFamilias.RowHeadersVisible = False
         Me.dgFamilias.RowTemplate.Height = 24
         Me.dgFamilias.Size = New System.Drawing.Size(519, 122)
         Me.dgFamilias.TabIndex = 103
         '
         'Nombre_Familia
         '
-        Me.Nombre_Familia.FillWeight = 140!
+        Me.Nombre_Familia.FillWeight = 140.0!
         Me.Nombre_Familia.HeaderText = "Nombre"
         Me.Nombre_Familia.Name = "Nombre_Familia"
-        Me.Nombre_Familia.ReadOnly = true
+        Me.Nombre_Familia.ReadOnly = True
         '
         'familia_id
         '
         Me.familia_id.HeaderText = ""
         Me.familia_id.Name = "familia_id"
-        Me.familia_id.Visible = false
+        Me.familia_id.Visible = False
         '
         'dgAsignarFamilia
         '
-        Me.dgAsignarFamilia.FillWeight = 140!
+        Me.dgAsignarFamilia.FillWeight = 140.0!
         Me.dgAsignarFamilia.HeaderText = "Asignada"
         Me.dgAsignarFamilia.Name = "dgAsignarFamilia"
         '
@@ -311,7 +381,7 @@ Partial Class frmAMUsuario
         '
         'lblPatentes
         '
-        Me.lblPatentes.AutoSize = true
+        Me.lblPatentes.AutoSize = True
         Me.lblPatentes.Location = New System.Drawing.Point(6, 169)
         Me.lblPatentes.Name = "lblPatentes"
         Me.lblPatentes.Size = New System.Drawing.Size(49, 13)
@@ -320,91 +390,25 @@ Partial Class frmAMUsuario
         '
         'lblFamilias
         '
-        Me.lblFamilias.AutoSize = true
+        Me.lblFamilias.AutoSize = True
         Me.lblFamilias.Location = New System.Drawing.Point(40, -58)
         Me.lblFamilias.Name = "lblFamilias"
         Me.lblFamilias.Size = New System.Drawing.Size(44, 13)
         Me.lblFamilias.TabIndex = 101
         Me.lblFamilias.Text = "Familias"
         '
-        'lblcontraseña
-        '
-        Me.lblcontraseña.AutoSize = true
-        Me.lblcontraseña.Location = New System.Drawing.Point(382, 41)
-        Me.lblcontraseña.Name = "lblcontraseña"
-        Me.lblcontraseña.Size = New System.Drawing.Size(70, 13)
-        Me.lblcontraseña.TabIndex = 120
-        Me.lblcontraseña.Text = "lblcontraseña"
-        Me.lblcontraseña.Visible = false
-        '
-        'lblNombreUsuarioError
-        '
-        Me.lblNombreUsuarioError.AutoSize = true
-        Me.lblNombreUsuarioError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblNombreUsuarioError.ForeColor = System.Drawing.Color.Red
-        Me.lblNombreUsuarioError.Location = New System.Drawing.Point(60, 41)
-        Me.lblNombreUsuarioError.Name = "lblNombreUsuarioError"
-        Me.lblNombreUsuarioError.Size = New System.Drawing.Size(24, 12)
-        Me.lblNombreUsuarioError.TabIndex = 121
-        Me.lblNombreUsuarioError.Text = "error"
-        Me.lblNombreUsuarioError.Visible = false
-        '
-        'lblApellidoError
-        '
-        Me.lblApellidoError.AutoSize = true
-        Me.lblApellidoError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblApellidoError.ForeColor = System.Drawing.Color.Red
-        Me.lblApellidoError.Location = New System.Drawing.Point(60, 79)
-        Me.lblApellidoError.Name = "lblApellidoError"
-        Me.lblApellidoError.Size = New System.Drawing.Size(24, 12)
-        Me.lblApellidoError.TabIndex = 122
-        Me.lblApellidoError.Text = "error"
-        Me.lblApellidoError.Visible = false
-        '
-        'lblNombreError
-        '
-        Me.lblNombreError.AutoSize = true
-        Me.lblNombreError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblNombreError.ForeColor = System.Drawing.Color.Red
-        Me.lblNombreError.Location = New System.Drawing.Point(60, 115)
-        Me.lblNombreError.Name = "lblNombreError"
-        Me.lblNombreError.Size = New System.Drawing.Size(24, 12)
-        Me.lblNombreError.TabIndex = 123
-        Me.lblNombreError.Text = "error"
-        Me.lblNombreError.Visible = false
-        '
-        'lblDniError
-        '
-        Me.lblDniError.AutoSize = true
-        Me.lblDniError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblDniError.ForeColor = System.Drawing.Color.Red
-        Me.lblDniError.Location = New System.Drawing.Point(378, 79)
-        Me.lblDniError.Name = "lblDniError"
-        Me.lblDniError.Size = New System.Drawing.Size(24, 12)
-        Me.lblDniError.TabIndex = 124
-        Me.lblDniError.Text = "error"
-        Me.lblDniError.Visible = false
-        '
-        'lblEmailError
-        '
-        Me.lblEmailError.AutoSize = true
-        Me.lblEmailError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblEmailError.ForeColor = System.Drawing.Color.Red
-        Me.lblEmailError.Location = New System.Drawing.Point(378, 115)
-        Me.lblEmailError.Name = "lblEmailError"
-        Me.lblEmailError.Size = New System.Drawing.Size(24, 12)
-        Me.lblEmailError.TabIndex = 125
-        Me.lblEmailError.Text = "error"
-        Me.lblEmailError.Visible = false
-        '
         'frmAMUsuario
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(622, 572)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.MaximizeBox = False
         Me.Name = "frmAMUsuario"
+        Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Usuario"
         Me.GroupBox1.ResumeLayout(false)
         Me.GroupBox1.PerformLayout

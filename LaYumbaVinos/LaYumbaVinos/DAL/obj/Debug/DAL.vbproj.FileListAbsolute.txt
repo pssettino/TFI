@@ -10,3 +10,4 @@ C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\DAL\obj\D
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\DAL\obj\Debug\DAL.dll
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\DAL\obj\Debug\DAL.xml
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\DAL\obj\Debug\DAL.pdb
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\DAL\bin\Debug\SevenZipSharp.dll

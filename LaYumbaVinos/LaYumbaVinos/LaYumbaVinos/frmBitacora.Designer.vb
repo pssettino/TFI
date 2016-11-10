@@ -233,10 +233,14 @@ Partial Class frmBitacora
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(925, 513)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox)
+        Me.MaximizeBox = False
         Me.Name = "frmBitacora"
+        Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Bitácora"
         CType(Me.dgBitacora, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox.ResumeLayout(False)

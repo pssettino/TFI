@@ -108,9 +108,13 @@ Partial Class frmAMRecepcionVino
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(377, 184)
         Me.Controls.Add(Me.grboxRecepcionVinos)
+        Me.MaximizeBox = False
         Me.Name = "frmAMRecepcionVino"
+        Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Recepcion de Vinos"
         CType(Me.txtCantidad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grboxRecepcionVinos.ResumeLayout(False)

@@ -23,6 +23,8 @@ Partial Class frmAMFamilia
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox = New System.Windows.Forms.GroupBox()
+        Me.lblDescripcionError = New System.Windows.Forms.Label()
+        Me.lblNombreError = New System.Windows.Forms.Label()
         Me.dgPatentes = New System.Windows.Forms.DataGridView()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgAsignarPatente = New System.Windows.Forms.DataGridViewCheckBoxColumn()
@@ -34,8 +36,6 @@ Partial Class frmAMFamilia
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
-        Me.lblNombreError = New System.Windows.Forms.Label()
-        Me.lblDescripcionError = New System.Windows.Forms.Label()
         Me.GroupBox.SuspendLayout()
         CType(Me.dgPatentes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -57,6 +57,30 @@ Partial Class frmAMFamilia
         Me.GroupBox.Size = New System.Drawing.Size(438, 364)
         Me.GroupBox.TabIndex = 4
         Me.GroupBox.TabStop = False
+        '
+        'lblDescripcionError
+        '
+        Me.lblDescripcionError.AutoSize = True
+        Me.lblDescripcionError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDescripcionError.ForeColor = System.Drawing.Color.Red
+        Me.lblDescripcionError.Location = New System.Drawing.Point(80, 84)
+        Me.lblDescripcionError.Name = "lblDescripcionError"
+        Me.lblDescripcionError.Size = New System.Drawing.Size(24, 12)
+        Me.lblDescripcionError.TabIndex = 117
+        Me.lblDescripcionError.Text = "error"
+        Me.lblDescripcionError.Visible = False
+        '
+        'lblNombreError
+        '
+        Me.lblNombreError.AutoSize = True
+        Me.lblNombreError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreError.ForeColor = System.Drawing.Color.Red
+        Me.lblNombreError.Location = New System.Drawing.Point(80, 42)
+        Me.lblNombreError.Name = "lblNombreError"
+        Me.lblNombreError.Size = New System.Drawing.Size(24, 12)
+        Me.lblNombreError.TabIndex = 116
+        Me.lblNombreError.Text = "error"
+        Me.lblNombreError.Visible = False
         '
         'dgPatentes
         '
@@ -150,37 +174,17 @@ Partial Class frmAMFamilia
         Me.txtNombre.Size = New System.Drawing.Size(344, 20)
         Me.txtNombre.TabIndex = 0
         '
-        'lblNombreError
-        '
-        Me.lblNombreError.AutoSize = True
-        Me.lblNombreError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombreError.ForeColor = System.Drawing.Color.Red
-        Me.lblNombreError.Location = New System.Drawing.Point(80, 42)
-        Me.lblNombreError.Name = "lblNombreError"
-        Me.lblNombreError.Size = New System.Drawing.Size(24, 12)
-        Me.lblNombreError.TabIndex = 116
-        Me.lblNombreError.Text = "error"
-        Me.lblNombreError.Visible = False
-        '
-        'lblDescripcionError
-        '
-        Me.lblDescripcionError.AutoSize = True
-        Me.lblDescripcionError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescripcionError.ForeColor = System.Drawing.Color.Red
-        Me.lblDescripcionError.Location = New System.Drawing.Point(80, 84)
-        Me.lblDescripcionError.Name = "lblDescripcionError"
-        Me.lblDescripcionError.Size = New System.Drawing.Size(24, 12)
-        Me.lblDescripcionError.TabIndex = 117
-        Me.lblDescripcionError.Text = "error"
-        Me.lblDescripcionError.Visible = False
-        '
         'frmAMFamilia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(456, 381)
         Me.Controls.Add(Me.GroupBox)
+        Me.MaximizeBox = False
         Me.Name = "frmAMFamilia"
+        Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Familia"
         Me.GroupBox.ResumeLayout(False)
         Me.GroupBox.PerformLayout()

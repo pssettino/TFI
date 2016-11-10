@@ -141,9 +141,13 @@ Partial Class frmUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(785, 396)
         Me.Controls.Add(Me.GroupBox)
+        Me.MaximizeBox = False
         Me.Name = "frmUsuarios"
+        Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Usuarios"
         CType(Me.dgUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox.ResumeLayout(False)

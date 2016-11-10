@@ -185,10 +185,14 @@ Partial Class frmMenuPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(954, 481)
         Me.Controls.Add(Me.mnsMenuPrincipal)
         Me.IsMdiContainer = True
+        Me.MaximizeBox = False
         Me.Name = "frmMenuPrincipal"
+        Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "La Yumba Vinos"
         Me.mnsMenuPrincipal.ResumeLayout(False)
         Me.mnsMenuPrincipal.PerformLayout()

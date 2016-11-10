@@ -348,9 +348,12 @@ Partial Class frmAMCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(393, 365)
         Me.Controls.Add(Me.GroupBox_FrmCli)
         Me.Name = "frmAMCliente"
+        Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Cliente"
         Me.GroupBox_FrmCli.ResumeLayout(False)
         Me.GroupBox_FrmCli.PerformLayout()

@@ -78,7 +78,7 @@ Public Class DVH
                 End If
             Next
         Catch ex As Exception
-            Throw ex
+            MsgBox("Error inesperado, contacte al administrador.")
         End Try
         If returnValue Then
             Return True

@@ -23,12 +23,20 @@ Public Class Traduccion
         If IdiomaBE IsNot Nothing Then
             ' CAMBIO EL TEXTO DE LA VENTANA
             Form.Text = TraducirTexto(Form.Text)
-            If Form.MainMenuStrip IsNot Nothing Then
+            If Form.IsMdiContainer Then
                 ' CAMBIO LOS TEXTOS DEL MENU
-                For Each MenuStrip In Form.MainMenuStrip.Items
+                Dim mStrinp As MenuStrip = Form.Controls(0)
+                For Each MenuStrip In mStrinp.Items
                     MenuStrip.Text = TraducirTexto(MenuStrip.Text)
                     For i = 0 To MenuStrip.DropDown.Items.Count - 1
-                        MenuStrip.DropDown.Items(i).Text = TraducirTexto(MenuStrip.DropDown.Items(i).Text)
+                        Dim subMenu As ToolStripMenuItem = DirectCast(MenuStrip.DropDown.Items(i), System.Windows.Forms.ToolStripMenuItem)
+                        If subMenu.HasDropDown Then
+                            For j = 0 To subMenu.DropDown.Items.Count - 1
+                                subMenu.DropDown.Items(j).Text = TraducirTexto(subMenu.DropDown.Items(j).Text)
+                            Next
+                        Else
+                            MenuStrip.DropDown.Items(i).Text = TraducirTexto(MenuStrip.DropDown.Items(i).Text)
+                        End If
                     Next
                 Next
             End If

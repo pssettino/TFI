@@ -23,6 +23,9 @@ Partial Class frmAMVino
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.grboxVino = New System.Windows.Forms.GroupBox()
+        Me.lblPrecioError = New System.Windows.Forms.Label()
+        Me.lblBodegaError = New System.Windows.Forms.Label()
+        Me.lblDescripcionError = New System.Windows.Forms.Label()
         Me.cmbBodega = New System.Windows.Forms.ComboBox()
         Me.txtCantidad = New System.Windows.Forms.NumericUpDown()
         Me.btnCancelar = New System.Windows.Forms.Button()
@@ -33,9 +36,6 @@ Partial Class frmAMVino
         Me.lblDescripcion = New System.Windows.Forms.Label()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
-        Me.lblDescripcionError = New System.Windows.Forms.Label()
-        Me.lblBodegaError = New System.Windows.Forms.Label()
-        Me.lblPrecioError = New System.Windows.Forms.Label()
         Me.grboxVino.SuspendLayout()
         CType(Me.txtCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -61,6 +61,42 @@ Partial Class frmAMVino
         Me.grboxVino.TabIndex = 9
         Me.grboxVino.TabStop = False
         Me.grboxVino.Text = "Vino"
+        '
+        'lblPrecioError
+        '
+        Me.lblPrecioError.AutoSize = True
+        Me.lblPrecioError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrecioError.ForeColor = System.Drawing.Color.Red
+        Me.lblPrecioError.Location = New System.Drawing.Point(82, 169)
+        Me.lblPrecioError.Name = "lblPrecioError"
+        Me.lblPrecioError.Size = New System.Drawing.Size(24, 12)
+        Me.lblPrecioError.TabIndex = 119
+        Me.lblPrecioError.Text = "error"
+        Me.lblPrecioError.Visible = False
+        '
+        'lblBodegaError
+        '
+        Me.lblBodegaError.AutoSize = True
+        Me.lblBodegaError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBodegaError.ForeColor = System.Drawing.Color.Red
+        Me.lblBodegaError.Location = New System.Drawing.Point(82, 90)
+        Me.lblBodegaError.Name = "lblBodegaError"
+        Me.lblBodegaError.Size = New System.Drawing.Size(24, 12)
+        Me.lblBodegaError.TabIndex = 117
+        Me.lblBodegaError.Text = "error"
+        Me.lblBodegaError.Visible = False
+        '
+        'lblDescripcionError
+        '
+        Me.lblDescripcionError.AutoSize = True
+        Me.lblDescripcionError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDescripcionError.ForeColor = System.Drawing.Color.Red
+        Me.lblDescripcionError.Location = New System.Drawing.Point(82, 51)
+        Me.lblDescripcionError.Name = "lblDescripcionError"
+        Me.lblDescripcionError.Size = New System.Drawing.Size(24, 12)
+        Me.lblDescripcionError.TabIndex = 116
+        Me.lblDescripcionError.Text = "error"
+        Me.lblDescripcionError.Visible = False
         '
         'cmbBodega
         '
@@ -153,49 +189,17 @@ Partial Class frmAMVino
         Me.txtDescripcion.Size = New System.Drawing.Size(241, 20)
         Me.txtDescripcion.TabIndex = 0
         '
-        'lblDescripcionError
-        '
-        Me.lblDescripcionError.AutoSize = True
-        Me.lblDescripcionError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescripcionError.ForeColor = System.Drawing.Color.Red
-        Me.lblDescripcionError.Location = New System.Drawing.Point(82, 51)
-        Me.lblDescripcionError.Name = "lblDescripcionError"
-        Me.lblDescripcionError.Size = New System.Drawing.Size(24, 12)
-        Me.lblDescripcionError.TabIndex = 116
-        Me.lblDescripcionError.Text = "error"
-        Me.lblDescripcionError.Visible = False
-        '
-        'lblBodegaError
-        '
-        Me.lblBodegaError.AutoSize = True
-        Me.lblBodegaError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBodegaError.ForeColor = System.Drawing.Color.Red
-        Me.lblBodegaError.Location = New System.Drawing.Point(82, 90)
-        Me.lblBodegaError.Name = "lblBodegaError"
-        Me.lblBodegaError.Size = New System.Drawing.Size(24, 12)
-        Me.lblBodegaError.TabIndex = 117
-        Me.lblBodegaError.Text = "error"
-        Me.lblBodegaError.Visible = False
-        '
-        'lblPrecioError
-        '
-        Me.lblPrecioError.AutoSize = True
-        Me.lblPrecioError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrecioError.ForeColor = System.Drawing.Color.Red
-        Me.lblPrecioError.Location = New System.Drawing.Point(82, 169)
-        Me.lblPrecioError.Name = "lblPrecioError"
-        Me.lblPrecioError.Size = New System.Drawing.Size(24, 12)
-        Me.lblPrecioError.TabIndex = 119
-        Me.lblPrecioError.Text = "error"
-        Me.lblPrecioError.Visible = False
-        '
         'frmAMVino
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(374, 266)
         Me.Controls.Add(Me.grboxVino)
+        Me.MaximizeBox = False
         Me.Name = "frmAMVino"
+        Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Vino"
         Me.grboxVino.ResumeLayout(False)
         Me.grboxVino.PerformLayout()

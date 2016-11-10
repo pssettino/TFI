@@ -35,7 +35,7 @@ Public Class Backup
         Catch ex As Exception
             File.Move(tempDir & "\" & inputFileName, BackupBE.ubicacion)
             Directory.Delete(tempDir, True)
-            Throw New Exception(ex.Message)
+            Throw New BLLException(ex.Message)
         End Try
         Directory.Delete(tempDir, True)
     End Sub

@@ -184,9 +184,13 @@ Partial Class frmCambiarContrasena
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(454, 212)
         Me.Controls.Add(Me.GroupBox)
+        Me.MaximizeBox = False
         Me.Name = "frmCambiarContrasena"
+        Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Cambiar Contraseña"
         Me.GroupBox.ResumeLayout(False)
         Me.GroupBox.PerformLayout()

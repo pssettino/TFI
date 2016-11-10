@@ -136,10 +136,14 @@ Partial Class frmRecepcionVinos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(504, 409)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.MaximizeBox = False
         Me.Name = "frmRecepcionVinos"
+        Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Recepción de Vinos"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

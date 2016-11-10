@@ -8,22 +8,24 @@ Public Class DVV
     Dim SqlConn As New SqlClient.SqlConnection With {.ConnectionString = Conexion.getConexionLaYumba}
 
     Public Function GetDigito(ByVal DigitoVerificadorVertical As BE.DVV) As String
+        Dim SqlConn As New SqlClient.SqlConnection With {.ConnectionString = Conexion.getConexionLaYumba}
         Dim SqlComm As New SqlClient.SqlCommand
 
         Dim dr As SqlClient.SqlDataReader
         Dim dt As New DataTable
 
-        sqlConn.Open()
+        SqlConn.Open()
         SqlComm.CommandText = String.Format("SELECT dvv FROM DVV WHERE nombre = '" + DigitoVerificadorVertical.ObtenerTabla.ToString) + "'"
-        SqlComm.Connection = sqlConn
+        SqlComm.Connection = SqlConn
         dr = SqlComm.ExecuteReader()
         dt.Load(dr)
-        sqlConn.Close()
+        SqlConn.Close()
 
         Return dt.Rows(0).Item(0).ToString
     End Function
 
     Public Function GetRegistros(ByVal DigitoVerificadorVertical As BE.DVV) As DataTable
+        Dim SqlConn As New SqlClient.SqlConnection With {.ConnectionString = Conexion.getConexionLaYumba}
         Dim SqlComm As New SqlClient.SqlCommand
 
         Dim dr As SqlClient.SqlDataReader
@@ -40,6 +42,7 @@ Public Class DVV
     End Function
 
     Public Sub SetDigito(ByVal DigitoVerificadorVertical As BE.DVV, ByVal dvv As String)
+        Dim SqlConn As New SqlClient.SqlConnection With {.ConnectionString = Conexion.getConexionLaYumba}
         Dim SqlComm As New SqlClient.SqlCommand
 
         SqlConn.Open()

@@ -122,9 +122,13 @@ Partial Class frmBackup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(456, 185)
         Me.Controls.Add(Me.GroupBox)
+        Me.MaximizeBox = False
         Me.Name = "frmBackup"
+        Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Backup"
         Me.GroupBox.ResumeLayout(False)
         Me.GroupBox.PerformLayout()

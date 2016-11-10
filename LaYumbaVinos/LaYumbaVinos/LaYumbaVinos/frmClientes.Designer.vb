@@ -184,10 +184,13 @@ Partial Class frmClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(813, 441)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.MaximizeBox = False
         Me.Name = "frmClientes"
+        Me.ShowIcon = False
         Me.Text = "Clientes"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

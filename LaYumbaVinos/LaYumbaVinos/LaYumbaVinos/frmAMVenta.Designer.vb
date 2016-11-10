@@ -50,7 +50,6 @@ Partial Class frmAMVenta
         Me.txtImporteTotal = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.dgVinosPorVenta = New System.Windows.Forms.DataGridView()
-        Me.btnAceptar = New System.Windows.Forms.Button()
         Me.venta_vino_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NroVino = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Vino = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -58,6 +57,7 @@ Partial Class frmAMVenta
         Me.PrecioVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gvBtnEliminarVino = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Eliminado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnAceptar = New System.Windows.Forms.Button()
         CType(Me.txtCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -356,14 +356,6 @@ Partial Class frmAMVenta
         Me.dgVinosPorVenta.Size = New System.Drawing.Size(662, 193)
         Me.dgVinosPorVenta.TabIndex = 120
         '
-        'btnAceptar
-        '
-        Me.btnAceptar.Location = New System.Drawing.Point(417, 358)
-        Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(127, 27)
-        Me.btnAceptar.TabIndex = 119
-        Me.btnAceptar.Text = "&Aceptar"
-        '
         'venta_vino_id
         '
         Me.venta_vino_id.HeaderText = ""
@@ -417,14 +409,26 @@ Partial Class frmAMVenta
         Me.Eliminado.ReadOnly = True
         Me.Eliminado.Visible = False
         '
+        'btnAceptar
+        '
+        Me.btnAceptar.Location = New System.Drawing.Point(417, 358)
+        Me.btnAceptar.Name = "btnAceptar"
+        Me.btnAceptar.Size = New System.Drawing.Size(127, 27)
+        Me.btnAceptar.TabIndex = 119
+        Me.btnAceptar.Text = "&Aceptar"
+        '
         'frmAMVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(715, 512)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.MaximizeBox = False
         Me.Name = "frmAMVenta"
+        Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Ventas"
         CType(Me.txtCantidad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)

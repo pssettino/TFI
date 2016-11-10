@@ -123,10 +123,14 @@ Partial Class frmFamilias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(549, 256)
         Me.Controls.Add(Me.GroupBox_ListFam)
+        Me.MaximizeBox = False
         Me.Name = "frmFamilias"
-        Me.Text = "frmFamilias"
+        Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.Text = "Familias"
         Me.GroupBox_ListFam.ResumeLayout(False)
         CType(Me.dgFamilias, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

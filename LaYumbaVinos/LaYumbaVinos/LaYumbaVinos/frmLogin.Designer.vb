@@ -115,6 +115,7 @@ Partial Class frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(496, 222)
         Me.Controls.Add(Me.cmbIdioma)
         Me.Controls.Add(Me.btnCancelar)
@@ -125,7 +126,10 @@ Partial Class frmLogin
         Me.Controls.Add(Me.lblcontraseña)
         Me.Controls.Add(Me.lblusuario)
         Me.Controls.Add(Me.PictureBox1)
+        Me.MaximizeBox = False
         Me.Name = "frmLogin"
+        Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
