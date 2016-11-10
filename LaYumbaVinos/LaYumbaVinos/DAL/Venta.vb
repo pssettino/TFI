@@ -319,6 +319,8 @@ Public Class Venta
             Throw ex
         End Try
         Return ventas(0)
+
+
     End Function
 
 

@@ -16,23 +16,28 @@
 
 
     Private Sub frmAMVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MenuUI = Me.Owner
-        TraduccionBLL = New BLL.Traduccion(MenuUI.GetIdioma)
-        Dim PatenteBE As New BE.Patente
-        PatenteBE.Nombre = "Venta"
-        PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
-        If (BLL.Usuario.GetInstance.VerificarPatente(MenuUI.GetUsuario, PatenteBE) = False) Then
-            MsgBox(TraduccionBLL.TraducirTexto("Sus permisos han sido modificados, por favor inicie sesion nuevamente"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
-            Application.Exit()
-        End If
-        TraduccionBLL.TraducirForm(Me)
-        MostrarDatos()
-        If _id > 0 Then
-            ObtenerVinosPorVenta()
-        Else
-            txtFechaHora.Text = DateTime.Now
-            txtNroVenta.Text = BLL.Venta.GetInstance.ObtenerMaxId() + 1
-        End If
+        Try
+            MenuUI = Me.Owner
+            TraduccionBLL = New BLL.Traduccion(MenuUI.GetIdioma)
+            Dim PatenteBE As New BE.Patente
+            PatenteBE.Nombre = "Venta"
+            PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
+            If (BLL.Usuario.GetInstance.VerificarPatente(MenuUI.GetUsuario, PatenteBE) = False) Then
+                MsgBox(TraduccionBLL.TraducirTexto("Sus permisos han sido modificados, por favor inicie sesion nuevamente"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
+                Application.Exit()
+            End If
+            TraduccionBLL.TraducirForm(Me)
+            MostrarDatos()
+            If _id > 0 Then
+                ObtenerVinosPorVenta()
+            Else
+                txtFechaHora.Text = DateTime.Now
+                txtNroVenta.Text = BLL.Venta.GetInstance.ObtenerMaxId() + 1
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+       
     End Sub
 
     Public Sub MostrarDatos()
@@ -65,17 +70,19 @@
 
         If (vinoList Is Nothing) Then
             Dim ventaBE = BLL.Venta.GetInstance().ListarVentaById(venta)
-            For Each item In ventaBE.Vinos
-                Dim ventaVino As New BE.VentaVino
-                Dim n As Integer = dgVinosPorVenta.Rows.Add()
-                dgVinosPorVenta.Rows.Item(n).Cells("gvBtnEliminarVino").Value = TraduccionBLL.TraducirTexto("Quitar Vino")
-                dgVinosPorVenta.Rows.Item(n).Cells("venta_vino_id").Value = item.VentaVinoId
-                dgVinosPorVenta.Rows.Item(n).Cells("NroVino").Value = item.Vino.VinoId
-                dgVinosPorVenta.Rows.Item(n).Cells("Vino").Value = item.Vino.Descripcion
-                dgVinosPorVenta.Rows.Item(n).Cells("CantVenta").Value = SeguridadBLL.DesencriptarRSA(item.CantidadVenta)
-                dgVinosPorVenta.Rows.Item(n).Cells("PrecioVenta").Value = SeguridadBLL.DesencriptarRSA(item.PrecioVenta)
-                txtImporteTotal.Text = CDbl(txtImporteTotal.Text) + (CInt(SeguridadBLL.DesencriptarRSA(item.CantidadVenta)) * CDbl(SeguridadBLL.DesencriptarRSA(item.PrecioVenta)))
-            Next
+            If Not ventaBE Is Nothing Then
+                For Each item In ventaBE.Vinos
+                    Dim ventaVino As New BE.VentaVino
+                    Dim n As Integer = dgVinosPorVenta.Rows.Add()
+                    dgVinosPorVenta.Rows.Item(n).Cells("gvBtnEliminarVino").Value = TraduccionBLL.TraducirTexto("Quitar Vino")
+                    dgVinosPorVenta.Rows.Item(n).Cells("venta_vino_id").Value = item.VentaVinoId
+                    dgVinosPorVenta.Rows.Item(n).Cells("NroVino").Value = item.Vino.VinoId
+                    dgVinosPorVenta.Rows.Item(n).Cells("Vino").Value = item.Vino.Descripcion
+                    dgVinosPorVenta.Rows.Item(n).Cells("CantVenta").Value = SeguridadBLL.DesencriptarRSA(item.CantidadVenta)
+                    dgVinosPorVenta.Rows.Item(n).Cells("PrecioVenta").Value = SeguridadBLL.DesencriptarRSA(item.PrecioVenta)
+                    txtImporteTotal.Text = CDbl(txtImporteTotal.Text) + (CInt(SeguridadBLL.DesencriptarRSA(item.CantidadVenta)) * CDbl(SeguridadBLL.DesencriptarRSA(item.PrecioVenta)))
+                Next
+            End If
         Else
             dgVinosPorVenta.Rows.Clear()
             For Each ventaVino In vinoList
@@ -90,7 +97,7 @@
                 txtImporteTotal.Text = CDbl(txtImporteTotal.Text) + (CInt(SeguridadBLL.DesencriptarRSA(ventaVino.CantidadVenta)) * CDbl(SeguridadBLL.DesencriptarRSA(ventaVino.PrecioVenta)))
             Next
         End If
-       
+
     End Sub
 
     Dim index As Integer
@@ -108,8 +115,6 @@
         ventaVino.CantidadVenta = SeguridadBLL.EncriptarRSA(txtCantidad.Text)
         ventaVino.Venta = venta
         vinos.Add(ventaVino)
-        ' RegistrarVenta(False)
-        'ObtenerVinosPorVenta()
 
         If (txtImporteTotal.Text = "") Then
             txtImporteTotal.Text = 0
@@ -171,8 +176,11 @@
         Dim VinoStock As New BE.Vino
         Dim cantidadStock As Integer
         If operador Then
-            cantidadStock = SeguridadBLL.DesencriptarRSA(ObtenerVino.cantidad) - CInt(txtCantidad.Text)
-            VinoStock.VinoId = cmbVino.SelectedValue
+            Dim cant = ObtenerVino.Cantidad
+            If (Not cant = Nothing) Then
+                cantidadStock = SeguridadBLL.DesencriptarRSA(cant) - CInt(txtCantidad.Text)
+                VinoStock.VinoId = cmbVino.SelectedValue
+            End If
         Else
             Dim CantidadVenta As Integer = dgVinosPorVenta.CurrentRow.Cells("CantVenta").Value
             Dim id As Integer = dgVinosPorVenta.CurrentRow.Cells("NroVino").Value
@@ -249,7 +257,7 @@
         Return valido
     End Function
 
-   
+
 
     Public Sub RegistrarBitacora(evento As String, nivel As String)
         Dim SeguridadBLL As New BLL.Seguridad
@@ -262,90 +270,124 @@
 
 
     Private Sub btnAgregarVino_Click(sender As Object, e As EventArgs) Handles btnAgregarVino.Click
-        If ValidarAgregarVino() Then
-            If ValidarStockPrecio() Then
-                AgregarVinosPorVenta()
+        Try
+            If ValidarAgregarVino() Then
+                If ValidarStockPrecio() Then
+                    AgregarVinosPorVenta()
+                End If
             End If
-        End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        If ValidarVenta() Then
-            RegistrarVenta(True)
-        End If
+        Try
+            If ValidarVenta() Then
+                If _id > 0 Then
+                    RegistrarVenta(False, False)
+                Else
+                    RegistrarVenta(True)
+                End If
+
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        index = 0
-        If _id > 0 Then
-            If ValidarVenta() = False Then
-                MsgBox(TraduccionBLL.TraducirTexto("La venta ya fue generada!"), MsgBoxStyle.Critical, "Error")
+        Try
+            index = 0
+            If _id > 0 Then
+                If ValidarVenta() = False Then
+                    MsgBox(TraduccionBLL.TraducirTexto("La venta ya fue generada!"), MsgBoxStyle.Critical, "Error")
+                Else
+                    Me.DialogResult = Windows.Forms.DialogResult.OK
+                    Me.Close()
+                End If
             Else
-                Me.DialogResult = Windows.Forms.DialogResult.OK
                 Me.Close()
             End If
-        Else
-            Me.Close()
-        End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub dgVinosPorVenta_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgVinosPorVenta.CellContentClick
-        Dim id As String = Convert.ToString(dgVinosPorVenta.CurrentRow.Cells("NroVino").Value)
-        Dim eliminado As Boolean = dgVinosPorVenta.CurrentRow.Cells("Eliminado").Value
-        Dim nombreVino As String = Convert.ToString(dgVinosPorVenta.CurrentRow.Cells("Vino").Value)
-        Dim result As Integer
-        Dim venta_vino_id As String = Convert.ToString(dgVinosPorVenta.CurrentRow.Cells("venta_vino_id").Value)
+        Try
+            Dim id As String = Convert.ToString(dgVinosPorVenta.CurrentRow.Cells("NroVino").Value)
+            Dim eliminado As Boolean = dgVinosPorVenta.CurrentRow.Cells("Eliminado").Value
+            Dim nombreVino As String = Convert.ToString(dgVinosPorVenta.CurrentRow.Cells("Vino").Value)
+            Dim result As Integer
+            Dim venta_vino_id As String = Convert.ToString(dgVinosPorVenta.CurrentRow.Cells("venta_vino_id").Value)
 
-        'Dim ventaElegida = BLL.Venta.GetInstance().ListarVentaById(venta)
-        'vinos.Clear()
-        'For Each item In ventaElegida.Vinos
-        '    vinos.Add(item)
-        'Next
+            'Dim ventaElegida = BLL.Venta.GetInstance().ListarVentaById(venta)
+            'vinos.Clear()
+            'For Each item In ventaElegida.Vinos
+            '    vinos.Add(item)
+            'Next
 
 
 
-        If e.ColumnIndex = 5 Then 'Nro Columna del datagriew
-            result = MessageBox.Show("¿Esta seguro que desea sacar el vino: " & nombreVino & "?", "Vino por Venta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
-            If result = DialogResult.OK Then
+            If e.ColumnIndex = 5 Then 'Nro Columna del datagriew
+                result = MessageBox.Show("¿Esta seguro que desea sacar el vino: " & nombreVino & "?", "Vino por Venta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+                If result = DialogResult.OK Then
 
-                If vinos(e.RowIndex).VentaVinoId = venta_vino_id Then
-                    vinos.RemoveAt(e.RowIndex)
-                    'RegistrarVenta(False, True)
-                    dgVinosPorVenta.Rows.Clear()
-                    ObtenerVinosPorVenta(vinos)
+                    If vinos(e.RowIndex).VentaVinoId = venta_vino_id Then
+                        vinos.RemoveAt(e.RowIndex)
+                        RegistrarVenta(False, True)
+                        dgVinosPorVenta.Rows.Clear()
+                        ObtenerVinosPorVenta(vinos)
+                    ElseIf venta_vino_id = 0 Then
+                        vinos.RemoveAt(e.RowIndex)
+                        dgVinosPorVenta.Rows.RemoveAt(e.RowIndex)
+                    Else
+                        dgVinosPorVenta.Rows.Clear()
+                        ObtenerVinosPorVenta()
+                    End If
 
                 Else
                     dgVinosPorVenta.Rows.Clear()
                     ObtenerVinosPorVenta()
                 End If
-
-            Else
-                dgVinosPorVenta.Rows.Clear()
-                ObtenerVinosPorVenta()
             End If
-        End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub txtPrecio_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPrecio.KeyPress
-        Dim Cont As Integer
-        For i As Integer = 1 To Len(txtPrecio.Text)
-            If Mid(txtPrecio.Text, i, 1) = "," Then Cont = Cont + 1
-        Next
-        Dim Cadena = ""
-        If Cont >= 1 Then Cadena = "1234567980" Else Cadena = "1234567890,"
-        If InStr(Cadena, e.KeyChar) Then
-            e.Handled = False
-        ElseIf Char.IsControl(e.KeyChar) Then
-            e.Handled = False
-        Else
-            e.Handled = True
-        End If
+        Try
+
+            Dim Cont As Integer
+            For i As Integer = 1 To Len(txtPrecio.Text)
+                If Mid(txtPrecio.Text, i, 1) = "," Then Cont = Cont + 1
+            Next
+            Dim Cadena = ""
+            If Cont >= 1 Then Cadena = "1234567980" Else Cadena = "1234567890,"
+            If InStr(Cadena, e.KeyChar) Then
+                e.Handled = False
+            ElseIf Char.IsControl(e.KeyChar) Then
+                e.Handled = False
+            Else
+                e.Handled = True
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub cmbVino_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbVino.SelectedIndexChanged
-        txtPrecioLista.Text = ""
-        txtDisponible.Text = ""
-        txtDisponible.Text = SeguridadBLL.DesencriptarRSA(ObtenerVino.Cantidad)
-        txtPrecioLista.Text = SeguridadBLL.DesencriptarRSA(ObtenerVino.Precio)
+        Try
+
+            txtPrecioLista.Text = ""
+            txtDisponible.Text = ""
+            txtDisponible.Text = SeguridadBLL.DesencriptarRSA(ObtenerVino.Cantidad)
+            txtPrecioLista.Text = SeguridadBLL.DesencriptarRSA(ObtenerVino.Precio)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

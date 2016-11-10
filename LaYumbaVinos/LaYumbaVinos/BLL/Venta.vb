@@ -36,7 +36,7 @@ Public Class Venta
             End If
 
         Catch ex As Exception
-            Throw ex
+            Throw New BLLException("Error Inesperado, contacte al Administrador.")
         End Try
     End Function
 
@@ -50,7 +50,7 @@ Public Class Venta
             End If
 
         Catch ex As Exception
-            Throw ex
+            Throw New BLLException("Error Inesperado, contacte al Administrador.")
         End Try
     End Function
 
@@ -59,7 +59,7 @@ Public Class Venta
         Try
             Return DAL.Venta.GetInstance().ListarVentasPorParametros(fechaDesde, fechaHasta, cliente_fk)
         Catch ex As Exception
-            Throw ex
+            Throw New BLLException("Error Inesperado, contacte al Administrador.")
         End Try
     End Function
 
@@ -67,7 +67,7 @@ Public Class Venta
         Try
             Return DAL.Venta.GetInstance().ListarVentaById(VentaBE)
         Catch ex As Exception
-            Throw ex
+            Throw New BLLException("Error Inesperado, contacte al Administrador.")
         End Try
     End Function
 
@@ -75,7 +75,7 @@ Public Class Venta
         Try
             Return DAL.Venta.GetInstance().ObtenerMaxId()
         Catch ex As Exception
-            Throw ex
+            Throw New BLLException("Error Inesperado, contacte al Administrador.")
         End Try
     End Function
 
@@ -84,7 +84,7 @@ Public Class Venta
         Try
             Return DAL.Venta.GetInstance().ObtenerMaxIdVenta_Vino()
         Catch ex As Exception
-            Throw ex
+            Throw New BLLException("Error Inesperado, contacte al Administrador.")
         End Try
     End Function
 

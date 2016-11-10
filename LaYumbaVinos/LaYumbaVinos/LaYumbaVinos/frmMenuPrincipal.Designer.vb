@@ -42,7 +42,6 @@ Partial Class frmMenuPrincipal
         Me.VentasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SeguridadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.IntegridadBDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnsMenuPrincipal = New System.Windows.Forms.MenuStrip()
         Me.mnsMenuPrincipal.SuspendLayout()
         Me.SuspendLayout()
@@ -168,16 +167,10 @@ Partial Class frmMenuPrincipal
         '
         'SeguridadToolStripMenuItem
         '
-        Me.SeguridadToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.AdministrarFamiliasToolStripMenuItem, Me.RestoreToolStripMenuItem, Me.BackupToolStripMenuItem, Me.BitacoraToolStripMenuItem, Me.CambiarContraseñaToolStripMenuItem, Me.IntegridadBDToolStripMenuItem})
+        Me.SeguridadToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.AdministrarFamiliasToolStripMenuItem, Me.RestoreToolStripMenuItem, Me.BackupToolStripMenuItem, Me.BitacoraToolStripMenuItem, Me.CambiarContraseñaToolStripMenuItem})
         Me.SeguridadToolStripMenuItem.Name = "SeguridadToolStripMenuItem"
         Me.SeguridadToolStripMenuItem.Size = New System.Drawing.Size(72, 20)
         Me.SeguridadToolStripMenuItem.Text = "Seguridad"
-        '
-        'IntegridadBDToolStripMenuItem
-        '
-        Me.IntegridadBDToolStripMenuItem.Name = "IntegridadBDToolStripMenuItem"
-        Me.IntegridadBDToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
-        Me.IntegridadBDToolStripMenuItem.Text = "Integridad BD"
         '
         'mnsMenuPrincipal
         '
@@ -224,5 +217,4 @@ Partial Class frmMenuPrincipal
     Friend WithEvents mnsMenuPrincipal As System.Windows.Forms.MenuStrip
     Friend WithEvents AdministraciónDeVinosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RecepciónDeVinosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents IntegridadBDToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

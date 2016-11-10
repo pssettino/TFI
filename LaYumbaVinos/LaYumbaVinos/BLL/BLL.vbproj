@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="Backup.vb" />
     <Compile Include="Bitacora.vb" />
+    <Compile Include="BLLException.vb" />
     <Compile Include="Bodega.vb" />
     <Compile Include="Cliente.vb" />
     <Compile Include="DVH.vb" />

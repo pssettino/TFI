@@ -69,10 +69,6 @@
         LaYumbaVinos.frmVinos.Show()
     End Sub
 
-    Private Sub IntegridadBDToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IntegridadBDToolStripMenuItem.Click
-        LaYumbaVinos.frmIntegridadDB.MdiParent = Me
-        LaYumbaVinos.frmIntegridadDB.Show()
-    End Sub
 
 
     Public Sub ValidarMenu()

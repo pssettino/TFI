@@ -21,7 +21,7 @@ Public Class Backup
         SqlComm.CommandType = CommandType.Text
 
         Try
-            SqlComm.CommandText = "BACKUP DATABASE LAYUMBAVINOS TO DISK = '" + inputFile + "'"
+            SqlComm.CommandText = "use LaYumbaVinos; BACKUP DATABASE LAYUMBAVINOS TO DISK = '" + inputFile + "';"
             SqlComm.ExecuteNonQuery()
             SqlConn.Close()
         Catch ex As Exception

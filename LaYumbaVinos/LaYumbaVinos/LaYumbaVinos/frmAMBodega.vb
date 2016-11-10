@@ -34,7 +34,7 @@
             localidadBE.LocalidadId = localidadSel
             unaBodega.Provincia = provinciaBE
             unaBodega.Localidad = localidadBE
-            
+
             If _id = 0 Then
                 BLL.Bodega.GetInstance.Add(unaBodega)
                 MessageBox.Show(TraduccionBLL.TraducirTexto("Se Registro la bodega") & ": " & razonSocial, TraduccionBLL.TraducirTexto("Registrar bodega"), MessageBoxButtons.OK, MessageBoxIcon.Information)

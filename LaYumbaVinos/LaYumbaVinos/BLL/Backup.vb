@@ -14,7 +14,7 @@ Public Class Backup
    
     Dim BackupDAL As New DAL.Backup
     Dim ConfigurationAppSettings As New System.Configuration.AppSettingsReader
-    Dim CompressDLL As String = "7z.dll"
+    Dim CompressDLL As String = "SevenZipSharp.dll"
 
     Public Sub ComprimirDb(ByVal BackupBE As BE.Backup)
         Dim dirInputFile = Path.GetDirectoryName(BackupBE.ubicacion)

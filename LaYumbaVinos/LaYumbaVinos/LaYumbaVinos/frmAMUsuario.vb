@@ -1,4 +1,6 @@
-﻿Public Class frmAMUsuario
+﻿Imports System.IO
+
+Public Class frmAMUsuario
     Dim BitacoraBE As New BE.Bitacora
     Dim TraduccionBLL As BLL.Traduccion
     Dim SeguridadBLL As New BLL.Seguridad
@@ -50,13 +52,13 @@
         If _id > 0 Then
             unUsuario.UsuarioId = _id
             Dim UsuarioBE = BLL.Usuario.GetInstance().ListById(unUsuario)
-            txtuser.Text = SeguridadBLL.DesencriptarRSA(UsuarioBE.NombreUsuario)
-            txtapellido.Text = UsuarioBE.Apellido
-            txtnombre.Text = UsuarioBE.Nombre
-            txtdni.Text = UsuarioBE.Dni
+            txtUser.Text = SeguridadBLL.DesencriptarRSA(UsuarioBE.NombreUsuario)
+            txtApellido.Text = UsuarioBE.Apellido
+            txtNombre.Text = UsuarioBE.Nombre
+            txtDni.Text = UsuarioBE.Dni
             txtEmail.Text = UsuarioBE.Mail
 
-            For Each FamiliaBE In UsuarioBE.familias
+            For Each FamiliaBE In UsuarioBE.Familias
                 For i = 0 To dgFamilias.Rows.Count - 1
                     If dgFamilias.Rows.Item(i).Cells("familia_id").Value = FamiliaBE.familiaId Then
                         dgFamilias.Rows.Item(i).Cells("dgAsignarFamilia").Value = True
@@ -64,10 +66,10 @@
                 Next
             Next
 
-            For Each PatenteBE In UsuarioBE.patentes
+            For Each PatenteBE In UsuarioBE.Patentes
                 For i = 0 To dgPatentes.Rows.Count - 1
                     If dgPatentes.Rows.Item(i).Cells("patente_id").Value = PatenteBE.PatenteId Then
-                        If PatenteBE.negado = False Then
+                        If PatenteBE.Negado = False Then
                             dgPatentes.Rows.Item(i).Cells("dgAsignarPatente").Value = True
                         Else
                             dgPatentes.Rows.Item(i).Cells("dgPatenteNegada").Value = True
@@ -80,29 +82,29 @@
 
 
     Public Sub CargarObjetos()
-        unUsuario.NombreUsuario = SeguridadBLL.EncriptarRSA(Trim(txtuser.Text))
-        unUsuario.Apellido = Trim(txtapellido.Text)
-        unUsuario.Nombre = Trim(txtnombre.Text)
-        unUsuario.Dni = Trim(txtdni.Text)
+        unUsuario.NombreUsuario = SeguridadBLL.EncriptarRSA(Trim(txtUser.Text))
+        unUsuario.Apellido = Trim(txtApellido.Text)
+        unUsuario.Nombre = Trim(txtNombre.Text)
+        unUsuario.Dni = Trim(txtDni.Text)
         unUsuario.Mail = Trim(txtEmail.Text)
 
-        unUsuario.familias.Clear()
+        unUsuario.Familias.Clear()
         For i = 0 To dgFamilias.Rows.Count - 1
             If dgFamilias.Rows.Item(i).Cells("dgAsignarFamilia").Value = True Then
                 Dim FamiliaBE As New BE.Familia
                 FamiliaBE.familiaId = dgFamilias.Rows.Item(i).Cells("familia_id").Value
                 FamiliaBE.nombre = SeguridadBLL.EncriptarRSA(dgFamilias.Rows.Item(i).Cells("Nombre_Familia").Value)
-                unUsuario.familias.Add(FamiliaBE)
+                unUsuario.Familias.Add(FamiliaBE)
             End If
         Next
 
-        unUsuario.patentes.Clear()
+        unUsuario.Patentes.Clear()
         For i = 0 To dgPatentes.Rows.Count - 1
             If dgPatentes.Rows.Item(i).Cells("dgAsignarPatente").Value = True Then
                 Dim PatenteBE As New BE.Patente
                 PatenteBE.PatenteId = dgPatentes.Rows.Item(i).Cells("patente_id").Value
                 PatenteBE.Nombre = dgPatentes.Rows.Item(i).Cells("Nombre").Value
-                unUsuario.patentes.Add(PatenteBE)
+                unUsuario.Patentes.Add(PatenteBE)
             End If
         Next
 
@@ -111,8 +113,8 @@
                 Dim PatenteBE As New BE.Patente
                 PatenteBE.PatenteId = dgPatentes.Rows.Item(i).Cells("patente_id").Value
                 PatenteBE.Nombre = dgPatentes.Rows.Item(i).Cells("Nombre").Value
-                PatenteBE.negado = True
-                unUsuario.patentes.Add(PatenteBE)
+                PatenteBE.Negado = True
+                unUsuario.Patentes.Add(PatenteBE)
             End If
         Next
     End Sub
@@ -125,11 +127,13 @@
 
 
     Private Sub RegistrarUsuario(Optional ByVal var As Boolean = True)
-        Dim nombre As String = Trim(txtuser.Text)
+        Dim nombre As String = Trim(txtUser.Text)
         CargarObjetos()
         If _id = 0 Then
-            unUsuario.Contraseña = SeguridadBLL.EncriptarMD5(Trim(SeguridadBLL.AutoGenerarContraseña(unUsuario, True)))
+            Dim autoContraseña As String = Trim(SeguridadBLL.AutoGenerarContraseña(unUsuario, True))
+            unUsuario.Contraseña = SeguridadBLL.EncriptarMD5(autoContraseña)
             BLL.Usuario.GetInstance.Add(unUsuario)
+
             MessageBox.Show(TraduccionBLL.TraducirTexto("Se Registro el Usuario") & ": " & nombre, TraduccionBLL.TraducirTexto("Registrar Usuario"), MessageBoxButtons.OK, MessageBoxIcon.Information)
             RegistrarBitacora("Registro Usuario: " & nombre, "Alta")
         Else
@@ -160,8 +164,8 @@
     Public Sub RegistrarBitacora(evento As String, nivel As String)
         Dim SeguridadBLL As New BLL.Seguridad
         BitacoraBE.Descripcion = SeguridadBLL.EncriptarRSA(evento)
-        BitacoraBE.usuario = MenuUI.GetUsuario
-        BitacoraBE.criticidad = nivel
+        BitacoraBE.Usuario = MenuUI.GetUsuario
+        BitacoraBE.Criticidad = nivel
         BLL.Bitacora.GetInstance.RegistrarBitacora(BitacoraBE)
     End Sub
 
@@ -169,26 +173,26 @@
     Private Function Validar() As Boolean
         Dim valido = True
         lblNombreUsuarioError.Visible = False
-        If txtuser.Text = "" Then
+        If txtUser.Text = "" Then
             valido = False
             lblNombreUsuarioError.Visible = True
             lblNombreUsuarioError.Text = TraduccionBLL.TraducirTexto("Campo requerido")
             lblNombreUsuarioError.Text = "Campo requerido"
         Else
-            unUsuario.NombreUsuario = SeguridadBLL.EncriptarRSA(Trim(txtuser.Text))
+            unUsuario.NombreUsuario = SeguridadBLL.EncriptarRSA(Trim(txtUser.Text))
             If BLL.Usuario.GetInstance.VerificarExistencia(unUsuario) And _id = 0 Then
                 MsgBox(TraduccionBLL.TraducirTexto("El nombre ingresado ya esta en uso, por favor ingrese otro nombre"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
                 Return False
             End If
         End If
         lblNombreUsuarioError.Visible = False
-        If txtnombre.Text = "" Then
+        If txtNombre.Text = "" Then
             valido = False
             lblNombreUsuarioError.Visible = True
             lblNombreUsuarioError.Text = TraduccionBLL.TraducirTexto("Campo requerido")
         End If
         lblApellidoError.Visible = False
-        If txtapellido.Text = "" Then
+        If txtApellido.Text = "" Then
             valido = False
             lblApellidoError.Visible = True
             lblApellidoError.Text = TraduccionBLL.TraducirTexto("Campo requerido")
@@ -203,11 +207,11 @@
             lblEmailError.Visible = True
             lblEmailError.Text = TraduccionBLL.TraducirTexto("Mail incorrecto")
         End If
-        lbldniError.Visible = False
-        If txtdni.Text = "" Then
+        lblDniError.Visible = False
+        If txtDni.Text = "" Then
             valido = False
-            lbldniError.Visible = True
-            lbldniError.Text = TraduccionBLL.TraducirTexto("Campo requerido")
+            lblDniError.Visible = True
+            lblDniError.Text = TraduccionBLL.TraducirTexto("Campo requerido")
         End If
         Return valido
     End Function
