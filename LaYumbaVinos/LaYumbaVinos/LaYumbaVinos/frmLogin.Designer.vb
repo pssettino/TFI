@@ -126,6 +126,7 @@ Partial Class frmLogin
         Me.Controls.Add(Me.lblcontraseña)
         Me.Controls.Add(Me.lblusuario)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "frmLogin"
         Me.ShowIcon = False

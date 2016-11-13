@@ -22,6 +22,7 @@ Partial Class frmMenuPrincipal
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMenuPrincipal))
         Me.VerLaAyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CambiarContraseñaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -173,10 +174,10 @@ Partial Class frmMenuPrincipal
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(954, 481)
         Me.Controls.Add(Me.mnsMenuPrincipal)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MaximizeBox = False
         Me.Name = "frmMenuPrincipal"
-        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "La Yumba Vinos"
         Me.mnsMenuPrincipal.ResumeLayout(False)
