@@ -7,10 +7,14 @@
 
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
-        Dim _frmAMFamilia As New frmAMFamilia
-        If _frmAMFamilia.ShowDialog(Me) = Windows.Forms.DialogResult.OK Then
-            ObtenerFamilias()
-        End If
+        Try
+            Dim _frmAMFamilia As New frmAMFamilia
+            If _frmAMFamilia.ShowDialog(Me) = Windows.Forms.DialogResult.OK Then
+                ObtenerFamilias()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Public Sub ObtenerFamilias()
@@ -24,17 +28,21 @@
     End Sub
 
     Private Sub frmFamilias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MenuUI = Me.MdiParent
-        TraduccionBLL = New BLL.Traduccion(MenuUI.GetIdioma)
-        Dim PatenteBE As New BE.Patente
-        PatenteBE.Nombre = "Familia"
-        PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
-        If (BLL.Usuario.GetInstance.VerificarPatente(MenuUI.GetUsuario, PatenteBE) = False) Then
-            MsgBox(TraduccionBLL.TraducirTexto("Sus permisos han sido modificados, por favor inicie sesion nuevamente"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
-            Application.Exit()
-        End If
-        TraduccionBLL.TraducirForm(Me)
-        ObtenerFamilias()
+        Try
+            MenuUI = Me.MdiParent
+            TraduccionBLL = New BLL.Traduccion(MenuUI.GetIdioma)
+            Dim PatenteBE As New BE.Patente
+            PatenteBE.Nombre = "Familia"
+            PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
+            If (BLL.Usuario.GetInstance.VerificarPatente(MenuUI.GetUsuario, PatenteBE) = False) Then
+                MsgBox(TraduccionBLL.TraducirTexto("Sus permisos han sido modificados, por favor inicie sesion nuevamente"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
+                Application.Exit()
+            End If
+            TraduccionBLL.TraducirForm(Me)
+            ObtenerFamilias()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Public Sub RegistrarBitacora(evento As String, nivel As String)
@@ -45,47 +53,51 @@
         BLL.Bitacora.GetInstance.RegistrarBitacora(BitacoraBE)
     End Sub
 
-    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
     Private Sub dgFamilias_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgFamilias.CellContentClick
-        Dim id As String = Convert.ToString(dgFamilias.CurrentRow.Cells("id").Value)
-        Dim nombre As String = Convert.ToString(dgFamilias.CurrentRow.Cells("Nombre").Value)
-        Dim result As Integer
-
-        unaFamilia.familiaId = id
-        'MODIFICAR
-        If e.ColumnIndex = 3 Then 'Nro Columna del datagriew
-            Dim FamiliaModificar As New frmAMFamilia(id)
-            Dim SeguridadBLL As New BLL.Seguridad
-            FamiliaModificar.txtnombre.Focus()
+        Try
+            Dim id As String = Convert.ToString(dgFamilias.CurrentRow.Cells("id").Value)
+            Dim nombre As String = Convert.ToString(dgFamilias.CurrentRow.Cells("Nombre").Value)
+            Dim result As Integer
 
             unaFamilia.familiaId = id
-            unaFamilia = BLL.Familia.GetInstance().ListById(unaFamilia)
+            'MODIFICAR
+            If e.ColumnIndex = 3 Then 'Nro Columna del datagriew
+                Dim FamiliaModificar As New frmAMFamilia(id)
+                Dim SeguridadBLL As New BLL.Seguridad
+                FamiliaModificar.txtNombre.Focus()
 
-            FamiliaModificar.txtnombre.Text = SeguridadBLL.DesencriptarRSA(unaFamilia.nombre)
-            FamiliaModificar.txtdescripcion.Text = unaFamilia.descripcion
+                unaFamilia.familiaId = id
+                unaFamilia = BLL.Familia.GetInstance().ListById(unaFamilia)
 
-            If FamiliaModificar.ShowDialog(Me) = Windows.Forms.DialogResult.OK Then
-                ObtenerFamilias()
-            End If
-        End If
-        'ELIMINAR
-        If e.ColumnIndex = 4 Then 'Nro Columna del datagriew
-            unaFamilia.familiaId = id
-            If BLL.Familia.GetInstance.ValidarEliminarFamilia(BLL.Familia.GetInstance.ListById(unaFamilia)) Then
-                result = MessageBox.Show(TraduccionBLL.TraducirTexto("¿Esta seguro que desea eliminar la familia") & ": " & nombre & "?", TraduccionBLL.TraducirTexto("Eliminar Familia"), MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
-                If result = DialogResult.OK Then
-                    BLL.Familia.GetInstance.Delete(unaFamilia)
-                    MessageBox.Show(TraduccionBLL.TraducirTexto(nombre), TraduccionBLL.TraducirTexto("Eliminar Familia"), MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    RegistrarBitacora("Elimar Familia: " & nombre, "Alta")
+                FamiliaModificar.txtNombre.Text = SeguridadBLL.DesencriptarRSA(unaFamilia.nombre)
+                FamiliaModificar.txtDescripcion.Text = unaFamilia.descripcion
+
+                If FamiliaModificar.ShowDialog(Me) = Windows.Forms.DialogResult.OK Then
+                    ObtenerFamilias()
                 End If
-            Else
-                MsgBox(TraduccionBLL.TraducirTexto("No se puede eliminar la familia porque quedarian patentes esenciales sin asignar"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
-                RegistrarBitacora(nombre & "No se puede eliminar la familia porque quedarian patentes esenciales sin asignar", "Alta")
             End If
-        End If
-        ObtenerFamilias()
+            'ELIMINAR
+            If e.ColumnIndex = 4 Then 'Nro Columna del datagriew
+                unaFamilia.familiaId = id
+                If BLL.Familia.GetInstance.ValidarEliminarFamilia(BLL.Familia.GetInstance.ListById(unaFamilia)) Then
+                    result = MessageBox.Show(TraduccionBLL.TraducirTexto("¿Esta seguro que desea eliminar la familia") & ": " & nombre & "?", TraduccionBLL.TraducirTexto("Eliminar Familia"), MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+                    If result = DialogResult.OK Then
+                        BLL.Familia.GetInstance.Delete(unaFamilia)
+                        MessageBox.Show(TraduccionBLL.TraducirTexto(nombre), TraduccionBLL.TraducirTexto("Eliminar Familia"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        RegistrarBitacora("Elimar Familia: " & nombre, "Alta")
+                    End If
+                Else
+                    MsgBox(TraduccionBLL.TraducirTexto("No se puede eliminar la familia porque quedarian patentes esenciales sin asignar"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
+                    RegistrarBitacora(nombre & "No se puede eliminar la familia porque quedarian patentes esenciales sin asignar", "Alta")
+                End If
+            End If
+            ObtenerFamilias()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

@@ -8,11 +8,15 @@ Public Class frmServidor
     End Sub
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        If Validar() Then
-            File.WriteAllText("AccederServidorSQL.txt", txtServidor.Text)
-            Me.DialogResult = Windows.Forms.DialogResult.OK
-            Me.Close()
-        End If
+        Try
+            If Validar() Then
+                File.WriteAllText("AccederServidorSQL.txt", txtServidor.Text)
+                Me.DialogResult = Windows.Forms.DialogResult.OK
+                Me.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click

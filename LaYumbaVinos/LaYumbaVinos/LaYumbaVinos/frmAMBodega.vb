@@ -18,37 +18,42 @@
     End Sub
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        If Validar() Then
-            Dim cuit As Integer = Integer.Parse(Trim(txtCuit.Text))
-            Dim razonSocial As String = Trim(txtRazonSocial.Text)
-            Dim provinciaSel As Integer = cmbProvincia.SelectedValue
-            Dim localidadSel As Integer = cmbLocalidad.SelectedValue
-            Dim telefono As Integer = Integer.Parse(Trim(txtTelefono.Text))
-            Dim provinciaBE As New BE.Provincia
-            Dim localidadBE As New BE.Localidad
+        Try
 
-            unaBodega.Cuit = cuit
-            unaBodega.RazonSocial = razonSocial
-            unaBodega.Telefono = telefono
-            provinciaBE.ProvinciaId = provinciaSel
-            localidadBE.LocalidadId = localidadSel
-            unaBodega.Provincia = provinciaBE
-            unaBodega.Localidad = localidadBE
+            If Validar() Then
+                Dim cuit As Integer = Integer.Parse(Trim(txtCuit.Text))
+                Dim razonSocial As String = Trim(txtRazonSocial.Text)
+                Dim provinciaSel As Integer = cmbProvincia.SelectedValue
+                Dim localidadSel As Integer = cmbLocalidad.SelectedValue
+                Dim telefono As Integer = Integer.Parse(Trim(txtTelefono.Text))
+                Dim provinciaBE As New BE.Provincia
+                Dim localidadBE As New BE.Localidad
 
-            If _id = 0 Then
-                BLL.Bodega.GetInstance.Add(unaBodega)
-                MessageBox.Show(TraduccionBLL.TraducirTexto("Se Registro la bodega") & ": " & razonSocial, TraduccionBLL.TraducirTexto("Registrar bodega"), MessageBoxButtons.OK, MessageBoxIcon.Information)
-                RegistrarBitacora("Registro bodega: " & razonSocial, "Alta")
-            Else
-                unaBodega.BodegaId = _id
-                BLL.Bodega.GetInstance.Update(unaBodega)
-                MessageBox.Show(TraduccionBLL.TraducirTexto("Se Modifico el bodega") & ": " & razonSocial, TraduccionBLL.TraducirTexto("Modificar bodega"), MessageBoxButtons.OK, MessageBoxIcon.Information)
-                RegistrarBitacora("Modifico bodega: " & razonSocial, "Alta")
+                unaBodega.Cuit = cuit
+                unaBodega.RazonSocial = razonSocial
+                unaBodega.Telefono = telefono
+                provinciaBE.ProvinciaId = provinciaSel
+                localidadBE.LocalidadId = localidadSel
+                unaBodega.Provincia = provinciaBE
+                unaBodega.Localidad = localidadBE
+
+                If _id = 0 Then
+                    BLL.Bodega.GetInstance.Add(unaBodega)
+                    MessageBox.Show(TraduccionBLL.TraducirTexto("Se Registro la bodega") & ": " & razonSocial, TraduccionBLL.TraducirTexto("Registrar bodega"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    RegistrarBitacora("Registro bodega: " & razonSocial, "Alta")
+                Else
+                    unaBodega.BodegaId = _id
+                    BLL.Bodega.GetInstance.Update(unaBodega)
+                    MessageBox.Show(TraduccionBLL.TraducirTexto("Se Modifico el bodega") & ": " & razonSocial, TraduccionBLL.TraducirTexto("Modificar bodega"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    RegistrarBitacora("Modifico bodega: " & razonSocial, "Alta")
+                End If
+
+                Me.DialogResult = Windows.Forms.DialogResult.OK
+                Me.Close()
             End If
-
-            Me.DialogResult = Windows.Forms.DialogResult.OK
-            Me.Close()
-        End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
@@ -56,26 +61,30 @@
     End Sub
 
     Private Sub frmAMBodega_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MenuUI = Me.Owner
-        TraduccionBLL = New BLL.Traduccion(MenuUI.GetIdioma)
-        Dim PatenteBE As New BE.Patente
-        PatenteBE.Nombre = "Bodega"
-        PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
-        If (BLL.Usuario.GetInstance.VerificarPatente(MenuUI.GetUsuario, PatenteBE) = False) Then
-            MsgBox(TraduccionBLL.TraducirTexto("Sus permisos han sido modificados, por favor inicie sesion nuevamente"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
-            Application.Exit()
-        End If
-        TraduccionBLL.TraducirForm(Me)
+        Try
+            MenuUI = Me.Owner
+            TraduccionBLL = New BLL.Traduccion(MenuUI.GetIdioma)
+            Dim PatenteBE As New BE.Patente
+            PatenteBE.Nombre = "Bodega"
+            PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
+            If (BLL.Usuario.GetInstance.VerificarPatente(MenuUI.GetUsuario, PatenteBE) = False) Then
+                MsgBox(TraduccionBLL.TraducirTexto("Sus permisos han sido modificados, por favor inicie sesion nuevamente"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
+                Application.Exit()
+            End If
+            TraduccionBLL.TraducirForm(Me)
 
-        If _id = 0 Then
-            cmbProvincia.DataSource = ProvinciaBLL.ListAll
-            cmbProvincia.ValueMember = "provinciaId"
-            cmbProvincia.DisplayMember = "descripcion"
+            If _id = 0 Then
+                cmbProvincia.DataSource = ProvinciaBLL.ListAll
+                cmbProvincia.ValueMember = "provinciaId"
+                cmbProvincia.DisplayMember = "descripcion"
 
-            cmbLocalidad.DataSource = LocalidadBLL.ListAll
-            cmbLocalidad.ValueMember = "localidadId"
-            cmbLocalidad.DisplayMember = "descripcion"
-        End If
+                cmbLocalidad.DataSource = LocalidadBLL.ListAll
+                cmbLocalidad.ValueMember = "localidadId"
+                cmbLocalidad.DisplayMember = "descripcion"
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Function Validar() As Boolean

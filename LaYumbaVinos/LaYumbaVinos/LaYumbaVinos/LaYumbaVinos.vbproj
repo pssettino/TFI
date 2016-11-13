@@ -92,12 +92,6 @@
     <Compile Include="frmAMFamilia.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAMRecepcionVino.Designer.vb">
-      <DependentUpon>frmAMRecepcionVino.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmAMRecepcionVino.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmAMUsuario.Designer.vb">
       <DependentUpon>frmAMUsuario.vb</DependentUpon>
     </Compile>
@@ -164,12 +158,6 @@
     <Compile Include="frmMenuPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRecepcionVinos.Designer.vb">
-      <DependentUpon>frmRecepcionVinos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmRecepcionVinos.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmRestore.Designer.vb">
       <DependentUpon>frmRestore.vb</DependentUpon>
     </Compile>
@@ -226,9 +214,6 @@
     <EmbeddedResource Include="frmAMFamilia.resx">
       <DependentUpon>frmAMFamilia.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAMRecepcionVino.resx">
-      <DependentUpon>frmAMRecepcionVino.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmAMUsuario.resx">
       <DependentUpon>frmAMUsuario.vb</DependentUpon>
     </EmbeddedResource>
@@ -261,9 +246,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmRecepcionVinos.resx">
-      <DependentUpon>frmRecepcionVinos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRestore.resx">
       <DependentUpon>frmRestore.vb</DependentUpon>

@@ -4,33 +4,45 @@
     Dim TraduccionBLL As BLL.Traduccion
     Dim SeguridadBLL As New BLL.Seguridad
     Private Sub btnNuevaVenta_Click(sender As Object, e As EventArgs) Handles btnNuevaVenta.Click
-        Dim _frmAMVenta As New frmAMVenta
-        If _frmAMVenta.ShowDialog(Me) = Windows.Forms.DialogResult.OK Then
-            ListarVentas()
-        End If
+        Try
+            Dim _frmAMVenta As New frmAMVenta
+            If _frmAMVenta.ShowDialog(Me) = Windows.Forms.DialogResult.OK Then
+                ListarVentas()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub frmVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MenuUI = Me.MdiParent
-        TraduccionBLL = New BLL.Traduccion(MenuUI.GetIdioma)
-        Dim PatenteBE As New BE.Patente
-        PatenteBE.Nombre = "Venta"
-        PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
-        If (BLL.Usuario.GetInstance.VerificarPatente(MenuUI.GetUsuario, PatenteBE) = False) Then
-            MsgBox(TraduccionBLL.TraducirTexto("Sus permisos han sido modificados, por favor inicie sesion nuevamente"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
-            Application.Exit()
-        End If
-        TraduccionBLL.TraducirForm(Me)
+        Try
+            MenuUI = Me.MdiParent
+            TraduccionBLL = New BLL.Traduccion(MenuUI.GetIdioma)
+            Dim PatenteBE As New BE.Patente
+            PatenteBE.Nombre = "Venta"
+            PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
+            If (BLL.Usuario.GetInstance.VerificarPatente(MenuUI.GetUsuario, PatenteBE) = False) Then
+                MsgBox(TraduccionBLL.TraducirTexto("Sus permisos han sido modificados, por favor inicie sesion nuevamente"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
+                Application.Exit()
+            End If
+            TraduccionBLL.TraducirForm(Me)
 
-        cmbCliente.DisplayMember = "nombreCompleto"
+            cmbCliente.DisplayMember = "nombreCompleto"
 
-        cmbCliente.ValueMember = "clienteId"
-        cmbCliente.DataSource = BLL.Cliente.GetInstance.ListAll()
-        ListarVentas()
+            cmbCliente.ValueMember = "clienteId"
+            cmbCliente.DataSource = BLL.Cliente.GetInstance.ListAll()
+            ListarVentas()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub btnBuscarVenta_Click(sender As Object, e As EventArgs) Handles btnBuscarVenta.Click
-        ListarVentas()
+        Try
+            ListarVentas()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
 
@@ -61,39 +73,46 @@
 
 
     Private Sub btnLimpiarVenta_Click(sender As Object, e As EventArgs) Handles btnLimpiarVenta.Click
-        dgVentas.Rows.Clear()
+        Try
+            dgVentas.Rows.Clear()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub dgVentas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgVentas.CellContentClick
+        Try
+            If e.ColumnIndex = 4 Then 'Nro Columna del datagriew
+                Dim id As String = Convert.ToString(dgVentas.CurrentRow.Cells("NroVenta").Value)
+                Dim VentaRegistrar As New frmAMVenta(id)
+                Dim venta As New BE.Venta
 
-        If e.ColumnIndex = 4 Then 'Nro Columna del datagriew
-            Dim id As String = Convert.ToString(dgVentas.CurrentRow.Cells("NroVenta").Value)
-            Dim VentaRegistrar As New frmAMVenta(id)
-            Dim venta As New BE.Venta
+                venta.VentaId = id
+                venta = BLL.Venta.GetInstance.ListarVentaById(venta)
 
-            venta.VentaId = id
-            venta = BLL.Venta.GetInstance.ListarVentaById(venta)
-
-            VentaRegistrar.txtFechaHora.Text = venta.FechaVenta
-            VentaRegistrar.txtNroVenta.Text = venta.VentaId
-            VentaRegistrar.vinos = venta.Vinos
+                VentaRegistrar.txtFechaHora.Text = venta.FechaVenta
+                VentaRegistrar.txtNroVenta.Text = venta.VentaId
+                VentaRegistrar.vinos = venta.Vinos
 
 
-            Dim clientesLista As New Dictionary(Of Integer, String)
-            clientesLista.Add(0, TraduccionBLL.TraducirTexto("Seleccione el cliente"))
-            For Each ClienteBE In BLL.Cliente.GetInstance.ObtenerClientesDisponibles()
-                clientesLista.Add(ClienteBE.ClienteId, ClienteBE.Apellido + ", " + ClienteBE.Nombre)
-            Next
+                Dim clientesLista As New Dictionary(Of Integer, String)
+                clientesLista.Add(0, TraduccionBLL.TraducirTexto("Seleccione el cliente"))
+                For Each ClienteBE In BLL.Cliente.GetInstance.ObtenerClientesDisponibles()
+                    clientesLista.Add(ClienteBE.ClienteId, ClienteBE.Apellido + ", " + ClienteBE.Nombre)
+                Next
 
-            VentaRegistrar.cmbCliente.DataSource = New BindingSource(clientesLista, Nothing)
-            VentaRegistrar.cmbCliente.DisplayMember = "Value"
-            VentaRegistrar.cmbCliente.ValueMember = "Key"
+                VentaRegistrar.cmbCliente.DataSource = New BindingSource(clientesLista, Nothing)
+                VentaRegistrar.cmbCliente.DisplayMember = "Value"
+                VentaRegistrar.cmbCliente.ValueMember = "Key"
 
-            VentaRegistrar.cmbCliente.SelectedValue = venta.Cliente.ClienteId
+                VentaRegistrar.cmbCliente.SelectedValue = venta.Cliente.ClienteId
 
-            If VentaRegistrar.ShowDialog(Me) = Windows.Forms.DialogResult.OK Then
-                ListarVentas()
+                If VentaRegistrar.ShowDialog(Me) = Windows.Forms.DialogResult.OK Then
+                    ListarVentas()
+                End If
             End If
-        End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

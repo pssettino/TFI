@@ -5,8 +5,12 @@
     Dim TraduccionBLL As BLL.Traduccion
 
     Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
-        dgBitacora.Rows.Clear()
-        ListarBitacoras()
+        Try
+            dgBitacora.Rows.Clear()
+            ListarBitacoras()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Public Function ListarBitacoras()
@@ -29,12 +33,11 @@
 
 
     Private Sub btnlimpiar_Click(sender As Object, e As EventArgs) Handles btnlimpiar.Click
-        dgBitacora.Rows.Clear()
-    End Sub
-
-    Private Sub btnExportar_Click(sender As Object, e As EventArgs) Handles btnExportar.Click
-        ' Dim BitacoraReporteUI As New LaYumbaVinos.frmBitacoraReporte(ListarBitacoras(), "Reporte de bitacora desde " + dtpFechaDesde.Value.Day.ToString + "/" + dtpFechaDesde.Value.Month.ToString + "/" + dtpFechaDesde.Value.Year.ToString + " hasta " + dtpFechaHasta.Value.Day.ToString + "/" + dtpFechaHasta.Value.Month.ToString + "/" + dtpFechaHasta.Value.Year.ToString)
-        'BitacoraReporteUI.Show()
+        Try
+            dgBitacora.Rows.Clear()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
@@ -42,17 +45,21 @@
     End Sub
 
     Private Sub frmBitacora_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MenuUI = Me.MdiParent
-        TraduccionBLL = New BLL.Traduccion(MenuUI.GetIdioma)
-        Dim PatenteBE As New BE.Patente
-        PatenteBE.Nombre = "Bitacora"
-        PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
-        If (BLL.Usuario.GetInstance.VerificarPatente(MenuUI.GetUsuario, PatenteBE) = False) Then
-            MsgBox(TraduccionBLL.TraducirTexto("Sus permisos han sido modificados, por favor inicie sesion nuevamente"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
-            Application.Exit()
-        End If
-        TraduccionBLL.TraducirForm(Me)
-        MuestraCamposBitacora()
+        Try
+            MenuUI = Me.MdiParent
+            TraduccionBLL = New BLL.Traduccion(MenuUI.GetIdioma)
+            Dim PatenteBE As New BE.Patente
+            PatenteBE.Nombre = "Bitacora"
+            PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
+            If (BLL.Usuario.GetInstance.VerificarPatente(MenuUI.GetUsuario, PatenteBE) = False) Then
+                MsgBox(TraduccionBLL.TraducirTexto("Sus permisos han sido modificados, por favor inicie sesion nuevamente"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
+                Application.Exit()
+            End If
+            TraduccionBLL.TraducirForm(Me)
+            MuestraCamposBitacora()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Public Sub MuestraCamposBitacora()

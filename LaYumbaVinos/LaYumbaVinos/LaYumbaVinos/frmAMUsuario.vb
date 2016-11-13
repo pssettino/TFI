@@ -15,18 +15,10 @@ Public Class frmAMUsuario
     End Sub
 
     Private Sub frmAMUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MenuUI = Me.Owner
-        TraduccionBLL = New BLL.Traduccion(MenuUI.GetIdioma)
-        Dim PatenteBE As New BE.Patente
-        PatenteBE.Nombre = "Usuario"
-        PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
-        If (BLL.Usuario.GetInstance.VerificarPatente(MenuUI.GetUsuario, PatenteBE) = False) Then
-            MsgBox(TraduccionBLL.TraducirTexto("Sus permisos han sido modificados, por favor inicie sesion nuevamente"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
-            Application.Exit()
-        End If
-        TraduccionBLL.TraducirForm(Me)
-        ObtenerDatos()
-        txtUser.Focus()
+        Try
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
 
@@ -120,9 +112,13 @@ Public Class frmAMUsuario
     End Sub
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        If Validar() Then
-            RegistrarUsuario(True)
-        End If
+        Try
+            If Validar() Then
+                RegistrarUsuario(True)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
 
@@ -150,14 +146,18 @@ Public Class frmAMUsuario
     End Sub
 
     Private Sub btnRestablecer_Click(sender As Object, e As EventArgs) Handles btnRestablecer.Click
-        Dim nombre As String = Trim(txtUser.Text)
-        CargarObjetos()
-        unUsuario.Contraseña = SeguridadBLL.EncriptarMD5(Trim(SeguridadBLL.AutoGenerarContraseña(unUsuario, True)))
-        lblcontraseña.Text = unUsuario.Contraseña
-        unUsuario.UsuarioId = _id
-        BLL.Usuario.GetInstance.Update(unUsuario)
-        MessageBox.Show(TraduccionBLL.TraducirTexto("Se restablecio la contraseña Usuario") & ": " & nombre, TraduccionBLL.TraducirTexto("Modificar Usuario"), MessageBoxButtons.OK, MessageBoxIcon.Information)
-        RegistrarBitacora("Modifico Usuario (restablecio la contraseña): " & nombre, "Alta")
+        Try
+            Dim nombre As String = Trim(txtUser.Text)
+            CargarObjetos()
+            unUsuario.Contraseña = SeguridadBLL.EncriptarMD5(Trim(SeguridadBLL.AutoGenerarContraseña(unUsuario, True)))
+            lblcontraseña.Text = unUsuario.Contraseña
+            unUsuario.UsuarioId = _id
+            BLL.Usuario.GetInstance.Update(unUsuario)
+            MessageBox.Show(TraduccionBLL.TraducirTexto("Se restablecio la contraseña Usuario") & ": " & nombre, TraduccionBLL.TraducirTexto("Modificar Usuario"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+            RegistrarBitacora("Modifico Usuario (restablecio la contraseña): " & nombre, "Alta")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
 
@@ -222,60 +222,72 @@ Public Class frmAMUsuario
     End Sub
 
     Private Sub dgFamilias_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgFamilias.CellContentClick
-        If _id > 0 Then
-            If (e.RowIndex >= 0 And e.ColumnIndex = 2) Then
-                dgFamilias.CommitEdit(DataGridViewDataErrorContexts.Commit)
-                If (dgFamilias.Rows(e.RowIndex).Cells("dgAsignarFamilia").Value = False And BLL.Familia.GetInstance.ValidarEliminarFamiliaUsuario(New BE.Familia With {.familiaId = dgFamilias.Rows(e.RowIndex).Cells("familia_id").Value}, BLL.Usuario.GetInstance.ListById(unUsuario)) = False) Then            '                   
-                    MsgBox(TraduccionBLL.TraducirTexto("No se puede quitar la familia al usuario porque contiene patentes esenciales y quedaria sin asignar"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
-                    ObtenerDatos()
-                Else
-                    RegistrarUsuario(False)
+        Try
+            If _id > 0 Then
+                If (e.RowIndex >= 0 And e.ColumnIndex = 2) Then
+                    dgFamilias.CommitEdit(DataGridViewDataErrorContexts.Commit)
+                    If (dgFamilias.Rows(e.RowIndex).Cells("dgAsignarFamilia").Value = False And BLL.Familia.GetInstance.ValidarEliminarFamiliaUsuario(New BE.Familia With {.familiaId = dgFamilias.Rows(e.RowIndex).Cells("familia_id").Value}, BLL.Usuario.GetInstance.ListById(unUsuario)) = False) Then            '                   
+                        MsgBox(TraduccionBLL.TraducirTexto("No se puede quitar la familia al usuario porque contiene patentes esenciales y quedaria sin asignar"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
+                        ObtenerDatos()
+                    Else
+                        RegistrarUsuario(False)
+                    End If
                 End If
             End If
-        End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub dgPatentes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgPatentes.CellContentClick
-        If _id > 0 Then
-            If (e.RowIndex >= 0 And e.ColumnIndex = 1) Then
-                dgPatentes.CommitEdit(DataGridViewDataErrorContexts.Commit)
-                If (dgPatentes.Rows(e.RowIndex).Cells("dgAsignarPatente").Value = False And
-                     BLL.Usuario.GetInstance.ValidarEliminarUsuarioPatente(BLL.Usuario.GetInstance.ListById(unUsuario), New BE.Patente With {.PatenteId = dgPatentes.Rows(e.RowIndex).Cells("patente_id").Value}) = False) Then            '                   
-                    MsgBox(TraduccionBLL.TraducirTexto("No se puede quitar la patente al usuario porque la patente quedaria sin asignacion"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
-                    ObtenerDatos()
-                Else
+        Try
+            If _id > 0 Then
+                If (e.RowIndex >= 0 And e.ColumnIndex = 1) Then
+                    dgPatentes.CommitEdit(DataGridViewDataErrorContexts.Commit)
+                    If (dgPatentes.Rows(e.RowIndex).Cells("dgAsignarPatente").Value = False And
+                         BLL.Usuario.GetInstance.ValidarEliminarUsuarioPatente(BLL.Usuario.GetInstance.ListById(unUsuario), New BE.Patente With {.PatenteId = dgPatentes.Rows(e.RowIndex).Cells("patente_id").Value}) = False) Then            '                   
+                        MsgBox(TraduccionBLL.TraducirTexto("No se puede quitar la patente al usuario porque la patente quedaria sin asignacion"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
+                        ObtenerDatos()
+                    Else
+                        dgPatentes.Rows(e.RowIndex).Cells("dgPatenteNegada").Value = False
+                        RegistrarUsuario(False)
+                    End If
+                End If
+                If (e.RowIndex >= 0 And e.ColumnIndex = 2) Then
+                    dgPatentes.CommitEdit(DataGridViewDataErrorContexts.Commit)
+                    If (dgPatentes.Rows(e.RowIndex).Cells("dgPatenteNegada").Value = True And
+                         BLL.Usuario.GetInstance.ValidarEliminarUsuarioPatenteNegacion(BLL.Usuario.GetInstance.ListById(unUsuario), New BE.Patente With {.PatenteId = dgPatentes.Rows(e.RowIndex).Cells("patente_id").Value}) = False) Then            '                   
+                        MsgBox(TraduccionBLL.TraducirTexto("No se puede negar la patente al usuario porque la patente quedaria sin asignacion"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
+                        ObtenerDatos()
+                    Else
+                        dgPatentes.Rows(e.RowIndex).Cells("dgAsignarPatente").Value = False
+                        RegistrarUsuario(False)
+                    End If
+                End If
+            Else
+                If (e.RowIndex >= 0 And e.ColumnIndex = 1) Then
                     dgPatentes.Rows(e.RowIndex).Cells("dgPatenteNegada").Value = False
-                    RegistrarUsuario(False)
                 End If
-            End If
-            If (e.RowIndex >= 0 And e.ColumnIndex = 2) Then
-                dgPatentes.CommitEdit(DataGridViewDataErrorContexts.Commit)
-                If (dgPatentes.Rows(e.RowIndex).Cells("dgPatenteNegada").Value = True And
-                     BLL.Usuario.GetInstance.ValidarEliminarUsuarioPatenteNegacion(BLL.Usuario.GetInstance.ListById(unUsuario), New BE.Patente With {.PatenteId = dgPatentes.Rows(e.RowIndex).Cells("patente_id").Value}) = False) Then            '                   
-                    MsgBox(TraduccionBLL.TraducirTexto("No se puede negar la patente al usuario porque la patente quedaria sin asignacion"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
-                    ObtenerDatos()
-                Else
+                If (e.RowIndex >= 0 And e.ColumnIndex = 2) Then
                     dgPatentes.Rows(e.RowIndex).Cells("dgAsignarPatente").Value = False
-                    RegistrarUsuario(False)
                 End If
             End If
-        Else
-            If (e.RowIndex >= 0 And e.ColumnIndex = 1) Then
-                dgPatentes.Rows(e.RowIndex).Cells("dgPatenteNegada").Value = False
-            End If
-            If (e.RowIndex >= 0 And e.ColumnIndex = 2) Then
-                dgPatentes.Rows(e.RowIndex).Cells("dgAsignarPatente").Value = False
-            End If
-        End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub txtDni_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDni.KeyPress
-        If Char.IsDigit(e.KeyChar) Then
-            e.Handled = False
-        ElseIf Char.IsControl(e.KeyChar) Then
-            e.Handled = False
-        Else
-            e.Handled = True
-        End If
+        Try
+            If Char.IsDigit(e.KeyChar) Then
+                e.Handled = False
+            ElseIf Char.IsControl(e.KeyChar) Then
+                e.Handled = False
+            Else
+                e.Handled = True
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

@@ -37,17 +37,21 @@
 
 
     Private Sub frmAMFamilia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MenuUI = Me.Owner
-        TraduccionBLL = New BLL.Traduccion(MenuUI.GetIdioma)
-        Dim PatenteBE As New BE.Patente
-        PatenteBE.Nombre = "Familia"
-        PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
-        If (BLL.Usuario.GetInstance.VerificarPatente(MenuUI.GetUsuario, PatenteBE) = False) Then
-            MsgBox(TraduccionBLL.TraducirTexto("Sus permisos han sido modificados, por favor inicie sesion nuevamente"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
-            Application.Exit()
-        End If
-        TraduccionBLL.TraducirForm(Me)
-        ObtenerPatentes()
+        Try
+            MenuUI = Me.Owner
+            TraduccionBLL = New BLL.Traduccion(MenuUI.GetIdioma)
+            Dim PatenteBE As New BE.Patente
+            PatenteBE.Nombre = "Familia"
+            PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
+            If (BLL.Usuario.GetInstance.VerificarPatente(MenuUI.GetUsuario, PatenteBE) = False) Then
+                MsgBox(TraduccionBLL.TraducirTexto("Sus permisos han sido modificados, por favor inicie sesion nuevamente"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
+                Application.Exit()
+            End If
+            TraduccionBLL.TraducirForm(Me)
+            ObtenerPatentes()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
 
@@ -111,24 +115,32 @@
 
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        If Validar() Then
-            RegistrarFamilia(True)
-        End If
+        Try
+            If Validar() Then
+                RegistrarFamilia(True)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub dgPatentes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgPatentes.CellContentClick
-        If _id > 0 Then
-            If (e.RowIndex >= 0 And e.ColumnIndex = 1) Then
-                dgPatentes.CommitEdit(DataGridViewDataErrorContexts.Commit)
-                If (dgPatentes.Rows(e.RowIndex).Cells("dgAsignarPatente").Value = False And
-                    BLL.Familia.GetInstance.ValidarEliminarFamiliaPatente(BLL.Familia.GetInstance.ListById(unaFamilia), New BE.Patente With {.PatenteId = dgPatentes.Rows(e.RowIndex).Cells("patente_id").Value}) = False) Then
-                    MsgBox(TraduccionBLL.TraducirTexto("No se puede quitar la patente a la familia porque quedarian patentes esenciales sin asignar"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
-                    ObtenerPatentes()
-                Else
-                    RegistrarFamilia(False)
+        Try
+            If _id > 0 Then
+                If (e.RowIndex >= 0 And e.ColumnIndex = 1) Then
+                    dgPatentes.CommitEdit(DataGridViewDataErrorContexts.Commit)
+                    If (dgPatentes.Rows(e.RowIndex).Cells("dgAsignarPatente").Value = False And
+                        BLL.Familia.GetInstance.ValidarEliminarFamiliaPatente(BLL.Familia.GetInstance.ListById(unaFamilia), New BE.Patente With {.PatenteId = dgPatentes.Rows(e.RowIndex).Cells("patente_id").Value}) = False) Then
+                        MsgBox(TraduccionBLL.TraducirTexto("No se puede quitar la patente a la familia porque quedarian patentes esenciales sin asignar"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
+                        ObtenerPatentes()
+                    Else
+                        RegistrarFamilia(False)
+                    End If
                 End If
             End If
-        End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Public Sub RegistrarBitacora(evento As String, nivel As String)

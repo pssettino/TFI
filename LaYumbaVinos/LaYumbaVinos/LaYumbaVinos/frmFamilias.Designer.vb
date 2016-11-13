@@ -23,7 +23,6 @@ Partial Class frmFamilias
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox_ListFam = New System.Windows.Forms.GroupBox()
-        Me.btnCancelar = New System.Windows.Forms.Button()
         Me.dgFamilias = New System.Windows.Forms.DataGridView()
         Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -37,24 +36,13 @@ Partial Class frmFamilias
         '
         'GroupBox_ListFam
         '
-        Me.GroupBox_ListFam.Controls.Add(Me.btnCancelar)
         Me.GroupBox_ListFam.Controls.Add(Me.dgFamilias)
-        Me.GroupBox_ListFam.Controls.Add(Me.btnRegistrar)
-        Me.GroupBox_ListFam.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox_ListFam.Location = New System.Drawing.Point(12, 45)
         Me.GroupBox_ListFam.Name = "GroupBox_ListFam"
-        Me.GroupBox_ListFam.Size = New System.Drawing.Size(531, 231)
+        Me.GroupBox_ListFam.Size = New System.Drawing.Size(531, 211)
         Me.GroupBox_ListFam.TabIndex = 2
         Me.GroupBox_ListFam.TabStop = False
         Me.GroupBox_ListFam.Text = "Familias"
-        '
-        'btnCancelar
-        '
-        Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancelar.Location = New System.Drawing.Point(392, 191)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(127, 27)
-        Me.btnCancelar.TabIndex = 7
-        Me.btnCancelar.Text = "&Cancelar"
         '
         'dgFamilias
         '
@@ -66,7 +54,7 @@ Partial Class frmFamilias
         Me.dgFamilias.Name = "dgFamilias"
         Me.dgFamilias.ReadOnly = True
         Me.dgFamilias.RowHeadersVisible = False
-        Me.dgFamilias.Size = New System.Drawing.Size(504, 166)
+        Me.dgFamilias.Size = New System.Drawing.Size(504, 186)
         Me.dgFamilias.TabIndex = 2
         '
         'Id
@@ -112,11 +100,11 @@ Partial Class frmFamilias
         '
         'btnRegistrar
         '
-        Me.btnRegistrar.Location = New System.Drawing.Point(259, 191)
+        Me.btnRegistrar.Location = New System.Drawing.Point(12, 12)
         Me.btnRegistrar.Name = "btnRegistrar"
         Me.btnRegistrar.Size = New System.Drawing.Size(127, 27)
         Me.btnRegistrar.TabIndex = 6
-        Me.btnRegistrar.Text = "&Registrar"
+        Me.btnRegistrar.Text = "&Nueva Familia"
         Me.btnRegistrar.UseVisualStyleBackColor = True
         '
         'frmFamilias
@@ -124,8 +112,9 @@ Partial Class frmFamilias
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(549, 256)
+        Me.ClientSize = New System.Drawing.Size(549, 265)
         Me.Controls.Add(Me.GroupBox_ListFam)
+        Me.Controls.Add(Me.btnRegistrar)
         Me.MaximizeBox = False
         Me.Name = "frmFamilias"
         Me.ShowIcon = False
@@ -137,7 +126,6 @@ Partial Class frmFamilias
 
     End Sub
     Friend WithEvents GroupBox_ListFam As System.Windows.Forms.GroupBox
-    Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents dgFamilias As System.Windows.Forms.DataGridView
     Friend WithEvents Id As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn

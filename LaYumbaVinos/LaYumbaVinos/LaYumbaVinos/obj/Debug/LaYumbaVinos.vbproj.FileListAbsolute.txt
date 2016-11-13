@@ -37,7 +37,6 @@ C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVi
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmAMBodega.resources
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmAMCliente.resources
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmAMFamilia.resources
-C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmAMRecepcionVino.resources
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmAMUsuario.resources
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmAMVenta.resources
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmAMVino.resources
@@ -49,7 +48,6 @@ C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVi
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmFamilias.resources
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmLogin.resources
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmMenuPrincipal.resources
-C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmRecepcionVinos.resources
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmRestore.resources
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmServidor.resources
 C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVinos\obj\Debug\LaYumbaVinos.frmUsuarios.resources

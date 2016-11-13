@@ -11,27 +11,31 @@
         _id = idParameter
     End Sub
     Private Sub frmAMCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MenuUI = Me.Owner
-        TraduccionBLL = New BLL.Traduccion(MenuUI.GetIdioma)
-        Dim PatenteBE As New BE.Patente
-        PatenteBE.Nombre = "Cliente"
-        PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
-        If (BLL.Usuario.GetInstance.VerificarPatente(MenuUI.GetUsuario, PatenteBE) = False) Then
-            MsgBox(TraduccionBLL.TraducirTexto("Sus permisos han sido modificados, por favor inicie sesion nuevamente"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
-            Application.Exit()
-        End If
-        TraduccionBLL.TraducirForm(Me)
+        Try
+            MenuUI = Me.Owner
+            TraduccionBLL = New BLL.Traduccion(MenuUI.GetIdioma)
+            Dim PatenteBE As New BE.Patente
+            PatenteBE.Nombre = "Cliente"
+            PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
+            If (BLL.Usuario.GetInstance.VerificarPatente(MenuUI.GetUsuario, PatenteBE) = False) Then
+                MsgBox(TraduccionBLL.TraducirTexto("Sus permisos han sido modificados, por favor inicie sesion nuevamente"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
+                Application.Exit()
+            End If
+            TraduccionBLL.TraducirForm(Me)
 
-        If _id = 0 Then
-            Dim localidad = BLL.Localidad.GetInstance.ListAll
-            cmbLocalidad.DataSource = localidad
-            cmbLocalidad.DisplayMember = "descripcion"
-            cmbLocalidad.ValueMember = "localidadId"
-            Dim provincia = BLL.Provincia.GetInstance.ListAll
-            cmbProvincia.DataSource = provincia
-            cmbProvincia.DisplayMember = "descripcion"
-            cmbProvincia.ValueMember = "provinciaId"
-        End If
+            If _id = 0 Then
+                Dim localidad = BLL.Localidad.GetInstance.ListAll
+                cmbLocalidad.DataSource = localidad
+                cmbLocalidad.DisplayMember = "descripcion"
+                cmbLocalidad.ValueMember = "localidadId"
+                Dim provincia = BLL.Provincia.GetInstance.ListAll
+                cmbProvincia.DataSource = provincia
+                cmbProvincia.DisplayMember = "descripcion"
+                cmbProvincia.ValueMember = "provinciaId"
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
@@ -39,38 +43,41 @@
     End Sub
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        If Validar() Then
-            Dim dni As String = Trim(txtDni.Text)
-            Dim localidadBE As New BE.Localidad
-            Dim provinciaBE As New BE.Provincia
+        Try
+            If Validar() Then
+                Dim dni As String = Trim(txtDni.Text)
+                Dim localidadBE As New BE.Localidad
+                Dim provinciaBE As New BE.Provincia
 
-            unCliente.Dni = dni
+                unCliente.Dni = dni
 
-            provinciaBE.ProvinciaId = cmbProvincia.SelectedValue
-            localidadBE.LocalidadId = cmbLocalidad.SelectedValue
-            localidadBE.Provincia = provinciaBE
-            unCliente.Localidad = localidadBE
-            unCliente.Apellido = Trim(txtApellido.Text)
-            unCliente.Nombre = Trim(txtNombre.Text)
-            unCliente.Email = Trim(txtEmail.Text)
-            unCliente.Telefono = Trim(txtTelefono.Text)
-            unCliente.Direccion = Trim(txtDireccion.Text)
+                provinciaBE.ProvinciaId = cmbProvincia.SelectedValue
+                localidadBE.LocalidadId = cmbLocalidad.SelectedValue
+                localidadBE.Provincia = provinciaBE
+                unCliente.Localidad = localidadBE
+                unCliente.Apellido = Trim(txtApellido.Text)
+                unCliente.Nombre = Trim(txtNombre.Text)
+                unCliente.Email = Trim(txtEmail.Text)
+                unCliente.Telefono = Trim(txtTelefono.Text)
+                unCliente.Direccion = Trim(txtDireccion.Text)
 
+                If _id = 0 Then
+                    BLL.Cliente.GetInstance.Add(unCliente)
+                    MessageBox.Show(TraduccionBLL.TraducirTexto("Se Registro el Cliente") & ": " & dni, TraduccionBLL.TraducirTexto("Registrar Cliente"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    RegistrarBitacora("Registro Cliente: " & dni, "Alta")
+                Else
+                    unCliente.ClienteId = _id
+                    BLL.Cliente.GetInstance.Update(unCliente)
+                    MessageBox.Show(TraduccionBLL.TraducirTexto("Se Modifico el Cliente") & ": " & dni, TraduccionBLL.TraducirTexto("Modificar Cliente"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    RegistrarBitacora("Modifico Cliente: " & dni, "Alta")
+                End If
 
-            If _id = 0 Then
-                BLL.Cliente.GetInstance.Add(unCliente)
-                MessageBox.Show(TraduccionBLL.TraducirTexto("Se Registro el Cliente") & ": " & dni, TraduccionBLL.TraducirTexto("Registrar Cliente"), MessageBoxButtons.OK, MessageBoxIcon.Information)
-                RegistrarBitacora("Registro Cliente: " & dni, "Alta")
-            Else
-                unCliente.ClienteId = _id
-                BLL.Cliente.GetInstance.Update(unCliente)
-                MessageBox.Show(TraduccionBLL.TraducirTexto("Se Modifico el Cliente") & ": " & dni, TraduccionBLL.TraducirTexto("Modificar Cliente"), MessageBoxButtons.OK, MessageBoxIcon.Information)
-                RegistrarBitacora("Modifico Cliente: " & dni, "Alta")
+                Me.DialogResult = Windows.Forms.DialogResult.OK
+                Me.Close()
             End If
-
-            Me.DialogResult = Windows.Forms.DialogResult.OK
-            Me.Close()
-        End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
 

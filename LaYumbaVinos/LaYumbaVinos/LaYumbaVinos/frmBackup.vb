@@ -14,16 +14,21 @@ Public Class frmBackup
 
 
     Protected Overrides Sub OnLoad(e As EventArgs)
-        MenuUI = Me.MdiParent
-        TraduccionBLL = New BLL.Traduccion(MenuUI.GetIdioma)
-        Dim PatenteBE As New BE.Patente
-        PatenteBE.Nombre = "Backup"
-        PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
-        If (BLL.Usuario.GetInstance.VerificarPatente(MenuUI.GetUsuario, PatenteBE) = False) Then
-            MsgBox(TraduccionBLL.TraducirTexto("Sus permisos han sido modificados, por favor inicie sesion nuevamente"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
-            Application.Exit()
-        End If
-        TraduccionBLL.TraducirForm(Me)
+        Try
+            MenuUI = Me.MdiParent
+            TraduccionBLL = New BLL.Traduccion(MenuUI.GetIdioma)
+            Dim PatenteBE As New BE.Patente
+            PatenteBE.Nombre = "Backup"
+            PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
+            If (BLL.Usuario.GetInstance.VerificarPatente(MenuUI.GetUsuario, PatenteBE) = False) Then
+                MsgBox(TraduccionBLL.TraducirTexto("Sus permisos han sido modificados, por favor inicie sesion nuevamente"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
+                Application.Exit()
+            End If
+            TraduccionBLL.TraducirForm(Me)
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
 
@@ -74,8 +79,12 @@ Public Class frmBackup
     End Sub
 
     Private Sub btnCarpeta_Click(sender As Object, e As EventArgs) Handles btnCarpeta.Click
-        If FolderBrowserDialog1.ShowDialog() = DialogResult.OK Then
-            txtruta.Text = FolderBrowserDialog1.SelectedPath
-        End If
+        Try
+            If FolderBrowserDialog1.ShowDialog() = DialogResult.OK Then
+                txtruta.Text = FolderBrowserDialog1.SelectedPath
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

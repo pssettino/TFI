@@ -102,7 +102,7 @@
 
     Dim index As Integer
     Public Sub AgregarVinosPorVenta()
-        ' dgVinosPorVenta.Rows.Clear()
+
         Dim vino As New BE.Vino
 
         vino.VinoId = cmbVino.SelectedValue
@@ -322,16 +322,9 @@
             Dim result As Integer
             Dim venta_vino_id As String = Convert.ToString(dgVinosPorVenta.CurrentRow.Cells("venta_vino_id").Value)
 
-            'Dim ventaElegida = BLL.Venta.GetInstance().ListarVentaById(venta)
-            'vinos.Clear()
-            'For Each item In ventaElegida.Vinos
-            '    vinos.Add(item)
-            'Next
-
-
 
             If e.ColumnIndex = 5 Then 'Nro Columna del datagriew
-                result = MessageBox.Show("¿Esta seguro que desea sacar el vino: " & nombreVino & "?", "Vino por Venta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+                result = MessageBox.Show(TraduccionBLL.TraducirTexto("¿Esta seguro que desea sacar el vino: ") & nombreVino & "?", TraduccionBLL.TraducirTexto("Vino por Venta"), MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
                 If result = DialogResult.OK Then
 
                     If vinos(e.RowIndex).VentaVinoId = venta_vino_id Then
@@ -381,7 +374,6 @@
 
     Private Sub cmbVino_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbVino.SelectedIndexChanged
         Try
-
             txtPrecioLista.Text = ""
             txtDisponible.Text = ""
             txtDisponible.Text = SeguridadBLL.DesencriptarRSA(ObtenerVino.Cantidad)

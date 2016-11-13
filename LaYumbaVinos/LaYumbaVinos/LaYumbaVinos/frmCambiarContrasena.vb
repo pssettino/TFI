@@ -13,17 +13,21 @@
     End Sub
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        If Validar() Then
-            Dim UsuarioBE As New BE.Usuario
-            UsuarioBE = BLL.Usuario.GetInstance.ListById(MenuUI.GetUsuario)
-            UsuarioBE.Contraseña = SeguridadBLL.EncriptarMD5(Trim(txtContraseñaConfirmar.Text))
-            BLL.Usuario.GetInstance.Update(UsuarioBE)
-            Dim nombreUsuario As String = SeguridadBLL.DesencriptarRSA(UsuarioBE.NombreUsuario)
-            MessageBox.Show(TraduccionBLL.TraducirTexto("Se Cambio la Contraseña") & ": " & nombreUsuario, TraduccionBLL.TraducirTexto("Cambiar Contraseña"), MessageBoxButtons.OK, MessageBoxIcon.Information)
-            RegistrarBitacora("Se Cambio la Contraseña: " & nombreUsuario, "Alta")
-            Me.DialogResult = Windows.Forms.DialogResult.OK
-            Me.Close()
-        End If
+        Try
+            If Validar() Then
+                Dim UsuarioBE As New BE.Usuario
+                UsuarioBE = BLL.Usuario.GetInstance.ListById(MenuUI.GetUsuario)
+                UsuarioBE.Contraseña = SeguridadBLL.EncriptarMD5(Trim(txtContraseñaConfirmar.Text))
+                BLL.Usuario.GetInstance.Update(UsuarioBE)
+                Dim nombreUsuario As String = SeguridadBLL.DesencriptarRSA(UsuarioBE.NombreUsuario)
+                MessageBox.Show(TraduccionBLL.TraducirTexto("Se Cambio la Contraseña") & ": " & nombreUsuario, TraduccionBLL.TraducirTexto("Cambiar Contraseña"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+                RegistrarBitacora("Se Cambio la Contraseña: " & nombreUsuario, "Alta")
+                Me.DialogResult = Windows.Forms.DialogResult.OK
+                Me.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
@@ -97,7 +101,7 @@
             If UsuarioBLL.ValidarEliminarUsuario(UsuarioBE) Then
                 UsuarioBE.Bloqueado = True
                 BLL.Usuario.GetInstance.BloquearDesbloquearUsuario(UsuarioBE)
-                MsgBox("Contraseña incorrecta. El usuario ha sido bloqueado!", MsgBoxStyle.Critical, "Error")
+                MsgBox(TraduccionBLL.TraducirTexto("Contraseña incorrecta. El usuario ha sido bloqueado!"), MsgBoxStyle.Critical, "Error")
                 RegistrarBitacora("Se bloqueo el usuario:" & nombreUsuario, "Alta")
                 Application.Exit()
             Else
@@ -105,12 +109,11 @@
                 UsuarioBE.Cci = 0
                 BLL.Usuario.GetInstance.Update(UsuarioBE)
                 RegistrarBitacora("Modifico Usuario (restablecio la contraseña): " & nombreUsuario, "Alta")
-                MsgBox("Contraseña incorrecta, Como el usuario contiene patentes esenciales se restableció la contraseña!", MsgBoxStyle.Critical, "Error")
+                MsgBox(TraduccionBLL.TraducirTexto("Contraseña incorrecta, Como el usuario contiene patentes esenciales se restableció la contraseña!"), MsgBoxStyle.Critical, "Error")
                 RegistrarBitacora("Ingreso incorrecto contraseña:" & nombreUsuario, "Media")
                 Application.Exit()
             End If
         Else
-            'MsgBox("Contraseña incorrecta", MsgBoxStyle.Critical, "Error")
             RegistrarBitacora("Ingreso incorrecto cambio de contraseña:" & nombreUsuario, "Media")
             limpiar()
         End If

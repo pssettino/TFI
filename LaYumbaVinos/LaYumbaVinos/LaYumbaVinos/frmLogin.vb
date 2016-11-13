@@ -8,9 +8,14 @@ Public Class frmLogin
     Dim BitacoraBE As New BE.Bitacora
     Dim UsuarioBE As New BE.Usuario
     Dim IdiomaBE As New BE.Idioma
+    Dim TraduccionBLL As BLL.Traduccion
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        LogIn()
+        Try
+            LogIn()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
 
@@ -21,16 +26,16 @@ Public Class frmLogin
             If UsuarioBE.UsuarioId = 0 Then
                 RegistrarBitacora("Ingreso Incorrecto: " & txtUsuario.Text, "Media")
                 txtContraseña.Text = ""
-                MsgBox("Ingreso incorrecto a la apliacion, por favor intentelo de nuevo!", MsgBoxStyle.Critical, "Error")
+                MsgBox(TraduccionBLL.TraducirTexto("Ingreso incorrecto a la apliacion, por favor intentelo de nuevo!"), MsgBoxStyle.Critical, "Error")
             Else
                 If UsuarioBE.Eliminado = True Then
-                    MsgBox("El usuario se encuentra eliminado. Contacte al Administrador.", MsgBoxStyle.Critical, "Error")
+                    MsgBox(TraduccionBLL.TraducirTexto("El usuario se encuentra eliminado. Contacte al Administrador."), MsgBoxStyle.Critical, "Error")
                     txtUsuario.Text = ""
                     txtContraseña.Text = ""
                     txtUsuario.Focus()
                 Else
                     If UsuarioBE.Bloqueado = True Then
-                        MsgBox("El usuario se encuentra bloqueado. Contacte al Administrador.", MsgBoxStyle.Critical, "Error")
+                        MsgBox(TraduccionBLL.TraducirTexto("El usuario se encuentra bloqueado. Contacte al Administrador."), MsgBoxStyle.Critical, "Error")
                         txtUsuario.Text = ""
                         txtContraseña.Text = ""
                         txtUsuario.Focus()
@@ -42,13 +47,13 @@ Public Class frmLogin
                                     PatenteBE.Nombre = "RecalcularDV"
                                     PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
                                     If UsuarioBLL.VerificarPatente(UsuarioBE, PatenteBE) Then
-                                        If MsgBox("Error al verificar la integridad de la Base de Datos. ¿Desea Recalcular los Digitos Verificadores? ", MsgBoxStyle.YesNo, "Confirmacion") = MsgBoxResult.Yes Then
+                                        If MsgBox(TraduccionBLL.TraducirTexto("Error al verificar la integridad de la Base de Datos. ¿Desea Recalcular los Digitos Verificadores? "), MsgBoxStyle.YesNo, "Confirmacion") = MsgBoxResult.Yes Then
                                             DVH_BLL.RecalcularDVH()
                                         Else
                                             Application.Exit()
                                         End If
                                     Else
-                                        MsgBox("Error al verificar la integridad de la Base de Datos. Por favor a contacte al Administrador del sistema.", MsgBoxStyle.Critical, "Error")
+                                        MsgBox(TraduccionBLL.TraducirTexto("Error al verificar la integridad de la Base de Datos. Por favor a contacte al Administrador del sistema."), MsgBoxStyle.Critical, "Error")
                                         Application.Exit()
                                     End If
                                 End If
@@ -69,18 +74,18 @@ Public Class frmLogin
                                 If UsuarioBLL.ValidarEliminarUsuario(UsuarioBE) Then
                                     UsuarioBE.Bloqueado = True
                                     BLL.Usuario.GetInstance.BloquearDesbloquearUsuario(UsuarioBE)
-                                    MsgBox("Contraseña incorrecta. El usuario ha sido bloqueado!", MsgBoxStyle.Critical, "Error")
+                                    MsgBox(TraduccionBLL.TraducirTexto("Contraseña incorrecta. El usuario ha sido bloqueado!"), MsgBoxStyle.Critical, "Error")
                                     RegistrarBitacora("Se bloqueo el usuario:" & txtUsuario.Text, "Alta")
                                 Else
                                     UsuarioBE.Contraseña = SeguridadBLL.EncriptarMD5(Trim(SeguridadBLL.AutoGenerarContraseña(UsuarioBE, True)))
                                     UsuarioBE.Cci = 0
                                     BLL.Usuario.GetInstance.Update(UsuarioBE)
                                     RegistrarBitacora("Modifico Usuario (restablecio la contraseña): " & txtUsuario.Text, "Alta")
-                                    MsgBox("Contraseña incorrecta, Como el usuario contiene patentes esenciales se restableció la contraseña!", MsgBoxStyle.Critical, "Error")
+                                    MsgBox(TraduccionBLL.TraducirTexto("Contraseña incorrecta, Como el usuario contiene patentes esenciales se restableció la contraseña!"), MsgBoxStyle.Critical, "Error")
                                     RegistrarBitacora("Ingreso incorrecto contraseña:" & txtUsuario.Text, "Media")
                                 End If
                             Else
-                                MsgBox("Contraseña incorrecta", MsgBoxStyle.Critical, "Error")
+                                MsgBox(TraduccionBLL.TraducirTexto("Contraseña incorrecta"), MsgBoxStyle.Critical, "Error")
                                 RegistrarBitacora("Ingreso incorrecto contraseña:" & txtUsuario.Text, "Media")
                                 txtContraseña.Text = ""
                             End If
@@ -95,11 +100,11 @@ Public Class frmLogin
         Dim valido = True
         If txtUsuario.Text = "" Then
             valido = False
-            MsgBox("Ingrese el Nombre de Usuario")
+            MsgBox(TraduccionBLL.TraducirTexto("Ingrese el Nombre de Usuario"))
         End If
         If txtContraseña.Text = "" Then
             valido = False
-            MsgBox("Ingrese la Contraseña")
+            MsgBox(TraduccionBLL.TraducirTexto("Ingrese la Contraseña"))
         End If
         Return valido
     End Function
@@ -123,7 +128,7 @@ Public Class frmLogin
 
             ObtenerIdioma()
         Catch ex As Exception
-            MsgBox("Error Inesperado, contacte al administrador", MsgBoxStyle.Critical, "Error")
+            MsgBox(ex.Message)
         End Try
     End Sub
 
