@@ -23,6 +23,8 @@ Public Class frmLogin
         If Validar() Then
             UsuarioBE.NombreUsuario = SeguridadBLL.EncriptarRSA(Trim(txtUsuario.Text))
             UsuarioBE = BLL.Usuario.GetInstance.ValidarContraseña(UsuarioBE)
+            IdiomaBE.IdiomaId = cmbIdioma.SelectedValue
+            TraduccionBLL = New BLL.Traduccion(IdiomaBE)
             If UsuarioBE.UsuarioId = 0 Then
                 RegistrarBitacora("Ingreso Incorrecto: " & txtUsuario.Text, "Media")
                 txtContraseña.Text = ""
