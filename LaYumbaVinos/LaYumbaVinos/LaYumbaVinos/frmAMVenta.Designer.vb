@@ -37,7 +37,6 @@ Partial Class frmAMVenta
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtPrecioLista = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.lblClienteE = New System.Windows.Forms.Label()
         Me.txtFechaHora = New System.Windows.Forms.DateTimePicker()
         Me.cmbCliente = New System.Windows.Forms.ComboBox()
         Me.cmbVino = New System.Windows.Forms.ComboBox()
@@ -58,6 +57,7 @@ Partial Class frmAMVenta
         Me.gvBtnEliminarVino = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Eliminado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnAceptar = New System.Windows.Forms.Button()
+        Me.lblClienteE = New System.Windows.Forms.Label()
         CType(Me.txtCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -201,24 +201,12 @@ Partial Class frmAMVenta
         Me.GroupBox1.Controls.Add(Me.txtNroVenta)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 13)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 6)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(691, 93)
+        Me.GroupBox1.Size = New System.Drawing.Size(691, 100)
         Me.GroupBox1.TabIndex = 10
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Venta"
-        '
-        'lblClienteE
-        '
-        Me.lblClienteE.AutoSize = True
-        Me.lblClienteE.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblClienteE.ForeColor = System.Drawing.Color.Red
-        Me.lblClienteE.Location = New System.Drawing.Point(117, 78)
-        Me.lblClienteE.Name = "lblClienteE"
-        Me.lblClienteE.Size = New System.Drawing.Size(24, 12)
-        Me.lblClienteE.TabIndex = 120
-        Me.lblClienteE.Text = "error"
-        Me.lblClienteE.Visible = False
         '
         'txtFechaHora
         '
@@ -230,7 +218,7 @@ Partial Class frmAMVenta
         'cmbCliente
         '
         Me.cmbCliente.FormattingEnabled = True
-        Me.cmbCliente.Location = New System.Drawing.Point(119, 52)
+        Me.cmbCliente.Location = New System.Drawing.Point(119, 50)
         Me.cmbCliente.Name = "cmbCliente"
         Me.cmbCliente.Size = New System.Drawing.Size(171, 21)
         Me.cmbCliente.TabIndex = 118
@@ -417,6 +405,18 @@ Partial Class frmAMVenta
         Me.btnAceptar.TabIndex = 119
         Me.btnAceptar.Text = "&Aceptar"
         '
+        'lblClienteE
+        '
+        Me.lblClienteE.AutoSize = True
+        Me.lblClienteE.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblClienteE.ForeColor = System.Drawing.Color.Red
+        Me.lblClienteE.Location = New System.Drawing.Point(117, 74)
+        Me.lblClienteE.Name = "lblClienteE"
+        Me.lblClienteE.Size = New System.Drawing.Size(24, 12)
+        Me.lblClienteE.TabIndex = 127
+        Me.lblClienteE.Text = "error"
+        Me.lblClienteE.Visible = False
+        '
         'frmAMVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -463,7 +463,6 @@ Partial Class frmAMVenta
     Friend WithEvents dgVinosPorVenta As System.Windows.Forms.DataGridView
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
     Friend WithEvents txtFechaHora As System.Windows.Forms.DateTimePicker
-    Friend WithEvents lblClienteE As System.Windows.Forms.Label
     Friend WithEvents lblPrecioE As System.Windows.Forms.Label
     Friend WithEvents lblVinoE As System.Windows.Forms.Label
     Friend WithEvents txtDisponible As System.Windows.Forms.TextBox
@@ -475,4 +474,5 @@ Partial Class frmAMVenta
     Friend WithEvents PrecioVenta As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents gvBtnEliminarVino As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents Eliminado As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents lblClienteE As System.Windows.Forms.Label
 End Class

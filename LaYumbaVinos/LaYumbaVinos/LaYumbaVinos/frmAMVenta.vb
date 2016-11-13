@@ -218,11 +218,11 @@
             lblVinoE.Visible = True
             lblVinoE.Text = TraduccionBLL.TraducirTexto("Seleccione el Vino")
         End If
-        lblClienteE.Visible = False
+        lblPrecioE.Visible = False
         If txtPrecio.Text = "" Then
             valido = False
-            lblClienteE.Visible = True
-            lblClienteE.Text = TraduccionBLL.TraducirTexto("Campo requerido")
+            lblPrecioE.Visible = True
+            lblPrecioE.Text = TraduccionBLL.TraducirTexto("Campo requerido")
         End If
         Return valido
     End Function

@@ -35,8 +35,6 @@ Partial Class frmMenuPrincipal
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteStockDeVinosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VinosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AdministraciónDeVinosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RecepciónDeVinosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VinosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BodegasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -122,22 +120,9 @@ Partial Class frmMenuPrincipal
         '
         'VinosToolStripMenuItem1
         '
-        Me.VinosToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdministraciónDeVinosToolStripMenuItem, Me.RecepciónDeVinosToolStripMenuItem})
         Me.VinosToolStripMenuItem1.Name = "VinosToolStripMenuItem1"
         Me.VinosToolStripMenuItem1.Size = New System.Drawing.Size(193, 22)
         Me.VinosToolStripMenuItem1.Text = "Vinos"
-        '
-        'AdministraciónDeVinosToolStripMenuItem
-        '
-        Me.AdministraciónDeVinosToolStripMenuItem.Name = "AdministraciónDeVinosToolStripMenuItem"
-        Me.AdministraciónDeVinosToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
-        Me.AdministraciónDeVinosToolStripMenuItem.Text = "Administración de Vinos"
-        '
-        'RecepciónDeVinosToolStripMenuItem
-        '
-        Me.RecepciónDeVinosToolStripMenuItem.Name = "RecepciónDeVinosToolStripMenuItem"
-        Me.RecepciónDeVinosToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
-        Me.RecepciónDeVinosToolStripMenuItem.Text = "Recepción de Vinos"
         '
         'VinosToolStripMenuItem
         '
@@ -219,6 +204,4 @@ Partial Class frmMenuPrincipal
     Friend WithEvents VentasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SeguridadToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnsMenuPrincipal As System.Windows.Forms.MenuStrip
-    Friend WithEvents AdministraciónDeVinosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RecepciónDeVinosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

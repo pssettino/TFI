@@ -64,7 +64,7 @@
         LaYumbaVinos.frmCambiarContrasena.Show()
     End Sub
 
-    Private Sub AdministraciónDeVinosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdministraciónDeVinosToolStripMenuItem.Click
+    Private Sub AdministraciónDeVinosToolStripMenuItem_Click(sender As Object, e As EventArgs)
         LaYumbaVinos.frmVinos.MdiParent = Me
         LaYumbaVinos.frmVinos.Show()
     End Sub
@@ -143,5 +143,23 @@
         TraduccionBLL = New BLL.Traduccion(GetIdioma)
         TraduccionBLL.TraducirForm(Me)
         Me.WindowState = FormWindowState.Maximized
+    End Sub
+
+    Private Sub RecepciónDeVinosToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        LaYumbaVinos.frmRecepcionVinos.MdiParent = Me
+        LaYumbaVinos.frmRecepcionVinos.Show()
+    End Sub
+
+    Private Sub VinosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles VinosToolStripMenuItem1.Click
+        LaYumbaVinos.frmVinos.MdiParent = Me
+        LaYumbaVinos.frmVinos.Show()
+    End Sub
+
+    Private Sub frmMenuPrincipal_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Application.Exit()
+    End Sub
+
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+        Application.Exit()
     End Sub
 End Class

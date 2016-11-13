@@ -14,7 +14,7 @@ Public Class Backup
    
     Dim BackupDAL As New DAL.Backup
     Dim ConfigurationAppSettings As New System.Configuration.AppSettingsReader
-    Dim CompressDLL As String = "SevenZipSharp.dll"
+    Dim CompressDLL As String = "C:\Program Files (x86)\7-Zip\7z.dll"
 
     Public Sub ComprimirDb(ByVal BackupBE As BE.Backup)
         Dim dirInputFile = Path.GetDirectoryName(BackupBE.ubicacion)
@@ -31,7 +31,7 @@ Public Class Backup
             Compressor.DirectoryStructure = False
             Compressor.CompressionLevel = CompressionLevel.Normal
             Compressor.VolumeSize = CInt(BackupBE.tamano)
-            Compressor.CompressDirectory(tempDir, BackupBE.ubicacion + ".dbk", True)
+            Compressor.CompressDirectory(tempDir, BackupBE.Ubicacion + ".dbk", True)
         Catch ex As Exception
             File.Move(tempDir & "\" & inputFileName, BackupBE.ubicacion)
             Directory.Delete(tempDir, True)
