@@ -16,6 +16,18 @@ Public Class frmAMUsuario
 
     Private Sub frmAMUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            MenuUI = Me.Owner
+            TraduccionBLL = New BLL.Traduccion(MenuUI.GetIdioma)
+            Dim PatenteBE As New BE.Patente
+            PatenteBE.Nombre = "Usuario"
+            PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
+            If (BLL.Usuario.GetInstance.VerificarPatente(MenuUI.GetUsuario, PatenteBE) = False) Then
+                MsgBox(TraduccionBLL.TraducirTexto("Sus permisos han sido modificados, por favor inicie sesion nuevamente"), MsgBoxStyle.Critical, TraduccionBLL.TraducirTexto("Error"))
+                Application.Exit()
+            End If
+            TraduccionBLL.TraducirForm(Me)
+            ObtenerDatos()
+            txtUser.Focus()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

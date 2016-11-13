@@ -7,10 +7,14 @@
 
 
     Public Sub New(ByVal _usuarioBE As BE.Usuario, ByVal _idiomaBE As BE.Idioma)
-        InitializeComponent()
-        UsuarioBE = _usuarioBE
-        IdiomaBE = _idiomaBE
-        ValidarMenu()
+        Try
+            InitializeComponent()
+            UsuarioBE = _usuarioBE
+            IdiomaBE = _idiomaBE
+            ValidarMenu()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Public Sub New()
@@ -73,59 +77,13 @@
 
     Public Sub ValidarMenu()
 
-        PatenteBE.Nombre = "Usuario"
-        PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
-        If BLL.Usuario.GetInstance.VerificarPatente(UsuarioBE, PatenteBE) Then
-            SeguridadToolStripMenuItem.Enabled = True
-            UsuariosToolStripMenuItem.Enabled = True
-        End If
-
-        PatenteBE.Nombre = "Familia"
-        PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
-        If BLL.Usuario.GetInstance.VerificarPatente(UsuarioBE, PatenteBE) Then
-            SeguridadToolStripMenuItem.Enabled = True
-            AdministrarFamiliasToolStripMenuItem.Enabled = True
-        End If
-
-        PatenteBE.Nombre = "Backup"
-        PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
-        If BLL.Usuario.GetInstance.VerificarPatente(UsuarioBE, PatenteBE) Then
-            SeguridadToolStripMenuItem.Enabled = True
-            BackupToolStripMenuItem.Enabled = True
-        End If
-
-        PatenteBE.Nombre = "Restore"
-        PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
-        If BLL.Usuario.GetInstance.VerificarPatente(UsuarioBE, PatenteBE) Then
-            SeguridadToolStripMenuItem.Enabled = True
-            RestoreToolStripMenuItem.Enabled = True
-        End If
-
-        PatenteBE.Nombre = "Bitacora"
-        PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
-        If BLL.Usuario.GetInstance.VerificarPatente(UsuarioBE, PatenteBE) Then
-            SeguridadToolStripMenuItem.Enabled = True
-            BitacoraToolStripMenuItem.Enabled = True
-        End If
-
-        PatenteBE.Nombre = "Venta"
-        PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
-        If BLL.Usuario.GetInstance.VerificarPatente(UsuarioBE, PatenteBE) Then
-            VentasToolStripMenuItem.Enabled = True
-        End If
-
-        PatenteBE.Nombre = "Cliente"
-        PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
-        If BLL.Usuario.GetInstance.VerificarPatente(UsuarioBE, PatenteBE) Then
-            ClientesToolStripMenuItem.Enabled = True
-        End If
-
-        PatenteBE.Nombre = "Vino"
-        PatenteBE.PatenteId = BLL.Usuario.GetInstance.ObtenerPantenteID(PatenteBE.Nombre)
-        If BLL.Usuario.GetInstance.VerificarPatente(UsuarioBE, PatenteBE) Then
-            VinosToolStripMenuItem.Enabled = True
-            ReporteStockDeVinosToolStripMenuItem.Enabled = True
-        End If
+        Dim patentes = BLL.Patente.GetInstance.ListAll()
+        For Each patente As BE.Patente In patentes
+            If BLL.Usuario.GetInstance.VerificarPatente(UsuarioBE, patente) Then
+                SeguridadToolStripMenuItem.Enabled = True
+                UsuariosToolStripMenuItem.Enabled = True
+            End If
+        Next
 
         SeguridadToolStripMenuItem.Enabled = True
         CambiarContraseñaToolStripMenuItem.Enabled = True
@@ -140,15 +98,15 @@
     End Function
 
     Private Sub frmMenuPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TraduccionBLL = New BLL.Traduccion(GetIdioma)
-        TraduccionBLL.TraducirForm(Me)
-        Me.WindowState = FormWindowState.Maximized
+        Try
+            TraduccionBLL = New BLL.Traduccion(GetIdioma)
+            TraduccionBLL.TraducirForm(Me)
+            Me.WindowState = FormWindowState.Maximized
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
-    Private Sub RecepciónDeVinosToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        LaYumbaVinos.frmRecepcionVinos.MdiParent = Me
-        LaYumbaVinos.frmRecepcionVinos.Show()
-    End Sub
 
     Private Sub VinosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles VinosToolStripMenuItem1.Click
         LaYumbaVinos.frmVinos.MdiParent = Me
