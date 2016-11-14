@@ -115,9 +115,9 @@
     End Function
 
 
-    Public Function ObtenerVinoPorParametros(descripcion As String, bodega As BE.Bodega, check As Boolean) As List(Of BE.Vino)
+    Public Function ObtenerVinoPorParametros(descripcion As String, bodega As BE.Bodega) As List(Of BE.Vino)
         Try
-            Return DAL.Vino.GetInstance.ObtenerVinoPorParametros(descripcion, bodega, check)
+            Return DAL.Vino.GetInstance.ObtenerVinoPorParametros(descripcion, bodega)
         Catch ex As Exception
             Throw ex
         End Try

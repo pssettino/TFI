@@ -373,7 +373,7 @@
         Return True
     End Function
 
-    Function ObtenerVinoPorParametros(descripcion As String, bodega As BE.Bodega, check As Boolean) As List(Of BE.Vino)
+    Function ObtenerVinoPorParametros(descripcion As String, bodega As BE.Bodega) As List(Of BE.Vino)
         Dim comm As New SqlClient.SqlCommand
         Dim sqlDa As New SqlClient.SqlDataAdapter
         Dim ds As New DataSet

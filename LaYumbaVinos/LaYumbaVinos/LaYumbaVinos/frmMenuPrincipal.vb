@@ -120,4 +120,9 @@
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Application.Exit()
     End Sub
+
+    Private Sub ReporteStockDeVinosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteStockDeVinosToolStripMenuItem.Click
+        LaYumbaVinos.frmVinosReporteFiltro.MdiParent = Me
+        LaYumbaVinos.frmVinosReporteFiltro.Show()
+    End Sub
 End Class
