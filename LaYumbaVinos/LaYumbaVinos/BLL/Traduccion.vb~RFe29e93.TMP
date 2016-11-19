@@ -19,6 +19,7 @@ Public Class Traduccion
 
     Public Sub TraducirForm(ByRef Form As Form)
 
+
         If IdiomaBE IsNot Nothing Then
             ' CAMBIO EL TEXTO DE LA VENTANA
             Form.Text = TraducirTexto(Form.Text)
@@ -32,7 +33,6 @@ Public Class Traduccion
                         If subMenu.HasDropDown Then
                             For j = 0 To subMenu.DropDown.Items.Count - 1
                                 subMenu.DropDown.Items(j).Text = TraducirTexto(subMenu.DropDown.Items(j).Text)
-
                             Next
                         Else
                             MenuStrip.DropDown.Items(i).Text = TraducirTexto(MenuStrip.DropDown.Items(i).Text)

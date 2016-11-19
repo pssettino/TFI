@@ -27,7 +27,8 @@ Public Class DVV
     Public Function VerificarDVV(ByVal dt As DataTable) As Boolean
         Dim dvv = ConcatenarRegistros(dt)
         Dim dvvBE = New BE.DVV(dt.TableName)
-        If (dvv <> DigitoVerificadorVerticalDAL.GetDigito(dvvBE)) Then
+        Dim dvvDB = DigitoVerificadorVerticalDAL.GetDigito(dvvBE)
+        If (dvv <> Long.Parse(dvvDB)) Then
             Return False
         End If
         Return True

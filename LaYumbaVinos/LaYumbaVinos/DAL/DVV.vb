@@ -52,5 +52,16 @@ Public Class DVV
         SqlConn.Close()
     End Sub
 
+    Public Sub SetDigito(nombre As String, ByVal dvv As String)
+        Dim SqlConn As New SqlClient.SqlConnection With {.ConnectionString = Conexion.getConexionLaYumba}
+        Dim SqlComm As New SqlClient.SqlCommand
+
+        SqlConn.Open()
+        SqlComm.CommandText = String.Format("UPDATE DVV SET dvv = '" + dvv.ToString + "' WHERE nombre = '" + nombre + "'")
+        SqlComm.Connection = SqlConn
+        SqlComm.ExecuteNonQuery()
+        SqlConn.Close()
+    End Sub
+
 
 End Class ' DVV

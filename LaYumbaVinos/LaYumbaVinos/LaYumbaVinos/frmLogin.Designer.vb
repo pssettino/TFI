@@ -105,6 +105,7 @@ Partial Class frmLogin
         '
         'cmbIdioma
         '
+        Me.cmbIdioma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbIdioma.FormattingEnabled = True
         Me.cmbIdioma.Location = New System.Drawing.Point(245, 116)
         Me.cmbIdioma.Name = "cmbIdioma"

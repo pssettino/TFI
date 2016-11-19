@@ -138,7 +138,7 @@
         clienteBE.NombreCompleto = DirectCast(cmbCliente.SelectedItem, System.Collections.Generic.KeyValuePair(Of Integer, String)).Value
 
         venta.cliente = clienteBE
-        venta.fechaVenta = txtFechaHora.Text
+        venta.FechaVenta = txtFechaHora.Value
         venta.activo = True
         venta.Vinos = vinos
 

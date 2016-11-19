@@ -63,6 +63,7 @@ Partial Class frmVentas
         '
         'cmbCliente
         '
+        Me.cmbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbCliente.FormattingEnabled = True
         Me.cmbCliente.Location = New System.Drawing.Point(116, 55)
         Me.cmbCliente.Name = "cmbCliente"
@@ -71,9 +72,9 @@ Partial Class frmVentas
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(6, 55)
+        Me.Label2.Location = New System.Drawing.Point(-3, 55)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(104, 19)
+        Me.Label2.Size = New System.Drawing.Size(79, 19)
         Me.Label2.TabIndex = 116
         Me.Label2.Text = "Cliente"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -116,7 +117,7 @@ Partial Class frmVentas
         '
         Me.lblFechaDesde.Location = New System.Drawing.Point(6, 19)
         Me.lblFechaDesde.Name = "lblFechaDesde"
-        Me.lblFechaDesde.Size = New System.Drawing.Size(107, 20)
+        Me.lblFechaDesde.Size = New System.Drawing.Size(70, 20)
         Me.lblFechaDesde.TabIndex = 111
         Me.lblFechaDesde.Text = "Fecha desde"
         Me.lblFechaDesde.TextAlign = System.Drawing.ContentAlignment.MiddleRight

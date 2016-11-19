@@ -78,18 +78,18 @@ Partial Class frmClientes
         '
         'txtBuscarApeNom
         '
-        Me.txtBuscarApeNom.Location = New System.Drawing.Point(488, 24)
+        Me.txtBuscarApeNom.Location = New System.Drawing.Point(514, 24)
         Me.txtBuscarApeNom.MaxLength = 255
         Me.txtBuscarApeNom.Name = "txtBuscarApeNom"
-        Me.txtBuscarApeNom.Size = New System.Drawing.Size(293, 20)
+        Me.txtBuscarApeNom.Size = New System.Drawing.Size(267, 20)
         Me.txtBuscarApeNom.TabIndex = 98
         '
         'txtBuscarDni
         '
-        Me.txtBuscarDni.Location = New System.Drawing.Point(49, 24)
+        Me.txtBuscarDni.Location = New System.Drawing.Point(46, 24)
         Me.txtBuscarDni.MaxLength = 8
         Me.txtBuscarDni.Name = "txtBuscarDni"
-        Me.txtBuscarDni.Size = New System.Drawing.Size(303, 20)
+        Me.txtBuscarDni.Size = New System.Drawing.Size(306, 20)
         Me.txtBuscarDni.TabIndex = 97
         '
         'GroupBox2

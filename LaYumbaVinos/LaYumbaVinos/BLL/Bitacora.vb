@@ -23,10 +23,12 @@ Public Class Bitacora
 
         Return _instancia
     End Function
-    Public Function RegistrarBitacora(objAdd As BE.Bitacora) As Boolean
+    Public Function RegistrarBitacora(objAdd As BE.Bitacora, Optional noFueCalculadoDV As Boolean = True) As Boolean
         Try
             If DAL.Bitacora.GetInstance().RegistrarBitacora(objAdd) Then
-                GenerarDV(DAL.Bitacora.GetInstance.ObtenerMaxId())
+                If (noFueCalculadoDV) Then
+                    GenerarDV(DAL.Bitacora.GetInstance.ObtenerMaxId())
+                End If
                 Return True
             Else
                 Return False

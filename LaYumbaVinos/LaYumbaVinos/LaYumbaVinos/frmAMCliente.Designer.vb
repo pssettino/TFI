@@ -92,7 +92,7 @@ Partial Class frmAMCliente
         Me.lblDireccionError.AutoSize = True
         Me.lblDireccionError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDireccionError.ForeColor = System.Drawing.Color.Red
-        Me.lblDireccionError.Location = New System.Drawing.Point(71, 277)
+        Me.lblDireccionError.Location = New System.Drawing.Point(87, 277)
         Me.lblDireccionError.Name = "lblDireccionError"
         Me.lblDireccionError.Size = New System.Drawing.Size(24, 12)
         Me.lblDireccionError.TabIndex = 122
@@ -104,7 +104,7 @@ Partial Class frmAMCliente
         Me.lblLocalidadError.AutoSize = True
         Me.lblLocalidadError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLocalidadError.ForeColor = System.Drawing.Color.Red
-        Me.lblLocalidadError.Location = New System.Drawing.Point(71, 239)
+        Me.lblLocalidadError.Location = New System.Drawing.Point(87, 239)
         Me.lblLocalidadError.Name = "lblLocalidadError"
         Me.lblLocalidadError.Size = New System.Drawing.Size(24, 12)
         Me.lblLocalidadError.TabIndex = 121
@@ -116,7 +116,7 @@ Partial Class frmAMCliente
         Me.lblProvinciaError.AutoSize = True
         Me.lblProvinciaError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblProvinciaError.ForeColor = System.Drawing.Color.Red
-        Me.lblProvinciaError.Location = New System.Drawing.Point(71, 197)
+        Me.lblProvinciaError.Location = New System.Drawing.Point(87, 197)
         Me.lblProvinciaError.Name = "lblProvinciaError"
         Me.lblProvinciaError.Size = New System.Drawing.Size(24, 12)
         Me.lblProvinciaError.TabIndex = 120
@@ -128,7 +128,7 @@ Partial Class frmAMCliente
         Me.lblEmailError.AutoSize = True
         Me.lblEmailError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblEmailError.ForeColor = System.Drawing.Color.Red
-        Me.lblEmailError.Location = New System.Drawing.Point(71, 154)
+        Me.lblEmailError.Location = New System.Drawing.Point(87, 154)
         Me.lblEmailError.Name = "lblEmailError"
         Me.lblEmailError.Size = New System.Drawing.Size(24, 12)
         Me.lblEmailError.TabIndex = 119
@@ -152,7 +152,7 @@ Partial Class frmAMCliente
         Me.lblDniError.AutoSize = True
         Me.lblDniError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDniError.ForeColor = System.Drawing.Color.Red
-        Me.lblDniError.Location = New System.Drawing.Point(71, 116)
+        Me.lblDniError.Location = New System.Drawing.Point(87, 116)
         Me.lblDniError.Name = "lblDniError"
         Me.lblDniError.Size = New System.Drawing.Size(24, 12)
         Me.lblDniError.TabIndex = 117
@@ -164,7 +164,7 @@ Partial Class frmAMCliente
         Me.lblNombreError.AutoSize = True
         Me.lblNombreError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombreError.ForeColor = System.Drawing.Color.Red
-        Me.lblNombreError.Location = New System.Drawing.Point(71, 79)
+        Me.lblNombreError.Location = New System.Drawing.Point(87, 80)
         Me.lblNombreError.Name = "lblNombreError"
         Me.lblNombreError.Size = New System.Drawing.Size(24, 12)
         Me.lblNombreError.TabIndex = 116
@@ -176,7 +176,7 @@ Partial Class frmAMCliente
         Me.lblapellidoError.AutoSize = True
         Me.lblapellidoError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblapellidoError.ForeColor = System.Drawing.Color.Red
-        Me.lblapellidoError.Location = New System.Drawing.Point(71, 41)
+        Me.lblapellidoError.Location = New System.Drawing.Point(87, 42)
         Me.lblapellidoError.Name = "lblapellidoError"
         Me.lblapellidoError.Size = New System.Drawing.Size(24, 12)
         Me.lblapellidoError.TabIndex = 115
@@ -185,18 +185,20 @@ Partial Class frmAMCliente
         '
         'cmbLocalidad
         '
+        Me.cmbLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbLocalidad.FormattingEnabled = True
-        Me.cmbLocalidad.Location = New System.Drawing.Point(71, 215)
+        Me.cmbLocalidad.Location = New System.Drawing.Point(89, 215)
         Me.cmbLocalidad.Name = "cmbLocalidad"
-        Me.cmbLocalidad.Size = New System.Drawing.Size(287, 21)
+        Me.cmbLocalidad.Size = New System.Drawing.Size(269, 21)
         Me.cmbLocalidad.TabIndex = 10
         '
         'cmbProvincia
         '
+        Me.cmbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbProvincia.FormattingEnabled = True
-        Me.cmbProvincia.Location = New System.Drawing.Point(70, 173)
+        Me.cmbProvincia.Location = New System.Drawing.Point(89, 173)
         Me.cmbProvincia.Name = "cmbProvincia"
-        Me.cmbProvincia.Size = New System.Drawing.Size(287, 21)
+        Me.cmbProvincia.Size = New System.Drawing.Size(268, 21)
         Me.cmbProvincia.TabIndex = 10
         '
         'btnCancelar
@@ -238,26 +240,26 @@ Partial Class frmAMCliente
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(70, 131)
+        Me.txtEmail.Location = New System.Drawing.Point(89, 131)
         Me.txtEmail.MaxLength = 100
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(285, 20)
+        Me.txtEmail.Size = New System.Drawing.Size(266, 20)
         Me.txtEmail.TabIndex = 4
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(73, 56)
+        Me.txtNombre.Location = New System.Drawing.Point(89, 56)
         Me.txtNombre.MaxLength = 80
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(285, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(269, 20)
         Me.txtNombre.TabIndex = 1
         '
         'txtApellido
         '
-        Me.txtApellido.Location = New System.Drawing.Point(73, 19)
+        Me.txtApellido.Location = New System.Drawing.Point(89, 19)
         Me.txtApellido.MaxLength = 80
         Me.txtApellido.Name = "txtApellido"
-        Me.txtApellido.Size = New System.Drawing.Size(285, 20)
+        Me.txtApellido.Size = New System.Drawing.Size(269, 20)
         Me.txtApellido.TabIndex = 0
         '
         'txtTelefono
@@ -270,18 +272,18 @@ Partial Class frmAMCliente
         '
         'txtDni
         '
-        Me.txtDni.Location = New System.Drawing.Point(73, 95)
+        Me.txtDni.Location = New System.Drawing.Point(89, 95)
         Me.txtDni.MaxLength = 8
         Me.txtDni.Name = "txtDni"
-        Me.txtDni.Size = New System.Drawing.Size(109, 20)
+        Me.txtDni.Size = New System.Drawing.Size(93, 20)
         Me.txtDni.TabIndex = 2
         '
         'txtDireccion
         '
-        Me.txtDireccion.Location = New System.Drawing.Point(73, 254)
+        Me.txtDireccion.Location = New System.Drawing.Point(89, 254)
         Me.txtDireccion.MaxLength = 255
         Me.txtDireccion.Name = "txtDireccion"
-        Me.txtDireccion.Size = New System.Drawing.Size(285, 20)
+        Me.txtDireccion.Size = New System.Drawing.Size(269, 20)
         Me.txtDireccion.TabIndex = 5
         '
         'lblProvincia

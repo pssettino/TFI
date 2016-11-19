@@ -67,7 +67,7 @@ Partial Class frmAMVino
         Me.lblPrecioError.AutoSize = True
         Me.lblPrecioError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPrecioError.ForeColor = System.Drawing.Color.Red
-        Me.lblPrecioError.Location = New System.Drawing.Point(82, 169)
+        Me.lblPrecioError.Location = New System.Drawing.Point(97, 169)
         Me.lblPrecioError.Name = "lblPrecioError"
         Me.lblPrecioError.Size = New System.Drawing.Size(24, 12)
         Me.lblPrecioError.TabIndex = 119
@@ -79,7 +79,7 @@ Partial Class frmAMVino
         Me.lblBodegaError.AutoSize = True
         Me.lblBodegaError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBodegaError.ForeColor = System.Drawing.Color.Red
-        Me.lblBodegaError.Location = New System.Drawing.Point(82, 90)
+        Me.lblBodegaError.Location = New System.Drawing.Point(97, 90)
         Me.lblBodegaError.Name = "lblBodegaError"
         Me.lblBodegaError.Size = New System.Drawing.Size(24, 12)
         Me.lblBodegaError.TabIndex = 117
@@ -91,7 +91,7 @@ Partial Class frmAMVino
         Me.lblDescripcionError.AutoSize = True
         Me.lblDescripcionError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDescripcionError.ForeColor = System.Drawing.Color.Red
-        Me.lblDescripcionError.Location = New System.Drawing.Point(82, 51)
+        Me.lblDescripcionError.Location = New System.Drawing.Point(97, 51)
         Me.lblDescripcionError.Name = "lblDescripcionError"
         Me.lblDescripcionError.Size = New System.Drawing.Size(24, 12)
         Me.lblDescripcionError.TabIndex = 116
@@ -100,20 +100,21 @@ Partial Class frmAMVino
         '
         'cmbBodega
         '
+        Me.cmbBodega.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbBodega.FormattingEnabled = True
-        Me.cmbBodega.Location = New System.Drawing.Point(83, 66)
+        Me.cmbBodega.Location = New System.Drawing.Point(99, 66)
         Me.cmbBodega.Name = "cmbBodega"
-        Me.cmbBodega.Size = New System.Drawing.Size(242, 21)
+        Me.cmbBodega.Size = New System.Drawing.Size(226, 21)
         Me.cmbBodega.TabIndex = 115
         '
         'txtCantidad
         '
-        Me.txtCantidad.Location = New System.Drawing.Point(83, 107)
+        Me.txtCantidad.Location = New System.Drawing.Point(99, 107)
         Me.txtCantidad.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCantidad.Maximum = New Decimal(New Integer() {32767, 0, 0, 0})
         Me.txtCantidad.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.Size = New System.Drawing.Size(110, 20)
+        Me.txtCantidad.Size = New System.Drawing.Size(94, 20)
         Me.txtCantidad.TabIndex = 114
         Me.txtCantidad.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
@@ -137,7 +138,7 @@ Partial Class frmAMVino
         'lblPrecio
         '
         Me.lblPrecio.AutoSize = True
-        Me.lblPrecio.Location = New System.Drawing.Point(41, 146)
+        Me.lblPrecio.Location = New System.Drawing.Point(32, 146)
         Me.lblPrecio.Name = "lblPrecio"
         Me.lblPrecio.Size = New System.Drawing.Size(37, 13)
         Me.lblPrecio.TabIndex = 2
@@ -147,7 +148,7 @@ Partial Class frmAMVino
         'lblCantidad
         '
         Me.lblCantidad.AutoSize = True
-        Me.lblCantidad.Location = New System.Drawing.Point(29, 107)
+        Me.lblCantidad.Location = New System.Drawing.Point(20, 107)
         Me.lblCantidad.Name = "lblCantidad"
         Me.lblCantidad.Size = New System.Drawing.Size(49, 13)
         Me.lblCantidad.TabIndex = 2
@@ -157,7 +158,7 @@ Partial Class frmAMVino
         'lblBodega
         '
         Me.lblBodega.AutoSize = True
-        Me.lblBodega.Location = New System.Drawing.Point(33, 69)
+        Me.lblBodega.Location = New System.Drawing.Point(25, 69)
         Me.lblBodega.Name = "lblBodega"
         Me.lblBodega.Size = New System.Drawing.Size(44, 13)
         Me.lblBodega.TabIndex = 2
@@ -167,7 +168,7 @@ Partial Class frmAMVino
         'lblDescripcion
         '
         Me.lblDescripcion.AutoSize = True
-        Me.lblDescripcion.Location = New System.Drawing.Point(15, 31)
+        Me.lblDescripcion.Location = New System.Drawing.Point(6, 31)
         Me.lblDescripcion.Name = "lblDescripcion"
         Me.lblDescripcion.Size = New System.Drawing.Size(63, 13)
         Me.lblDescripcion.TabIndex = 2
@@ -176,17 +177,17 @@ Partial Class frmAMVino
         '
         'txtPrecio
         '
-        Me.txtPrecio.Location = New System.Drawing.Point(83, 146)
+        Me.txtPrecio.Location = New System.Drawing.Point(99, 146)
         Me.txtPrecio.Name = "txtPrecio"
-        Me.txtPrecio.Size = New System.Drawing.Size(109, 20)
+        Me.txtPrecio.Size = New System.Drawing.Size(93, 20)
         Me.txtPrecio.TabIndex = 3
         Me.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.Location = New System.Drawing.Point(84, 28)
+        Me.txtDescripcion.Location = New System.Drawing.Point(99, 28)
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(241, 20)
+        Me.txtDescripcion.Size = New System.Drawing.Size(226, 20)
         Me.txtDescripcion.TabIndex = 0
         '
         'frmAMVino

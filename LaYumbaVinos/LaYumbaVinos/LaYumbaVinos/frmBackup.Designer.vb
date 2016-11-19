@@ -111,6 +111,7 @@ Partial Class frmBackup
         'nudValor
         '
         Me.nudValor.Location = New System.Drawing.Point(79, 75)
+        Me.nudValor.Maximum = New Decimal(New Integer() {50, 0, 0, 0})
         Me.nudValor.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudValor.Name = "nudValor"
         Me.nudValor.ReadOnly = True

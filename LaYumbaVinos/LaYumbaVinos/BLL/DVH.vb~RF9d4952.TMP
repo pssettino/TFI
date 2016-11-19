@@ -68,13 +68,13 @@ Public Class DVH
                         DVHBE.AgregarRestriccion(primary_key.ColumnName, dr.item(primary_key).ToString)
                     Next
                     If (DVH <> DigitoVerificadorHorizontalDAL.GetDigito(DVHBE)) Then
-                        RegistrarBitacora("Error DVH: " & dt.TableName, "Alta", UsuarioBE, False)
+                        RegistrarBitacora("Error DVH: " & dt.TableName, "Alta", UsuarioBE)
                         returnValue = False
                         Return returnValue
                     End If
                 Next
                 If (DigitoVerificadorVerticalBLL.VerificarDVV(dt) = False) Then
-                    RegistrarBitacora("Error DVV: " & dt.TableName, "Alta", UsuarioBE, False)
+                    RegistrarBitacora("Error DVV: " & dt.TableName, "Alta", UsuarioBE)
                     returnValue = False
                     Return returnValue
                 End If

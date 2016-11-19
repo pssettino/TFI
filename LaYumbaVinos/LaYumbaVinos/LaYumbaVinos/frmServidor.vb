@@ -10,7 +10,7 @@ Public Class frmServidor
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         Try
             If Validar() Then
-                File.WriteAllText("AccederServidorSQL.txt", txtServidor.Text)
+                File.WriteAllText("AccederServidorSQL.txt", SeguridadBLL.EncriptarRSA(txtServidor.Text))
                 Me.DialogResult = Windows.Forms.DialogResult.OK
                 Me.Close()
             End If

@@ -67,7 +67,7 @@ Partial Class frmBitacora
         '
         'lblUsuario
         '
-        Me.lblUsuario.Location = New System.Drawing.Point(20, 29)
+        Me.lblUsuario.Location = New System.Drawing.Point(6, 29)
         Me.lblUsuario.Name = "lblUsuario"
         Me.lblUsuario.Size = New System.Drawing.Size(67, 17)
         Me.lblUsuario.TabIndex = 25
@@ -76,7 +76,7 @@ Partial Class frmBitacora
         '
         'lblCriticidad
         '
-        Me.lblCriticidad.Location = New System.Drawing.Point(20, 55)
+        Me.lblCriticidad.Location = New System.Drawing.Point(6, 55)
         Me.lblCriticidad.Name = "lblCriticidad"
         Me.lblCriticidad.Size = New System.Drawing.Size(62, 18)
         Me.lblCriticidad.TabIndex = 25
@@ -205,6 +205,7 @@ Partial Class frmBitacora
         '
         'cmbCriticidad
         '
+        Me.cmbCriticidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbCriticidad.FormattingEnabled = True
         Me.cmbCriticidad.Location = New System.Drawing.Point(84, 56)
         Me.cmbCriticidad.Name = "cmbCriticidad"
@@ -213,6 +214,7 @@ Partial Class frmBitacora
         '
         'cmbUsuario
         '
+        Me.cmbUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbUsuario.FormattingEnabled = True
         Me.cmbUsuario.Location = New System.Drawing.Point(84, 29)
         Me.cmbUsuario.Name = "cmbUsuario"

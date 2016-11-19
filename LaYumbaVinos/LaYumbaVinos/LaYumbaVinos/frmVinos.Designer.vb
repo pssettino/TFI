@@ -58,16 +58,17 @@ Partial Class frmVinos
         '
         'cmbVinos
         '
+        Me.cmbVinos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbVinos.FormattingEnabled = True
-        Me.cmbVinos.Location = New System.Drawing.Point(504, 46)
+        Me.cmbVinos.Location = New System.Drawing.Point(515, 46)
         Me.cmbVinos.Name = "cmbVinos"
-        Me.cmbVinos.Size = New System.Drawing.Size(272, 21)
+        Me.cmbVinos.Size = New System.Drawing.Size(261, 21)
         Me.cmbVinos.TabIndex = 17
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(454, 49)
+        Me.Label1.Location = New System.Drawing.Point(436, 49)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 13)
         Me.Label1.TabIndex = 15
@@ -84,7 +85,7 @@ Partial Class frmVinos
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.Location = New System.Drawing.Point(75, 46)
+        Me.txtDescripcion.Location = New System.Drawing.Point(87, 46)
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(327, 20)
         Me.txtDescripcion.TabIndex = 13

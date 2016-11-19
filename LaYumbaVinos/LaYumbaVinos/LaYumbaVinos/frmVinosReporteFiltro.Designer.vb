@@ -62,8 +62,9 @@ Partial Class frmVinosReporteFiltro
         '
         'cmbBodega
         '
+        Me.cmbBodega.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbBodega.FormattingEnabled = True
-        Me.cmbBodega.Location = New System.Drawing.Point(92, 66)
+        Me.cmbBodega.Location = New System.Drawing.Point(112, 66)
         Me.cmbBodega.Name = "cmbBodega"
         Me.cmbBodega.Size = New System.Drawing.Size(272, 21)
         Me.cmbBodega.TabIndex = 97
@@ -175,7 +176,7 @@ Partial Class frmVinosReporteFiltro
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.Location = New System.Drawing.Point(92, 28)
+        Me.txtDescripcion.Location = New System.Drawing.Point(112, 28)
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(272, 20)
         Me.txtDescripcion.TabIndex = 0

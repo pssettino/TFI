@@ -63,7 +63,7 @@ Partial Class frmAMFamilia
         Me.lblDescripcionError.AutoSize = True
         Me.lblDescripcionError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDescripcionError.ForeColor = System.Drawing.Color.Red
-        Me.lblDescripcionError.Location = New System.Drawing.Point(80, 84)
+        Me.lblDescripcionError.Location = New System.Drawing.Point(95, 84)
         Me.lblDescripcionError.Name = "lblDescripcionError"
         Me.lblDescripcionError.Size = New System.Drawing.Size(24, 12)
         Me.lblDescripcionError.TabIndex = 117
@@ -75,7 +75,7 @@ Partial Class frmAMFamilia
         Me.lblNombreError.AutoSize = True
         Me.lblNombreError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombreError.ForeColor = System.Drawing.Color.Red
-        Me.lblNombreError.Location = New System.Drawing.Point(80, 42)
+        Me.lblNombreError.Location = New System.Drawing.Point(95, 42)
         Me.lblNombreError.Name = "lblNombreError"
         Me.lblNombreError.Size = New System.Drawing.Size(24, 12)
         Me.lblNombreError.TabIndex = 116
@@ -89,12 +89,12 @@ Partial Class frmAMFamilia
         Me.dgPatentes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgPatentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgPatentes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.dgAsignarPatente, Me.patente_id})
-        Me.dgPatentes.Location = New System.Drawing.Point(82, 99)
+        Me.dgPatentes.Location = New System.Drawing.Point(97, 99)
         Me.dgPatentes.Margin = New System.Windows.Forms.Padding(2)
         Me.dgPatentes.Name = "dgPatentes"
         Me.dgPatentes.RowHeadersVisible = False
         Me.dgPatentes.RowTemplate.Height = 24
-        Me.dgPatentes.Size = New System.Drawing.Size(344, 217)
+        Me.dgPatentes.Size = New System.Drawing.Size(329, 217)
         Me.dgPatentes.TabIndex = 51
         '
         'Nombre
@@ -119,7 +119,7 @@ Partial Class frmAMFamilia
         'lblpatentes
         '
         Me.lblpatentes.AutoSize = True
-        Me.lblpatentes.Location = New System.Drawing.Point(24, 104)
+        Me.lblpatentes.Location = New System.Drawing.Point(19, 99)
         Me.lblpatentes.Name = "lblpatentes"
         Me.lblpatentes.Size = New System.Drawing.Size(49, 13)
         Me.lblpatentes.TabIndex = 10
@@ -128,7 +128,7 @@ Partial Class frmAMFamilia
         'lbldescripcion
         '
         Me.lbldescripcion.AutoSize = True
-        Me.lbldescripcion.Location = New System.Drawing.Point(10, 64)
+        Me.lbldescripcion.Location = New System.Drawing.Point(6, 64)
         Me.lbldescripcion.Name = "lbldescripcion"
         Me.lbldescripcion.Size = New System.Drawing.Size(63, 13)
         Me.lbldescripcion.TabIndex = 10
@@ -146,7 +146,7 @@ Partial Class frmAMFamilia
         'lblnombre
         '
         Me.lblnombre.AutoSize = True
-        Me.lblnombre.Location = New System.Drawing.Point(29, 22)
+        Me.lblnombre.Location = New System.Drawing.Point(24, 22)
         Me.lblnombre.Name = "lblnombre"
         Me.lblnombre.Size = New System.Drawing.Size(44, 13)
         Me.lblnombre.TabIndex = 10
@@ -162,16 +162,16 @@ Partial Class frmAMFamilia
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.Location = New System.Drawing.Point(82, 61)
+        Me.txtDescripcion.Location = New System.Drawing.Point(97, 61)
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(344, 20)
+        Me.txtDescripcion.Size = New System.Drawing.Size(329, 20)
         Me.txtDescripcion.TabIndex = 1
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(82, 19)
+        Me.txtNombre.Location = New System.Drawing.Point(97, 19)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(344, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(329, 20)
         Me.txtNombre.TabIndex = 0
         '
         'frmAMFamilia

@@ -51,6 +51,7 @@ Public Class frmLogin
                                     If UsuarioBLL.VerificarPatente(UsuarioBE, PatenteBE) Then
                                         If MsgBox(TraduccionBLL.TraducirTexto("Error al verificar la integridad de la Base de Datos. ¿Desea Recalcular los Digitos Verificadores? "), MsgBoxStyle.YesNo, "Confirmacion") = MsgBoxResult.Yes Then
                                             DVH_BLL.RecalcularDVH()
+                                            RegistrarBitacora("DV Recalculados ", "Baja")
                                         Else
                                             Application.Exit()
                                         End If
@@ -116,7 +117,7 @@ Public Class frmLogin
 
         Try
             If (File.Exists("AccederServidorSQL.txt") = True) Then
-                If (SeguridadBLL.ValidarServidor(File.ReadAllText("AccederServidorSQL.txt")) = False) Then
+                If (SeguridadBLL.ValidarServidor(SeguridadBLL.DesencriptarRSA(File.ReadAllText("AccederServidorSQL.txt"))) = False) Then
                     returnValue = True
                 End If
             Else

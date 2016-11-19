@@ -131,6 +131,7 @@ Partial Class frmAMBodega
         '
         'cmbProvincia
         '
+        Me.cmbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbProvincia.FormattingEnabled = True
         Me.cmbProvincia.Location = New System.Drawing.Point(89, 177)
         Me.cmbProvincia.Name = "cmbProvincia"
@@ -139,6 +140,7 @@ Partial Class frmAMBodega
         '
         'cmbLocalidad
         '
+        Me.cmbLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbLocalidad.FormattingEnabled = True
         Me.cmbLocalidad.Location = New System.Drawing.Point(87, 230)
         Me.cmbLocalidad.Name = "cmbLocalidad"

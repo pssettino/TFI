@@ -37,6 +37,7 @@ Partial Class frmAMVenta
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtPrecioLista = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblClienteE = New System.Windows.Forms.Label()
         Me.txtFechaHora = New System.Windows.Forms.DateTimePicker()
         Me.cmbCliente = New System.Windows.Forms.ComboBox()
         Me.cmbVino = New System.Windows.Forms.ComboBox()
@@ -57,7 +58,6 @@ Partial Class frmAMVenta
         Me.gvBtnEliminarVino = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Eliminado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnAceptar = New System.Windows.Forms.Button()
-        Me.lblClienteE = New System.Windows.Forms.Label()
         CType(Me.txtCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -83,7 +83,7 @@ Partial Class frmAMVenta
         '
         'Label1
         '
-        Me.Label1.Location = New System.Drawing.Point(26, 19)
+        Me.Label1.Location = New System.Drawing.Point(13, 19)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(78, 20)
         Me.Label1.TabIndex = 2
@@ -101,9 +101,9 @@ Partial Class frmAMVenta
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(5, 50)
+        Me.Label2.Location = New System.Drawing.Point(0, 50)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(99, 22)
+        Me.Label2.Size = New System.Drawing.Size(87, 22)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Clientes activos"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -208,6 +208,18 @@ Partial Class frmAMVenta
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Venta"
         '
+        'lblClienteE
+        '
+        Me.lblClienteE.AutoSize = True
+        Me.lblClienteE.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblClienteE.ForeColor = System.Drawing.Color.Red
+        Me.lblClienteE.Location = New System.Drawing.Point(117, 74)
+        Me.lblClienteE.Name = "lblClienteE"
+        Me.lblClienteE.Size = New System.Drawing.Size(24, 12)
+        Me.lblClienteE.TabIndex = 127
+        Me.lblClienteE.Text = "error"
+        Me.lblClienteE.Visible = False
+        '
         'txtFechaHora
         '
         Me.txtFechaHora.Location = New System.Drawing.Point(408, 18)
@@ -217,18 +229,20 @@ Partial Class frmAMVenta
         '
         'cmbCliente
         '
+        Me.cmbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbCliente.FormattingEnabled = True
         Me.cmbCliente.Location = New System.Drawing.Point(119, 50)
         Me.cmbCliente.Name = "cmbCliente"
-        Me.cmbCliente.Size = New System.Drawing.Size(171, 21)
+        Me.cmbCliente.Size = New System.Drawing.Size(173, 21)
         Me.cmbCliente.TabIndex = 118
         '
         'cmbVino
         '
+        Me.cmbVino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbVino.FormattingEnabled = True
         Me.cmbVino.Location = New System.Drawing.Point(118, 19)
         Me.cmbVino.Name = "cmbVino"
-        Me.cmbVino.Size = New System.Drawing.Size(180, 21)
+        Me.cmbVino.Size = New System.Drawing.Size(173, 21)
         Me.cmbVino.TabIndex = 118
         '
         'GroupBox2
@@ -404,18 +418,6 @@ Partial Class frmAMVenta
         Me.btnAceptar.Size = New System.Drawing.Size(127, 27)
         Me.btnAceptar.TabIndex = 119
         Me.btnAceptar.Text = "&Aceptar"
-        '
-        'lblClienteE
-        '
-        Me.lblClienteE.AutoSize = True
-        Me.lblClienteE.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblClienteE.ForeColor = System.Drawing.Color.Red
-        Me.lblClienteE.Location = New System.Drawing.Point(117, 74)
-        Me.lblClienteE.Name = "lblClienteE"
-        Me.lblClienteE.Size = New System.Drawing.Size(24, 12)
-        Me.lblClienteE.TabIndex = 127
-        Me.lblClienteE.Text = "error"
-        Me.lblClienteE.Visible = False
         '
         'frmAMVenta
         '

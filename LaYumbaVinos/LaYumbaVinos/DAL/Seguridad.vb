@@ -12,6 +12,24 @@ Imports System.IO
 Public Class Seguridad
     Dim SqlConn As New SqlClient.SqlConnection With {.ConnectionString = Conexion.getConexionLaYumba}
 
+
+    Private Sub New()
+
+    End Sub
+
+    Private Shared _instancia As DAL.Seguridad
+
+    Public Shared Function GetInstance() As DAL.Seguridad
+
+        If _instancia Is Nothing Then
+
+            _instancia = New DAL.Seguridad
+
+        End If
+
+        Return _instancia
+    End Function
+
     Public Function EncriptarRSA(ByVal Input As String) As String
 
         Dim IV() As Byte = ASCIIEncoding.ASCII.GetBytes("qualityi") 'La clave debe ser de 8 caracteres

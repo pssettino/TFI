@@ -118,7 +118,7 @@ Partial Class frmAMUsuario
         Me.lblNombreError.AutoSize = True
         Me.lblNombreError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombreError.ForeColor = System.Drawing.Color.Red
-        Me.lblNombreError.Location = New System.Drawing.Point(60, 115)
+        Me.lblNombreError.Location = New System.Drawing.Point(80, 115)
         Me.lblNombreError.Name = "lblNombreError"
         Me.lblNombreError.Size = New System.Drawing.Size(24, 12)
         Me.lblNombreError.TabIndex = 123
@@ -130,7 +130,7 @@ Partial Class frmAMUsuario
         Me.lblApellidoError.AutoSize = True
         Me.lblApellidoError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblApellidoError.ForeColor = System.Drawing.Color.Red
-        Me.lblApellidoError.Location = New System.Drawing.Point(60, 79)
+        Me.lblApellidoError.Location = New System.Drawing.Point(80, 79)
         Me.lblApellidoError.Name = "lblApellidoError"
         Me.lblApellidoError.Size = New System.Drawing.Size(24, 12)
         Me.lblApellidoError.TabIndex = 122
@@ -142,7 +142,7 @@ Partial Class frmAMUsuario
         Me.lblNombreUsuarioError.AutoSize = True
         Me.lblNombreUsuarioError.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombreUsuarioError.ForeColor = System.Drawing.Color.Red
-        Me.lblNombreUsuarioError.Location = New System.Drawing.Point(60, 41)
+        Me.lblNombreUsuarioError.Location = New System.Drawing.Point(80, 41)
         Me.lblNombreUsuarioError.Name = "lblNombreUsuarioError"
         Me.lblNombreUsuarioError.Size = New System.Drawing.Size(24, 12)
         Me.lblNombreUsuarioError.TabIndex = 121
@@ -179,7 +179,7 @@ Partial Class frmAMUsuario
         'lblusuario
         '
         Me.lblusuario.AutoSize = True
-        Me.lblusuario.Location = New System.Drawing.Point(12, 22)
+        Me.lblusuario.Location = New System.Drawing.Point(7, 22)
         Me.lblusuario.Name = "lblusuario"
         Me.lblusuario.Size = New System.Drawing.Size(43, 13)
         Me.lblusuario.TabIndex = 111
@@ -189,16 +189,16 @@ Partial Class frmAMUsuario
         'txtNombre
         '
         Me.txtNombre.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtNombre.Location = New System.Drawing.Point(62, 92)
+        Me.txtNombre.Location = New System.Drawing.Point(82, 92)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(206, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(186, 20)
         Me.txtNombre.TabIndex = 105
         '
         'txtApellido
         '
-        Me.txtApellido.Location = New System.Drawing.Point(62, 56)
+        Me.txtApellido.Location = New System.Drawing.Point(82, 56)
         Me.txtApellido.Name = "txtApellido"
-        Me.txtApellido.Size = New System.Drawing.Size(206, 20)
+        Me.txtApellido.Size = New System.Drawing.Size(186, 20)
         Me.txtApellido.TabIndex = 104
         '
         'txtDni
@@ -219,7 +219,7 @@ Partial Class frmAMUsuario
         'lblNombre
         '
         Me.lblNombre.AutoSize = True
-        Me.lblNombre.Location = New System.Drawing.Point(12, 95)
+        Me.lblNombre.Location = New System.Drawing.Point(6, 95)
         Me.lblNombre.Name = "lblNombre"
         Me.lblNombre.Size = New System.Drawing.Size(44, 13)
         Me.lblNombre.TabIndex = 108
@@ -229,7 +229,7 @@ Partial Class frmAMUsuario
         'lblApellido
         '
         Me.lblApellido.AutoSize = True
-        Me.lblApellido.Location = New System.Drawing.Point(12, 59)
+        Me.lblApellido.Location = New System.Drawing.Point(6, 59)
         Me.lblApellido.Name = "lblApellido"
         Me.lblApellido.Size = New System.Drawing.Size(44, 13)
         Me.lblApellido.TabIndex = 109
@@ -258,9 +258,9 @@ Partial Class frmAMUsuario
         '
         'txtUser
         '
-        Me.txtUser.Location = New System.Drawing.Point(62, 19)
+        Me.txtUser.Location = New System.Drawing.Point(82, 19)
         Me.txtUser.Name = "txtUser"
-        Me.txtUser.Size = New System.Drawing.Size(206, 20)
+        Me.txtUser.Size = New System.Drawing.Size(186, 20)
         Me.txtUser.TabIndex = 103
         '
         'GroupBox2
