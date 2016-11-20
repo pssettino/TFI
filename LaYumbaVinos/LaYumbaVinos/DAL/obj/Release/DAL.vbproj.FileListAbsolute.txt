@@ -1,0 +1,13 @@
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\DAL\bin\Release\DAL.dll
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\DAL\bin\Release\DAL.pdb
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\DAL\bin\Release\DAL.xml
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\DAL\bin\Release\BE.dll
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\DAL\bin\Release\SevenZipSharp.dll
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\DAL\bin\Release\BE.pdb
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\DAL\bin\Release\BE.xml
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\DAL\obj\Release\DAL.vbprojResolveAssemblyReference.cache
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\DAL\obj\Release\DAL.Resources.resources
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\DAL\obj\Release\DAL.vbproj.GenerateResource.Cache
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\DAL\obj\Release\DAL.dll
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\DAL\obj\Release\DAL.xml
+C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\DAL\obj\Release\DAL.pdb

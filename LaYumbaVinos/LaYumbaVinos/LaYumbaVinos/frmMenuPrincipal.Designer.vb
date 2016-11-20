@@ -42,6 +42,7 @@ Partial Class frmMenuPrincipal
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SeguridadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnsMenuPrincipal = New System.Windows.Forms.MenuStrip()
+        Me.HelpProviderHG = New System.Windows.Forms.HelpProvider()
         Me.mnsMenuPrincipal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -167,6 +168,11 @@ Partial Class frmMenuPrincipal
         Me.mnsMenuPrincipal.TabIndex = 1
         Me.mnsMenuPrincipal.Text = "MenuStrip1"
         '
+        'HelpProviderHG
+        '
+        Me.HelpProviderHG.HelpNamespace = "C:\Users\pgsett\Desktop\Trabajo De Campo\TFI\LaYumbaVinos\LaYumbaVinos\LaYumbaVin" & _
+    "os.chm"
+        '
         'frmMenuPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -174,10 +180,13 @@ Partial Class frmMenuPrincipal
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(954, 481)
         Me.Controls.Add(Me.mnsMenuPrincipal)
+        Me.HelpProviderHG.SetHelpKeyword(Me, "frmMenuPrincipal_1.htm")
+        Me.HelpProviderHG.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.Topic)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MaximizeBox = False
         Me.Name = "frmMenuPrincipal"
+        Me.HelpProviderHG.SetShowHelp(Me, True)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "La Yumba Vinos"
         Me.mnsMenuPrincipal.ResumeLayout(False)
@@ -205,4 +214,5 @@ Partial Class frmMenuPrincipal
     Friend WithEvents VentasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SeguridadToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnsMenuPrincipal As System.Windows.Forms.MenuStrip
+    Friend WithEvents HelpProviderHG As System.Windows.Forms.HelpProvider
 End Class

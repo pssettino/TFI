@@ -99,14 +99,6 @@
 
     Private Sub frmMenuPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            Dim toolTip1 As New ToolTip()
-
-            ' Set up the delays for the ToolTip.
-            toolTip1.AutoPopDelay = 5000
-            toolTip1.InitialDelay = 1000
-            toolTip1.ReshowDelay = 500
-            ' Force the ToolTip text to be displayed whether or not the form is active.
-            toolTip1.ShowAlways = True
 
             TraduccionBLL = New BLL.Traduccion(GetIdioma)
             TraduccionBLL.TraducirForm(Me)
@@ -133,5 +125,9 @@
     Private Sub ReporteStockDeVinosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteStockDeVinosToolStripMenuItem.Click
         LaYumbaVinos.frmVinosReporteFiltro.MdiParent = Me
         LaYumbaVinos.frmVinosReporteFiltro.Show()
+    End Sub
+
+    Private Sub VerLaAyudaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VerLaAyudaToolStripMenuItem.Click
+        Help.ShowHelp(Me, "LaYumbaVinos.chm")
     End Sub
 End Class
